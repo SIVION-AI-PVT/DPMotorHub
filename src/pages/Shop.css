@@ -1,0 +1,126 @@
+.shop-page {
+  padding-top: 120px; /* offset for fixed header */
+  padding-bottom: var(--space-10);
+}
+
+.shop-header {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.breadcrumb {
+  margin-bottom: var(--space-2);
+}
+
+.shop-layout {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.shop-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.filter-group {
+  margin-bottom: var(--space-5);
+}
+
+.filter-title {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--charcoal);
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--charcoal);
+}
+
+.clear-filters-btn {
+  background: none;
+  border: none;
+  color: var(--mid-gray);
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.shop-main {
+  flex: 1;
+}
+
+.shop-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort-dropdown select {
+  padding: 8px 16px;
+  border: 1px solid var(--light-gray);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.mobile-filter-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .shop-grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-layout {
+    flex-direction: column;
+  }
+  .shop-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    z-index: 200;
+    padding: var(--space-6) var(--space-4);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+  .shop-sidebar.open {
+    transform: translateX(0);
+  }
+  .mobile-filter-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-grid.grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
