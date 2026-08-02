@@ -1,130 +1,635 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, Clock, Wrench, Settings, Star } from 'lucide-react';
-import Button from '../components/Button';
-import ProductCard from '../components/ProductCard';
-import './Home.css';
+import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-const featuredProducts = [
-  { id: '1', name: 'M Performance Carbon Fiber Front Splitter', price: 1850, models: ['G80 M3', 'G82 M4'], image: 'https://images.unsplash.com/photo-1616788494707-1d897712df71?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-  { id: '2', name: 'M Performance Steering Wheel V2', price: 1250, models: ['F80 M3', 'F82 M4'], image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-  { id: '3', name: 'Titanium Exhaust System', price: 4200, models: ['F90 M5'], image: 'https://images.unsplash.com/photo-1632230159781-a8878b277dfd?auto=format&fit=crop&q=80&w=400', isMPerformance: false },
-  { id: '4', name: 'Forged Alloy Wheels 763M', price: 3800, models: ['F87 M2'], image: 'https://images.unsplash.com/photo-1620986797534-19067b003a89?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
+gsap.registerPlugin(ScrollTrigger);
+import {
+  ShieldCheck,
+  Clock,
+  Wrench,
+  Settings,
+  Star,
+  ArrowUpRight,
+  Search,
+  ChevronRight,
+  CheckCircle2,
+  MessageCircle,
+  Sparkles,
+  Award,
+  Key,
+  Truck,
+  CheckSquare,
+  Layers,
+  MapPin,
+  Phone,
+  Mail,
+  Zap,
+} from "lucide-react";
+import ProductCard from "../components/ProductCard";
+import { INITIAL_PRODUCTS, useCart } from "../context/CartContext";
+import "./Home.css";
+
+const M5_FEATURES = [
+  {
+    id: "01",
+    name: "THE TRACK",
+    detail: "635 HP, S63 4.4L V8 Twin-Turbo Engine",
+  },
+  {
+    id: "02",
+    name: "EXHAUST SYSTEM",
+    detail: "Grade-1 Titanium Quad Acoustics",
+  },
+  {
+    id: "03",
+    name: "AERODYNAMICS",
+    detail: "Pre-preg Carbon Fiber Hood & Splitter",
+  },
+  {
+    id: "04",
+    name: "ALCANTARA & TRIM",
+    detail: "M Carbon Bucket Seats & Tricolor Stitch",
+  },
 ];
 
 export default function Home() {
-  React.useEffect(() => {
-    document.body.classList.add('home-page');
-    return () => document.body.classList.remove('home-page');
-  }, []);
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      // Hero Animation
+      const tl = gsap.timeline();
+      tl.from(".stitch-hero-eyebrow", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.2,
+      })
+        .from(
+          ".stitch-hero-title",
+          {
+            y: 60,
+            opacity: 0,
+            filter: "blur(10px)",
+            scale: 0.95,
+            duration: 1,
+            ease: "expo.out",
+          },
+          "-=0.5",
+        )
+        .from(
+          ".stitch-hero-subtitle",
+          {
+            y: 30,
+            opacity: 0,
+            filter: "blur(5px)",
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.7",
+        )
+        .from(
+          ".stitch-hero-actions a",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+          },
+          "-=0.6",
+        )
+        .from(
+          ".hero-finder-bar",
+          {
+            y: 50,
+            opacity: 0,
+            filter: "blur(10px)",
+            duration: 1,
+            ease: "back.out(1.5)",
+          },
+          "-=0.5",
+        );
+
+      // Scroll Animations
+      gsap.from(".stitch-showcase-media", {
+        scrollTrigger: {
+          trigger: ".stitch-showcase-section",
+          start: "top 70%",
+        },
+        x: -60,
+        opacity: 0,
+        filter: "blur(10px)",
+        duration: 1.2,
+        ease: "expo.out",
+      });
+
+      gsap.from(".stitch-spec-card", {
+        scrollTrigger: { trigger: ".stitch-showcase-info", start: "top 75%" },
+        x: 40,
+        opacity: 0,
+        filter: "blur(5px)",
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+
+      gsap.from(".shop-grid > div", {
+        scrollTrigger: {
+          trigger: ".stitch-inventory-section",
+          start: "top 70%",
+        },
+        y: 50,
+        opacity: 0,
+        filter: "blur(8px)",
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".wix-why-card", {
+        scrollTrigger: { trigger: ".wix-why-section", start: "top 75%" },
+        y: 40,
+        opacity: 0,
+        filter: "blur(5px)",
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    },
+    { scope: container },
+  );
+
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const [selectedChassis, setSelectedChassis] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [activeModelTab, setActiveModelTab] = useState("all");
+  const [vinInput, setVinInput] = useState("");
+  const [vinVerified, setVinVerified] = useState(false);
+
+  const handleFinderSearch = (e) => {
+    e.preventDefault();
+    let query = "/shop?";
+    if (selectedChassis)
+      query += `chassis=${encodeURIComponent(selectedChassis)}&`;
+    if (selectedCategory)
+      query += `category=${encodeURIComponent(selectedCategory)}`;
+    navigate(query);
+  };
+
+  const handleVinVerify = (e) => {
+    e.preventDefault();
+    if (vinInput.trim().length >= 5) {
+      setVinVerified(true);
+    }
+  };
+
+  const inventoryProducts =
+    activeModelTab === "all"
+      ? INITIAL_PRODUCTS
+      : INITIAL_PRODUCTS.filter((p) =>
+          p.models.some((m) =>
+            m.toLowerCase().includes(activeModelTab.toLowerCase()),
+          ),
+        );
 
   return (
-    <div className="home">
-      {/* Hero Section */}
-      <section className="hero dark-section">
-        <div className="hero-bg">
-          <img src="https://images.unsplash.com/photo-1555353540-64fd3737b98d?auto=format&fit=crop&q=80&w=1920" alt="BMW M Engine Bay" />
-          <div className="hero-overlay"></div>
+    <div className="home-stitch-ui" ref={container}>
+      {/* 1. STITCH HERO: BORN ON THE TRACK */}
+      <section className="stitch-hero">
+        <div className="stitch-hero-bg">
+          <img
+            src="/assets/hero_bg.jpg"
+            alt="BMW M5 Hero"
+            className="hero-bg"
+          />{" "}
+          <div className="stitch-hero-overlay"></div>
         </div>
-        <div className="container hero-content">
-          <div className="eyebrow" style={{ color: '#fff', marginBottom: '16px' }}>GENUINE BMW M PERFORMANCE</div>
-          <h1 className="h1 hero-title">ENGINEERED FOR THE LIMIT.</h1>
-          <p className="hero-subtitle">Specialist retailer of premium aftermarket and genuine performance parts for BMW M enthusiasts.</p>
-          <div className="hero-actions">
-            <Button to="/shop" variant="primary">Shop Parts</Button>
-            <Button to="/shop?sort=model" variant="outline" className="hero-outline-btn">Browse by Model</Button>
+
+        <div className="container stitch-hero-container">
+          <div className="stitch-hero-eyebrow">
+            <span className="m-stripe-pill"></span> M PERFORMANCE • MOTORSPORT
+            HARDWARE
+          </div>
+
+          <h1 className="stitch-hero-title">BORN ON THE TRACK</h1>
+
+          <p className="stitch-hero-subtitle">
+            Uncompromising dynamics. Precision engineering. Experience the
+            pinnacle of motorsport performance where every detail is designed
+            for velocity.
+          </p>
+
+          <div className="stitch-hero-actions">
+            <Link to="/shop" className="wix-pill-btn dark">
+              EXPLORE PARTS <ArrowUpRight size={18} />
+            </Link>
+            <Link to="/shop?sort=model" className="wix-pill-btn orange">
+              CONFIGURE M-CAR <ArrowUpRight size={18} />
+            </Link>
+          </div>
+
+          {/* Floating Vehicle Finder Bar */}
+          <div className="hero-finder-bar">
+            <form onSubmit={handleFinderSearch} className="hero-finder-form">
+              <div className="finder-input-group">
+                <label>CHASSIS / MODEL</label>
+                <select
+                  value={selectedChassis}
+                  onChange={(e) => setSelectedChassis(e.target.value)}
+                >
+                  <option value="">
+                    Select BMW Model (e.g. G80 M3, F90 M5)...
+                  </option>
+                  <option value="G80 M3">G80 M3 Sedan (2021+)</option>
+                  <option value="G82 M4">G82 M4 Coupe (2021+)</option>
+                  <option value="F80 M3">F80 M3 Sedan (2014-2018)</option>
+                  <option value="F82 M4">F82 M4 Coupe (2014-2020)</option>
+                  <option value="F90 M5">F90 M5 Sedan (2018+)</option>
+                  <option value="F87 M2">F87 M2 Coupe (2016-2021)</option>
+                </select>
+              </div>
+
+              <div className="finder-input-group">
+                <label>PART CATEGORY</label>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                >
+                  <option value="">All Categories...</option>
+                  <option value="engine">Engine & Performance</option>
+                  <option value="brakes-suspension">Brakes & Suspension</option>
+                  <option value="exterior">Exterior & Carbon Aero</option>
+                  <option value="wheels">Wheels & Spacers</option>
+                  <option value="interior">Interior & Trim</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                className="wix-pill-btn accent finder-submit-btn"
+              >
+                FIND FITMENT <Search size={16} />
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <section className="trust-strip">
+      {/* 2. STITCH FEATURE SHOWCASE: M5 CS THE PEAK OF PERFORMANCE */}
+      <section className="section stitch-showcase-section dark-section">
         <div className="container">
-          <div className="grid grid-cols-4 trust-grid">
-            <div className="trust-item">
-              <Shield size={24} strokeWidth={1.5} />
-              <span>Genuine Parts</span>
+          <div className="stitch-showcase-grid">
+            {/* Left Image Showcase */}
+            <div className="stitch-showcase-media">
+              <img
+                src="/assets/exhaust_system.jpg"
+                alt="BMW M Parts"
+                className="w-full h-full object-cover"
+              />
+              <div className="stitch-showcase-badge">
+                <Zap size={18} color="var(--m-blue)" />
+                <span>M5 CS SPECIFICATION</span>
+              </div>
+              <div className="stitch-media-title-overlay">
+                <div className="caption" style={{ color: "var(--m-blue)" }}>
+                  THE ALL-NEW
+                </div>
+                <h2 className="h1" style={{ fontSize: "42px", color: "#fff" }}>
+                  BMW M5 CS
+                </h2>
+              </div>
             </div>
-            <div className="trust-item">
-              <Clock size={24} strokeWidth={1.5} />
-              <span>Fast Delivery</span>
-            </div>
-            <div className="trust-item">
-              <Wrench size={24} strokeWidth={1.5} />
-              <span>Warranty Included</span>
-            </div>
-            <div className="trust-item">
-              <Settings size={24} strokeWidth={1.5} />
-              <span>Expert Support</span>
+
+            {/* Right Specs List */}
+            <div className="stitch-showcase-info">
+              <div
+                className="eyebrow"
+                style={{ color: "var(--m-blue)", marginBottom: "12px" }}
+              >
+                ENGINEERING HIGHLIGHTS
+              </div>
+              <h2 className="wix-main-h2 dark" style={{ marginBottom: "32px" }}>
+                The Peak Of Performance
+              </h2>
+
+              <div className="stitch-specs-list">
+                {M5_FEATURES.map((spec) => (
+                  <div key={spec.id} className="stitch-spec-card">
+                    <span className="stitch-spec-id">{spec.id}</span>
+                    <div>
+                      <h4 className="stitch-spec-name">{spec.name}</h4>
+                      <p className="stitch-spec-detail">{spec.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ marginTop: "36px" }}>
+                <Link to="/shop?chassis=F90" className="wix-pill-btn dark">
+                  EXPLORE M5 CS PARTS <ArrowUpRight size={18} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="section featured-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="h2">FEATURED PARTS</h2>
-            <Link to="/shop" className="view-all-link">View All Catalog</Link>
+      {/* 3. STITCH SECTION: PRECISION VERIFICATION & VIN CHECKER */}
+      <section className="section stitch-verification-section">
+        <div
+          className="container text-center"
+          style={{ textAlign: "center", maxWidth: "840px", margin: "0 auto" }}
+        >
+          <div
+            className="eyebrow"
+            style={{ justifyContent: "center", marginBottom: "12px" }}
+          >
+            VIN FITMENT SEARCH
           </div>
-          <div className="grid grid-cols-4">
-            {featuredProducts.map(product => (
+          <h2 className="wix-main-h2" style={{ marginBottom: "16px" }}>
+            PRECISION VERIFICATION
+          </h2>
+          <p
+            className="body-text"
+            style={{ color: "var(--mid-gray)", marginBottom: "36px" }}
+          >
+            Select your M chassis code or enter your 17-digit VIN to unlock a
+            bespoke catalog of genuine M Performance parts engineered
+            specifically for your vehicle.
+          </p>
+
+          {/* VIN Form */}
+          <form onSubmit={handleVinVerify} className="stitch-vin-form">
+            <input
+              type="text"
+              placeholder="ENTER 17-DIGIT VIN HERE (e.g. WBS83AY000)..."
+              value={vinInput}
+              onChange={(e) => setVinInput(e.target.value)}
+              maxLength={17}
+              className="stitch-vin-input"
+            />
+            <button type="submit" className="wix-pill-btn orange">
+              VERIFY <ArrowUpRight size={18} />
+            </button>
+          </form>
+
+          {vinVerified && (
+            <div className="stitch-vin-success">
+              <CheckCircle2 size={18} color="var(--m-blue)" />
+              <span>
+                100% Guaranteed BMW OEM Fitment Verified for VIN:{" "}
+                {vinInput.toUpperCase()}
+              </span>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 4. STITCH SECTION: THE M COLLECTION | INVENTORY */}
+      <section className="section stitch-inventory-section dark-section">
+        <div className="container">
+          <div className="wix-section-split-header">
+            <div>
+              <div
+                className="eyebrow"
+                style={{ color: "var(--m-blue)", marginBottom: "8px" }}
+              >
+                CATALOG SELECTION
+              </div>
+              <h2 className="wix-main-h2 dark">AVAILABLE M-INVENTORY</h2>
+            </div>
+
+            <div className="tab-buttons-container">
+              {[
+                { id: "all", label: "ALL MODELS" },
+                { id: "G80", label: "G80 M3" },
+                { id: "G82", label: "G82 M4" },
+                { id: "F90", label: "F90 M5" },
+                { id: "F87", label: "F87 M2" },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`tab-filter-btn ${activeModelTab === tab.id ? "active" : ""}`}
+                  onClick={() => setActiveModelTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 shop-grid">
+            {inventoryProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
+
+          <div style={{ textAlign: "center", marginTop: "56px" }}>
+            <Link to="/shop" className="wix-pill-btn dark">
+              VIEW FULL INVENTORY <ArrowUpRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Brand Story Teaser */}
-      <section className="brand-teaser dark-section">
+      {/* 5. WHY DP MOTORHUB? DARK GRID SECTION */}
+      <section className="section wix-why-section dark-section">
         <div className="container">
-          <div className="grid grid-cols-2">
-            <div className="teaser-image">
-              <img src="https://images.unsplash.com/photo-1596707323862-23c50953bf6c?auto=format&fit=crop&q=80&w=800" alt="Workshop" />
-            </div>
-            <div className="teaser-content">
-              <h2 className="h2" style={{ marginBottom: '24px' }}>DRIVEN BY PASSION.</h2>
-              <p className="body-text" style={{ marginBottom: '32px', color: '#A0A0A5' }}>
-                We don't just sell parts; we understand the engineering behind them. DP Motorhub was founded by M-car enthusiasts to provide a curated selection of the highest quality upgrades available.
+          <h2 className="wix-main-h2 dark">
+            Why DP
+            <br />
+            Motorhub?
+          </h2>
+
+          <div className="wix-why-grid">
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <ShieldCheck size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">Only Certified Motors & OEM</h3>
+              <p className="wix-why-desc">
+                100% genuine BMW M parts and certified tuning components with
+                factory warranties.
               </p>
-              <Button to="/about" variant="outline">Learn More</Button>
+            </div>
+
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <Key size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">VIN Fitment Verification</h3>
+              <p className="wix-why-desc">
+                Enter your 17-digit VIN to confirm exact factory compatibility
+                before ordering.
+              </p>
+            </div>
+
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <Truck size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">Free Express Delivery</h3>
+              <p className="wix-why-desc">
+                Worldwide 24-hour dispatch on all in-stock carbon fiber and
+                performance parts.
+              </p>
+            </div>
+
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <CheckSquare size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">30 Days Money Back</h3>
+              <p className="wix-why-desc">
+                Full 30-day return policy for uninstalled components in original
+                packaging.
+              </p>
+            </div>
+
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <Award size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">Pre-Approved Quality</h3>
+              <p className="wix-why-desc">
+                Every part is inspected under high-intensity UV lighting for
+                weave symmetry and finish.
+              </p>
+            </div>
+
+            <div className="wix-why-card">
+              <div className="wix-why-icon">
+                <Settings size={22} color="var(--white)" />
+              </div>
+              <h3 className="wix-why-title">Extra Service & Support</h3>
+              <p className="wix-why-desc">
+                BMW Master Technicians on standby for torque specs, installation
+                guides, and support.
+              </p>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Testimonials */}
-      <section className="section">
+
+      {/* 6. WHATSAPP INSTANT SOURCING BANNER */}
+      <section className="section wix-promo-banner-section">
+        <div className="container text-center" style={{ textAlign: "center" }}>
+          <h2 className="wix-promo-title">
+            Need a rare M part?
+            <br />
+            We're here for you: 100% genuine
+            <br />
+            VIN fitment & express sourcing
+          </h2>
+
+          <div style={{ marginTop: "32px" }}>
+            <a
+              href="https://wa.me/15556769377"
+              target="_blank"
+              rel="noreferrer"
+              className="wix-pill-btn orange"
+            >
+              Find Out More <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FULL BLEED MEDIA BREAK */}
+      <section className="wix-media-break">
+        <img
+          src="/assets/rear_diffuser.jpg"
+          alt="BMW M Performance Engineering"
+          className="wix-why-bg"
+        />
+      </section>
+
+      {/* 8. VISIT US & DRIVE AWAY WITH YOUR NEW CAR / CONTACT & MAP */}
+      <section className="section wix-contact-map-section dark-section">
         <div className="container">
-          <h2 className="h2 text-center" style={{ marginBottom: '48px', textAlign: 'center' }}>ENTHUSIAST APPROVED</h2>
-          <div className="grid grid-cols-3">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="testimonial-card">
-                <div className="stars">
-                  <Star size={16} fill="var(--m-blue)" color="var(--m-blue)" />
-                  <Star size={16} fill="var(--m-blue)" color="var(--m-blue)" />
-                  <Star size={16} fill="var(--m-blue)" color="var(--m-blue)" />
-                  <Star size={16} fill="var(--m-blue)" color="var(--m-blue)" />
-                  <Star size={16} fill="var(--m-blue)" color="var(--m-blue)" />
-                </div>
-                <p className="body-text">"Incredible service and fast shipping. The carbon fiber splitter fits my G80 perfectly, exactly as described. Genuine quality."</p>
-                <div className="testimonial-author">
-                  <div className="h3" style={{ fontSize: '16px' }}>Alex R.</div>
-                  <div className="caption">G80 M3 Owner</div>
+          <div
+            className="grid grid-cols-2 wix-contact-grid"
+            style={{ gap: "64px", alignItems: "center" }}
+          >
+            <div className="wix-contact-info-col">
+              <h2 className="wix-main-h2 dark" style={{ marginBottom: "32px" }}>
+                Visit us & upgrade
+                <br />
+                your M car today!
+              </h2>
+
+              <div className="wix-contact-email">
+                <a href="mailto:sales@dpmotorhub.com">sales@dpmotorhub.com</a>
+              </div>
+
+              <div className="wix-contact-address">
+                DP Motorhub GmbH
+                <br />
+                Schleißheimer Str. 200, 80809 Munich, Germany
+              </div>
+
+              <div className="wix-contact-phones">
+                +1 555-676-9377
+                <br />
+                +1 555-M-POWER
+              </div>
+            </div>
+
+            {/* Dark Map Simulation */}
+            <div className="wix-map-card">
+              <div className="wix-map-header">
+                <span>Map | Satellite</span>
+              </div>
+              <div className="wix-map-body">
+                <div className="wix-map-pin-popup">
+                  <strong>DP Motorhub Munich HQ</strong>
+                  <p>Schleißheimer Str. 200, Munich</p>
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Directions ↗
+                  </a>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="cta-banner dark-section" style={{ padding: '80px 0', textAlign: 'center' }}>
-        <div className="container">
-          <h2 className="h2" style={{ marginBottom: '16px' }}>CAN'T FIND WHAT YOU NEED?</h2>
-          <p className="body-text" style={{ marginBottom: '32px', color: '#A0A0A5' }}>Contact our experts and we'll source it for you.</p>
-          <Button to="/contact" variant="primary">Contact Us on WhatsApp</Button>
+      {/* 9. GIANT BOTTOM TYPOGRAPHY FOOTER BRANDING */}
+      <section className="wix-footer-brand-section dark-section">
+        <div className="container text-center" style={{ textAlign: "center" }}>
+          <div className="wix-footer-logo-row">
+            <span className="logo-arrow">➤</span>{" "}
+            <span className="logo-text-premium" style={{ fontSize: "inherit" }}>
+              DP MOTORHUB
+            </span>
+          </div>
+
+          <div className="wix-footer-socials">
+            <a href="#" aria-label="Facebook">
+              <MessageCircle size={20} />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <Award size={20} />
+            </a>
+            <a href="#" aria-label="X">
+              <ArrowUpRight size={20} />
+            </a>
+          </div>
+
+          <div className="wix-giant-brand-text logo-text-premium">
+            DP MOTORHUB
+          </div>
         </div>
       </section>
     </div>

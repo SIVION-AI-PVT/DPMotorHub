@@ -1,13 +1,21 @@
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+/* Glassmorphism Home Styles */
+.home-stitch-ui {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.hero-bg {
+/* 1. Stitch Hero Section */
+.stitch-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 0 110px;
+}
+
+.stitch-hero-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,159 +24,529 @@
   z-index: 1;
 }
 
-.hero-bg img {
+.stitch-hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.65) contrast(1.15);
 }
 
-.hero-overlay {
+.stitch-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(11,11,13,0.9) 0%, rgba(11,11,13,0.6) 50%, rgba(11,11,13,0.2) 100%);
+  background:
+    radial-gradient(circle, transparent 20%, rgba(11, 11, 13, 0.85) 100%),
+    linear-gradient(
+      180deg,
+      rgba(11, 11, 13, 0.4) 0%,
+      rgba(11, 11, 13, 0.95) 100%
+    );
 }
 
-.hero-content {
+.stitch-hero-container {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  padding-top: 80px; /* account for header */
-}
-
-.hero-title {
-  margin-bottom: var(--space-3);
-  position: relative;
-  display: inline-block;
-}
-
-.hero-title::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 60px;
-  height: 6px;
-  background: linear-gradient(90deg, var(--m-blue) 0%, var(--m-blue) 33.33%, var(--m-purple) 33.33%, var(--m-purple) 66.66%, var(--m-red) 66.66%, var(--m-red) 100%);
-  transform: skewX(-20deg);
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  margin-bottom: var(--space-5);
-  color: #E0E0E5;
-}
-
-.hero-actions {
-  display: flex;
-  gap: var(--space-3);
-}
-
-/* Trust Strip */
-.trust-strip {
-  border-bottom: 1px solid var(--light-gray);
-  background: var(--white);
-}
-
-.trust-grid {
-  padding: var(--space-4) 0;
-}
-
-.trust-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--charcoal);
+  max-width: 980px;
 }
 
-/* Sections */
-.section {
-  padding: var(--space-10) 0;
+.stitch-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: var(--space-5);
-}
-
-.view-all-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--m-blue);
+.stitch-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(52px, 9vw, 110px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 0.95;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-.view-all-link:hover {
-  text-decoration: underline;
+.stitch-hero-subtitle {
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: #c0c0c5;
+  margin-bottom: 44px;
+  max-width: 760px;
+  line-height: 1.6;
 }
 
-/* Brand Teaser */
-.brand-teaser {
-  padding: var(--space-10) 0;
+.stitch-hero-actions {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 56px;
 }
 
-.teaser-image {
-  height: 100%;
-  min-height: 400px;
+/* Floating Glass Vehicle Finder Bar */
+.hero-finder-bar {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 860px;
+  box-shadow: var(--glass-shadow), var(--glass-glow-blue);
+  border-left: 4px solid var(--m-blue);
+}
+
+.hero-finder-form {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.finder-input-group {
+  flex: 1;
+  text-align: left;
+}
+
+.finder-input-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--m-blue);
+  margin-bottom: 8px;
+}
+
+.finder-input-group select {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 12px 20px !important;
+  font-size: 13px !important;
+  backdrop-filter: blur(10px);
+}
+
+.finder-submit-btn {
+  padding: 14px 32px !important;
+  font-size: 13px !important;
+}
+
+/* 2. Stitch Showcase Section (M5 CS Peak of Performance) */
+.stitch-showcase-section {
+  padding: 120px 0;
+}
+
+.stitch-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.stitch-showcase-media {
   position: relative;
+  height: 540px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
 }
 
-.teaser-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.stitch-showcase-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.teaser-content {
-  padding: var(--space-6);
+.stitch-showcase-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(11, 11, 13, 0.85);
+  backdrop-filter: var(--glass-blur);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--m-blue);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stitch-media-title-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+}
+
+.stitch-specs-list {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.stitch-spec-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: 20px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s;
+}
+
+.stitch-spec-card:hover {
+  border-color: var(--m-blue);
+  background: var(--glass-bg-hover);
+  box-shadow: var(--glass-glow-blue);
+  transform: translateX(6px);
+}
+
+.stitch-spec-id {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--m-blue);
+}
+
+.stitch-spec-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.stitch-spec-detail {
+  font-size: 13px;
+  color: var(--mid-gray);
+}
+
+/* 3. Stitch Precision Verification & VIN Section */
+.stitch-verification-section {
+  padding: 120px 0;
+  background: transparent;
+}
+
+.stitch-vin-form {
+  display: flex;
+  gap: 14px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.stitch-vin-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  font-family: monospace !important;
+  font-size: 15px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 16px 28px !important;
+  border-radius: var(--radius-pill) !important;
+  color: var(--white) !important;
+}
+
+.stitch-vin-success {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--m-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0, 138, 201, 0.35);
+}
+
+/* 4. Stitch Inventory Section */
+.stitch-inventory-section {
+  padding: 120px 0;
+}
+
+.tab-buttons-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-filter-btn {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  color: var(--mid-gray);
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-filter-btn.active,
+.tab-filter-btn:hover {
+  background: var(--white);
+  color: var(--charcoal);
+  border-color: var(--white);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Why DP Motorhub? Glass Grid */
+.wix-why-section {
+  padding: 120px 0;
+}
+
+.wix-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.wix-why-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: 36px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s;
+}
+
+.wix-why-card:hover {
+  border-color: var(--m-blue);
+  box-shadow: var(--glass-glow-blue);
+  transform: translateY(-6px);
+}
+
+.wix-why-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wix-why-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.wix-why-desc {
+  font-size: 14px;
+  color: var(--mid-gray);
+  line-height: 1.6;
+}
+
+/* Promo Banner Glass */
+.wix-promo-banner-section {
+  padding: 120px 0;
+  background: transparent;
+}
+
+.wix-promo-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+/* Media Break */
+.wix-media-break {
+  width: 100%;
+  height: 65vh;
+  min-height: 420px;
+  overflow: hidden;
+  background-color: var(--charcoal);
+}
+
+.wix-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contact & Dark Map Glass */
+.wix-contact-map-section {
+  padding: 120px 0;
+}
+
+.wix-contact-email a {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--m-blue);
+  text-decoration: none;
+}
+
+.wix-contact-email a:hover {
+  text-decoration: underline;
+}
+
+.wix-contact-address {
+  margin-top: 32px;
+  font-size: 16px;
+  color: var(--mid-gray);
+  line-height: 1.6;
+}
+
+.wix-contact-phones {
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.wix-map-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--glass-shadow);
+}
+
+.wix-map-header {
+  background: rgba(11, 11, 13, 0.9);
+  padding: 14px 20px;
+  font-size: 12px;
+  color: var(--mid-gray);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.wix-map-body {
+  flex: 1;
+  background: url("/assets/front_splitter.jpg") center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-/* Testimonial Card */
-.testimonial-card {
-  background: var(--light-gray);
-  padding: var(--space-5);
+.wix-map-pin-popup {
+  background: rgba(11, 11, 13, 0.92);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--m-blue);
+  padding: 18px 24px;
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: 13px;
+  box-shadow: var(--glass-glow-blue);
+}
+
+.wix-map-pin-popup a {
+  color: var(--m-blue);
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Giant Bottom Footer */
+.wix-footer-brand-section {
+  padding: 80px 0 40px;
+  background: rgba(6, 6, 8, 0.95);
+  border-top: 1px solid var(--glass-border);
+}
+
+.wix-footer-logo-row {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.stars {
+.logo-arrow {
+  color: var(--m-blue);
+}
+
+.wix-footer-socials {
   display: flex;
-  gap: 4px;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
-.testimonial-author {
-  margin-top: auto;
-  padding-top: var(--space-3);
-  border-top: 1px solid #D0D0D5;
+.wix-footer-socials a {
+  color: var(--mid-gray);
+  transition: color 0.2s;
 }
 
-@media (max-width: 768px) {
-  .hero-actions {
-    flex-direction: column;
-  }
-  .brand-teaser .grid-cols-2 {
+.wix-footer-socials a:hover {
+  color: var(--white);
+}
+
+.wix-giant-brand-text {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 12vw, 160px);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.06);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  user-select: none;
+}
+
+@media (max-width: 900px) {
+  .stitch-showcase-grid {
     grid-template-columns: 1fr;
   }
-  .teaser-image {
-    min-height: 250px;
+  .wix-why-grid {
+    grid-template-columns: 1fr;
   }
-  .teaser-content {
-    padding: var(--space-4) 0;
+  .hero-finder-form {
+    flex-direction: column;
+  }
+  .stitch-vin-form {
+    flex-direction: column;
   }
 }

@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CartDrawer from './components/CartDrawer';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CartDrawer from "./components/CartDrawer";
+import { CartProvider, useCart } from "./context/CartContext";
 
 // Pages
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ProductDetail from './pages/ProductDetail';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -19,15 +25,24 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+function NotificationToast() {
+  const { notification } = useCart();
+  if (!notification) return null;
 
+  return (
+    <div className="notification-toast">
+      <span>{notification}</span>
+    </div>
+  );
+}
+
+function AppContent() {
   return (
     <Router>
       <ScrollToTop />
-      <Header onOpenCart={() => setIsCartOpen(true)} />
-      
-      <main style={{ minHeight: '100vh' }}>
+      <Header />
+
+      <main style={{ minHeight: "80vh" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -36,11 +51,18 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      
+
       <Footer />
-      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <CartDrawer />
+      <NotificationToast />
     </Router>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
+  );
+}

@@ -1,0 +1,104 @@
+- generic [ref=f11e2]:
+  - generic [ref=f11e4]:
+    - generic [ref=f11e5]: 100% Genuine BMW M Performance Hardware
+    - generic [ref=f11e7]: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+  - banner [ref=f11e8]:
+    - generic [ref=f11e9]:
+      - link "DP Motorhub Homepage" [ref=f11e10] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f11e11]: DP MOTORHUB
+      - navigation "Main Navigation" [ref=f11e13]:
+        - link "SHOP CATALOG" [ref=f11e14] [cursor=pointer]:
+          - /url: /shop
+        - link "CARBON AERO" [ref=f11e15] [cursor=pointer]:
+          - /url: /shop?category=exterior
+        - link "BMW MODELS" [ref=f11e16] [cursor=pointer]:
+          - /url: /shop?sort=model
+        - link "ABOUT US" [ref=f11e17] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=f11e18] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f11e19]:
+        - button "Open Search Modal (Press Ctrl+K)" [ref=f11e20] [cursor=pointer]:
+          - generic [ref=f11e24]: ⌘K
+        - button "User Account" [ref=f11e25] [cursor=pointer]
+        - button "Open Shopping Cart with 2 items" [ref=f11e29] [cursor=pointer]:
+          - generic [ref=f11e33]: "2"
+  - main [ref=f11e34]
+  - contentinfo [ref=f11e35]:
+    - generic [ref=f11e36]:
+      - generic [ref=f11e37]:
+        - generic [ref=f11e38]:
+          - link "DP MOTORHUB" [ref=f11e39] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f11e42]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=f11e43]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=f11e48]:
+            - link "WhatsApp Support" [ref=f11e49] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email Support" [ref=f11e52] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone Support" [ref=f11e56] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global Support" [ref=f11e59] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f11e63]:
+          - heading "M PARTS CATALOG" [level=4] [ref=f11e64]
+          - list [ref=f11e65]:
+            - listitem [ref=f11e66]:
+              - link "Engine & Performance" [ref=f11e67] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=f11e68]:
+              - link "Brakes & Suspension" [ref=f11e69] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=f11e70]:
+              - link "Exterior & Carbon Aero" [ref=f11e71] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=f11e72]:
+              - link "Wheels & Spacers" [ref=f11e73] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=f11e74]:
+              - link "Interior & Trim" [ref=f11e75] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=f11e76]:
+          - heading "BMW M CHASSIS" [level=4] [ref=f11e77]
+          - list [ref=f11e78]:
+            - listitem [ref=f11e79]:
+              - link "BMW G80 M3 / G82 M4" [ref=f11e80] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=f11e81]:
+              - link "BMW F80 M3 / F82 M4" [ref=f11e82] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=f11e83]:
+              - link "BMW F90 M5 Competition" [ref=f11e84] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=f11e85]:
+              - link "BMW F87 M2 / G87 M2" [ref=f11e86] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=f11e87]:
+              - link "About DP Motorhub" [ref=f11e88] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f11e89]:
+              - link "Technical Fitment Support" [ref=f11e90] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f11e91]:
+          - heading "INSIDER ACCESS" [level=4] [ref=f11e92]
+          - paragraph [ref=f11e93]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=f11e94]:
+            - textbox "Enter your email address..." [ref=f11e96]
+            - button "SUBSCRIBE" [ref=f11e97] [cursor=pointer]
+      - generic [ref=f11e102]:
+        - paragraph [ref=f11e103]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=f11e104]:
+          - generic [ref=f11e105]: VISA
+          - generic [ref=f11e106]: MASTERCARD
+          - generic [ref=f11e107]: APPLE PAY
+          - generic [ref=f11e108]: PAYPAL
+          - generic [ref=f11e109]: KLARNA
+        - generic [ref=f11e110]:
+          - link "Privacy Policy" [ref=f11e111] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=f11e112] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=f11e113] [cursor=pointer]:
+            - /url: /contact

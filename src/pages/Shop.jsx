@@ -1,76 +1,413 @@
-import React, { useState } from 'react';
-import ProductCard from '../components/ProductCard';
-import './Shop.css';
-
-const MOCK_PRODUCTS = [
-  { id: '1', name: 'M Performance Carbon Fiber Front Splitter', price: 1850, models: ['G80 M3', 'G82 M4'], image: 'https://images.unsplash.com/photo-1616788494707-1d897712df71?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-  { id: '2', name: 'M Performance Steering Wheel V2', price: 1250, models: ['F80 M3', 'F82 M4'], image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-  { id: '3', name: 'Titanium Exhaust System', price: 4200, models: ['F90 M5'], image: 'https://images.unsplash.com/photo-1632230159781-a8878b277dfd?auto=format&fit=crop&q=80&w=400', isMPerformance: false },
-  { id: '4', name: 'Forged Alloy Wheels 763M', price: 3800, models: ['F87 M2'], image: 'https://images.unsplash.com/photo-1620986797534-19067b003a89?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-  { id: '5', name: 'Carbon Ceramic Brake Kit', price: 8500, models: ['G80 M3', 'F90 M5'], image: 'https://images.unsplash.com/photo-1549429532-6a75f850e051?auto=format&fit=crop&q=80&w=400', isMPerformance: false },
-  { id: '6', name: 'Carbon Fiber Mirror Caps', price: 450, models: ['G80 M3', 'G82 M4'], image: 'https://images.unsplash.com/photo-1622384992985-021d74d32a32?auto=format&fit=crop&q=80&w=400', isMPerformance: true },
-];
+import React, { useState, useMemo, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import {
+  Filter,
+  X,
+  ChevronDown,
+  Check,
+  RefreshCw,
+  SlidersHorizontal,
+  ArrowUpRight,
+} from "lucide-react";
+import ProductCard from "../components/ProductCard";
+import { INITIAL_PRODUCTS } from "../context/CartContext";
+import "./Shop.css";
 
 export default function Shop() {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialCategory = searchParams.get("category") || "";
+  const initialChassis = searchParams.get("chassis") || "";
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedChassis, setSelectedChassis] = useState(
+    initialChassis ? [initialChassis] : [],
+  );
+  const [selectedCategories, setSelectedCategories] = useState(
+    initialCategory ? [initialCategory] : [],
+  );
+  const [mPerformanceOnly, setMPerformanceOnly] = useState(false);
+  const [maxPrice, setMaxPrice] = useState(3000000);
+  const [sortBy, setSortBy] = useState("featured");
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
+
+  const chassisOptions = [
+    { id: "G80 / G82 (M3/M4)", label: "G80 / G82 (M3/M4)" },
+    { id: "F80 / F82 (M3/M4)", label: "F80 / F82 (M3/M4)" },
+    { id: "F90 (M5)", label: "F90 (M5)" },
+    { id: "F87 / G87 (M2)", label: "F87 / G87 (M2)" },
+  ];
+
+  const categoryOptions = [
+    { id: "engine", label: "Engine & Performance" },
+    { id: "brakes-suspension", label: "Brakes & Suspension" },
+    { id: "exterior", label: "Exterior & Carbon Aero" },
+    { id: "wheels", label: "Wheels & Spacers" },
+    { id: "interior", label: "Interior & Trim" },
+  ];
+
+  const handleChassisToggle = (id) => {
+    setSelectedChassis((prev) =>
+      prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id],
+    );
+  };
+
+  const handleCategoryToggle = (id) => {
+    setSelectedCategories((prev) =>
+      prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id],
+    );
+  };
+
+  const clearAllFilters = () => {
+    setSearchQuery("");
+    setSelectedChassis([]);
+    setSelectedCategories([]);
+    setMPerformanceOnly(false);
+    setMaxPrice(3000000);
+    setSortBy("featured");
+    setSearchParams({});
+  };
+
+  const filteredProducts = useMemo(() => {
+    return INITIAL_PRODUCTS.filter((product) => {
+      // Search
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchesName = product.name.toLowerCase().includes(q);
+        const matchesOem = product.oem.toLowerCase().includes(q);
+        if (!matchesName && !matchesOem) return false;
+      }
+
+      // Chassis
+      if (selectedChassis.length > 0) {
+        const matches = product.models.some((m) =>
+          selectedChassis.some(
+            (sc) =>
+              sc.toLowerCase().includes(m.toLowerCase()) ||
+              m.toLowerCase().includes(sc.split(" ")[0].toLowerCase()),
+          ),
+        );
+        if (!matches) return false;
+      }
+
+      // Category
+      if (selectedCategories.length > 0) {
+        if (!selectedCategories.includes(product.category)) return false;
+      }
+
+      // M Performance Only
+      if (mPerformanceOnly && !product.isMPerformance) {
+        return false;
+      }
+
+      // Price
+      if (product.price > maxPrice) {
+        return false;
+      }
+
+      return true;
+    }).sort((a, b) => {
+      if (sortBy === "price-low") return a.price - b.price;
+      if (sortBy === "price-high") return b.price - a.price;
+      if (sortBy === "rating") return b.rating - a.rating;
+      return 0;
+    });
+  }, [
+    searchQuery,
+    selectedChassis,
+    selectedCategories,
+    mPerformanceOnly,
+    maxPrice,
+    sortBy,
+  ]);
+
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      // Header Animation
+      gsap.from(".wix-section-split-header > div", {
+        y: 30,
+        opacity: 0,
+        filter: "blur(5px)",
+        duration: 0.8,
+        ease: "power3.out",
+      });
+      gsap.from(".wix-section-split-header p", {
+        y: 20,
+        opacity: 0,
+        filter: "blur(5px)",
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // Sidebar Animation
+      gsap.from(".shop-sidebar", {
+        x: -40,
+        opacity: 0,
+        filter: "blur(10px)",
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.3,
+      });
+    },
+    { scope: container },
+  );
+
+  useGSAP(
+    () => {
+      // Products Grid Animation on mount or filter change
+      if (filteredProducts.length > 0) {
+        gsap.fromTo(
+          ".shop-grid > div",
+          { y: 40, opacity: 0, filter: "blur(8px)", scale: 0.95 },
+          {
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power3.out",
+            overwrite: "auto",
+          },
+        );
+      }
+    },
+    { dependencies: [filteredProducts], scope: container },
+  );
 
   return (
-    <div className="shop-page container">
-      {/* Breadcrumb & Header */}
-      <div className="shop-header">
-        <div className="breadcrumb caption">Home / Shop</div>
-        <h1 className="h1">M PERFORMANCE PARTS</h1>
-        <p className="body-text" style={{ color: 'var(--mid-gray)', marginTop: '8px' }}>Showing {MOCK_PRODUCTS.length} results</p>
-      </div>
-
-      <div className="shop-layout">
-        {/* Sidebar Filters */}
-        <aside className={`shop-sidebar ${isFilterOpen ? 'open' : ''}`}>
-          <div className="filter-group">
-            <h3 className="h3 filter-title" style={{ fontSize: '18px' }}>Chassis / Model</h3>
-            <label className="checkbox-label"><input type="checkbox" /> G80 / G82 (M3/M4)</label>
-            <label className="checkbox-label"><input type="checkbox" /> F80 / F82 (M3/M4)</label>
-            <label className="checkbox-label"><input type="checkbox" /> F90 (M5)</label>
-            <label className="checkbox-label"><input type="checkbox" /> F87 / G87 (M2)</label>
-          </div>
-          <div className="filter-group">
-            <h3 className="h3 filter-title" style={{ fontSize: '18px' }}>Category</h3>
-            <label className="checkbox-label"><input type="checkbox" /> Engine & Performance</label>
-            <label className="checkbox-label"><input type="checkbox" /> Brakes & Suspension</label>
-            <label className="checkbox-label"><input type="checkbox" /> Exterior & Aero</label>
-            <label className="checkbox-label"><input type="checkbox" /> Wheels & Spacers</label>
-            <label className="checkbox-label"><input type="checkbox" /> Interior</label>
-          </div>
-          <button className="clear-filters-btn">Clear all filters</button>
-        </aside>
-
-        {/* Product Grid Area */}
-        <main className="shop-main">
-          <div className="shop-controls">
-            <button className="mobile-filter-toggle btn btn-outline" onClick={() => setIsFilterOpen(!isFilterOpen)}>
-              Filters
-            </button>
-            <div className="sort-dropdown">
-              <span className="caption">Sort by:</span>
-              <select>
-                <option>Newest</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Popularity</option>
-              </select>
+    <div className="shop-page" ref={container}>
+      <div className="container">
+        {/* Header */}
+        <div
+          className="wix-section-split-header"
+          style={{ marginBottom: "40px" }}
+        >
+          <div>
+            <div className="eyebrow" style={{ marginBottom: "8px" }}>
+              BMW MOTORSPORT CATALOG
             </div>
+            <h1 className="wix-main-h2">M Performance Catalog</h1>
           </div>
+          <p
+            className="body-text"
+            style={{
+              color: "var(--mid-gray)",
+              maxWidth: "420px",
+              fontSize: "14px",
+            }}
+          >
+            Explore genuine BMW M components, dry carbon fiber aerodynamic kits,
+            and track-engineered upgrades verified for Nürburgring performance.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-3 shop-grid">
-            {MOCK_PRODUCTS.map(product => (
-              <ProductCard key={product.id} {...product} />
+        {/* Active Filter Chips */}
+        {(selectedChassis.length > 0 ||
+          selectedCategories.length > 0 ||
+          mPerformanceOnly ||
+          searchQuery) && (
+          <div className="active-filter-chips">
+            <span className="chips-label">ACTIVE FILTERS:</span>
+            {searchQuery && (
+              <span className="filter-chip">
+                Search: "{searchQuery}"{" "}
+                <X size={14} onClick={() => setSearchQuery("")} />
+              </span>
+            )}
+            {selectedChassis.map((c) => (
+              <span key={c} className="filter-chip">
+                {c} <X size={14} onClick={() => handleChassisToggle(c)} />
+              </span>
             ))}
+            {selectedCategories.map((c) => (
+              <span key={c} className="filter-chip">
+                {c} <X size={14} onClick={() => handleCategoryToggle(c)} />
+              </span>
+            ))}
+            {mPerformanceOnly && (
+              <span className="filter-chip">
+                Genuine M Only{" "}
+                <X size={14} onClick={() => setMPerformanceOnly(false)} />
+              </span>
+            )}
+            <button className="clear-chips-btn" onClick={clearAllFilters}>
+              Clear All
+            </button>
           </div>
-          
-          <div className="pagination">
-            <button className="btn btn-outline" style={{ width: '100%', maxWidth: '300px', margin: '48px auto 0' }}>Load More Parts</button>
-          </div>
-        </main>
+        )}
+
+        <div className="shop-layout">
+          {/* Sidebar Filters */}
+          <aside className={`shop-sidebar ${isFilterDrawerOpen ? "open" : ""}`}>
+            <div className="sidebar-header">
+              <div className="sidebar-title">
+                <SlidersHorizontal size={18} />
+                <span>FILTERS</span>
+              </div>
+              <button
+                className="sidebar-close-btn"
+                onClick={() => setIsFilterDrawerOpen(false)}
+                aria-label="Close Filter Drawer"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Search Input */}
+            <div className="filter-group">
+              <label className="filter-label">Search Catalog</label>
+              <input
+                type="text"
+                placeholder="Part name or OEM #..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="filter-search-input"
+              />
+            </div>
+
+            {/* Chassis Filter */}
+            <div className="filter-group">
+              <label className="filter-label">BMW Chassis / Model</label>
+              <div className="checkbox-list">
+                {chassisOptions.map((option) => (
+                  <label key={option.id} className="checkbox-item">
+                    <input
+                      type="checkbox"
+                      checked={selectedChassis.includes(option.id)}
+                      onChange={() => handleChassisToggle(option.id)}
+                    />
+                    <span>{option.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Category Filter */}
+            <div className="filter-group">
+              <label className="filter-label">Categories</label>
+              <div className="checkbox-list">
+                {categoryOptions.map((option) => (
+                  <label key={option.id} className="checkbox-item">
+                    <input
+                      type="checkbox"
+                      checked={selectedCategories.includes(option.id)}
+                      onChange={() => handleCategoryToggle(option.id)}
+                    />
+                    <span>{option.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* M Performance Only Toggle */}
+            <div className="filter-group">
+              <label className="filter-label">Brand Specification</label>
+              <label className="checkbox-item">
+                <input
+                  type="checkbox"
+                  checked={mPerformanceOnly}
+                  onChange={(e) => setMPerformanceOnly(e.target.checked)}
+                />
+                <span>Genuine M Performance Only</span>
+              </label>
+            </div>
+
+            {/* Price Filter */}
+            <div className="filter-group">
+              <div className="filter-label-row">
+                <label className="filter-label">Max Price</label>
+                <span className="price-value price">
+                  LKR {maxPrice.toLocaleString()}
+                </span>
+              </div>
+              <input
+                type="range"
+                min="150000"
+                max="3000000"
+                step="50000"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                className="price-range-slider"
+              />
+            </div>
+
+            <button
+              className="wix-pill-btn dark clear-all-sidebar-btn"
+              onClick={clearAllFilters}
+            >
+              Reset Filters <RefreshCw size={14} />
+            </button>
+          </aside>
+
+          {/* Main Grid Area */}
+          <main className="shop-main-content">
+            <div className="shop-controls-bar">
+              <button
+                className="mobile-filter-trigger wix-pill-btn dark"
+                onClick={() => setIsFilterDrawerOpen(true)}
+              >
+                <Filter size={16} /> Filters
+              </button>
+
+              <div className="results-count">
+                Showing <strong>{filteredProducts.length}</strong> genuine parts
+              </div>
+
+              <div className="sort-dropdown-container">
+                <label htmlFor="sort-select" className="sort-label">
+                  Sort By:
+                </label>
+                <select
+                  id="sort-select"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="sort-select"
+                >
+                  <option value="featured">Featured & Newest</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                </select>
+              </div>
+            </div>
+
+            {filteredProducts.length === 0 ? (
+              <div className="no-products-state">
+                <Filter size={48} color="var(--mid-gray)" />
+                <h3
+                  className="h3"
+                  style={{ marginTop: "16px", marginBottom: "8px" }}
+                >
+                  No Parts Match Your Selection
+                </h3>
+                <p
+                  className="body-text"
+                  style={{
+                    color: "var(--mid-gray)",
+                    fontSize: "14px",
+                    marginBottom: "24px",
+                  }}
+                >
+                  Try resetting your price range or chassis filter to view
+                  available inventory.
+                </p>
+                <button className="wix-pill-btn dark" onClick={clearAllFilters}>
+                  Reset All Filters
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 shop-grid">
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} {...product} />
+                ))}
+              </div>
+            )}
+          </main>
+        </div>
       </div>
     </div>
   );

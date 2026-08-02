@@ -1,0 +1,304 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: 100% Genuine BMW M Performance & Verified Tuning Components
+    - generic [ref=e9]: Fast Worldwide Delivery | VIN Fitment Verification
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - link "DP MOTORHUB" [ref=e12] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e15]:
+        - link "SHOP CATALOG" [ref=e16] [cursor=pointer]:
+          - /url: /shop
+        - generic [ref=e17]: CATEGORIES ▾
+        - link "BMW MODELS" [ref=e18] [cursor=pointer]:
+          - /url: /shop?sort=model
+        - link "ABOUT US" [ref=e19] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=e20] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e21]:
+        - button "Search Parts" [ref=e22] [cursor=pointer]
+        - link "Expert Support" [ref=e26] [cursor=pointer]:
+          - /url: /contact
+        - button "2" [ref=e30] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - img "BMW M Performance Car" [ref=e40]
+        - generic [ref=e42]:
+          - heading "Yours To Power" [level=1] [ref=e43]
+          - generic [ref=e44]: "[ 100% Genuine BMW M Performance & Motorsport Hardware ]"
+          - link "Explore The Parts" [ref=e46] [cursor=pointer]:
+            - /url: /shop
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: CHASSIS / MODEL
+              - combobox [ref=e54]:
+                - option "Select Chassis (e.g. G80, F90)..." [selected]
+                - option "G80 M3 Sedan (2021+)"
+                - option "G82 M4 Coupe (2021+)"
+                - option "F80 M3 Sedan (2014-2018)"
+                - option "F82 M4 Coupe (2014-2020)"
+                - option "F90 M5 Sedan (2018+)"
+                - option "F87 M2 Coupe (2016-2021)"
+            - generic [ref=e55]:
+              - generic [ref=e56]: CATEGORY
+              - combobox [ref=e57]:
+                - option "All Categories..." [selected]
+                - option "Engine & Performance"
+                - option "Brakes & Suspension"
+                - option "Exterior & Carbon Aero"
+                - option "Wheels & Spacers"
+                - option "Interior & Trim"
+            - button "Find Fitment" [ref=e58] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - heading "Best deals" [level=2] [ref=e65]
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: This is our curated showcase of authentic BMW M Performance parts. Every component is engineered to convey maximum track capability, featuring dry carbon construction, exact OEM fitment, and verified motorsport provenance.
+            - link "View All Deals" [ref=e69] [cursor=pointer]:
+              - /url: /shop
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - link [ref=e75] [cursor=pointer]:
+              - /url: /product/1
+              - img "M Performance Carbon Fiber Front Splitter" [ref=e76]
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - link "M Performance Carbon Fiber Front Splitter" [ref=e79] [cursor=pointer]:
+                  - /url: /product/1
+                - generic [ref=e80]: "01"
+              - paragraph [ref=e81]: High-gloss pre-preg dry carbon fiber splitter for front downforce optimization.
+              - generic [ref=e82]:
+                - generic [ref=e83]: $1850.00
+                - button "+ Quick Add" [ref=e84] [cursor=pointer]
+          - generic [ref=e85]:
+            - link [ref=e86] [cursor=pointer]:
+              - /url: /product/2
+              - img "M Performance Steering Wheel V2 (Alcantara)" [ref=e87]
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - link "M Performance Steering Wheel V2 (Alcantara)" [ref=e90] [cursor=pointer]:
+                  - /url: /product/2
+                - generic [ref=e91]: "02"
+              - paragraph [ref=e92]: Race-inspired Alcantara grip with tricolor M stitching and carbon fiber display trim.
+              - generic [ref=e93]:
+                - generic [ref=e94]: $1250.00
+                - button "+ Quick Add" [ref=e95] [cursor=pointer]
+          - generic [ref=e96]:
+            - link [ref=e97] [cursor=pointer]:
+              - /url: /product/3
+              - img "Titanium Exhaust System with Carbon Tips" [ref=e98]
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - link "Titanium Exhaust System with Carbon Tips" [ref=e101] [cursor=pointer]:
+                  - /url: /product/3
+                - generic [ref=e102]: "03"
+              - paragraph [ref=e103]: Grade-1 ultra-lightweight titanium exhaust delivering authentic M acoustics.
+              - generic [ref=e104]:
+                - generic [ref=e105]: $4200.00
+                - button "+ Quick Add" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link [ref=e108] [cursor=pointer]:
+              - /url: /product/4
+              - img "Forged Lightweight Alloy Wheels 763M Set" [ref=e109]
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - link "Forged Lightweight Alloy Wheels 763M Set" [ref=e112] [cursor=pointer]:
+                  - /url: /product/4
+                - generic [ref=e113]: "04"
+              - paragraph [ref=e114]: Motorsport forged aluminum wheels finished in Matte Frozen Gold or Satin Black.
+              - generic [ref=e115]:
+                - generic [ref=e116]: $3800.00
+                - button "+ Quick Add" [ref=e117] [cursor=pointer]
+        - link "View All Deals" [ref=e119] [cursor=pointer]:
+          - /url: /shop
+      - generic [ref=e124]:
+        - heading "Why DP Motorhub?" [level=2] [ref=e125]: Why DPMotorhub?
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - heading "Only Certified Motors & OEM" [level=3] [ref=e132]
+            - paragraph [ref=e133]: 100% genuine BMW M parts and certified tuning components with factory warranties.
+          - generic [ref=e134]:
+            - heading "VIN Fitment Verification" [level=3] [ref=e140]
+            - paragraph [ref=e141]: Enter your 17-digit VIN to confirm exact factory compatibility before ordering.
+          - generic [ref=e142]:
+            - heading "Free Express Delivery" [level=3] [ref=e149]
+            - paragraph [ref=e150]: Worldwide 24-hour dispatch on all in-stock carbon fiber and performance parts.
+          - generic [ref=e151]:
+            - heading "30 Days Money Back" [level=3] [ref=e156]
+            - paragraph [ref=e157]: Full 30-day return policy for uninstalled components in original packaging.
+          - generic [ref=e158]:
+            - heading "Pre-Approved Quality" [level=3] [ref=e163]
+            - paragraph [ref=e164]: Every part is inspected under high-intensity UV lighting for weave symmetry and finish.
+          - generic [ref=e165]:
+            - heading "Extra Service & Support" [level=3] [ref=e170]
+            - paragraph [ref=e171]: BMW Master Technicians on standby for torque specs, installation guides, and support.
+      - generic [ref=e173]:
+        - 'heading "Need a rare M part? We''re here for you: 100% genuine VIN fitment & express sourcing" [level=2] [ref=e174]': "Need a rare M part?We're here for you: 100% genuineVIN fitment & express sourcing"
+        - link "Find Out More" [ref=e176] [cursor=pointer]:
+          - /url: https://wa.me/15556769377
+      - generic [ref=e181]:
+        - generic [ref=e182]: "[ Our BMW M Chassis ]"
+        - generic [ref=e183]:
+          - link "G80 / G82 M3/M4 M3 / M4 (2021+)" [ref=e184] [cursor=pointer]:
+            - /url: /shop?chassis=G80%20%2F%20G82%20M3%2FM4
+            - generic [ref=e185]: G80 / G82 M3/M4
+            - generic [ref=e186]: M3 / M4 (2021+)
+          - link "F80 / F82 M3/M4 M3 / M4 (2014-2020)" [ref=e187] [cursor=pointer]:
+            - /url: /shop?chassis=F80%20%2F%20F82%20M3%2FM4
+            - generic [ref=e188]: F80 / F82 M3/M4
+            - generic [ref=e189]: M3 / M4 (2014-2020)
+          - link "F90 M5 M5 Sedan (2018+)" [ref=e190] [cursor=pointer]:
+            - /url: /shop?chassis=F90%20M5
+            - generic [ref=e191]: F90 M5
+            - generic [ref=e192]: M5 Sedan (2018+)
+          - link "F87 / G87 M2 M2 Coupe (2016+)" [ref=e193] [cursor=pointer]:
+            - /url: /shop?chassis=F87%20%2F%20G87%20M2
+            - generic [ref=e194]: F87 / G87 M2
+            - generic [ref=e195]: M2 Coupe (2016+)
+          - link "F95 X5M X5 M (2020+)" [ref=e196] [cursor=pointer]:
+            - /url: /shop?chassis=F95%20X5M
+            - generic [ref=e197]: F95 X5M
+            - generic [ref=e198]: X5 M (2020+)
+      - img "BMW M Car Rear Winding Road" [ref=e200]
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - heading "Visit us & upgrade your M car today!" [level=2] [ref=e205]: Visit us & upgradeyour M car today!
+          - link "sales@dpmotorhub.com" [ref=e207] [cursor=pointer]:
+            - /url: mailto:sales@dpmotorhub.com
+          - generic [ref=e208]: DP Motorhub GmbHSchleißheimer Str. 200, 80809 Munich, Germany
+          - generic [ref=e209]: +1 555-676-9377+1 555-M-POWER
+        - generic [ref=e210]:
+          - generic [ref=e211]: Map | Satellite
+          - generic [ref=e213]:
+            - strong [ref=e214]: DP Motorhub Munich HQ
+            - paragraph [ref=e215]: Schleißheimer Str. 200, Munich
+            - link "Directions ↗" [ref=e216] [cursor=pointer]:
+              - /url: https://maps.google.com
+      - generic [ref=e218]:
+        - generic [ref=e219]:
+          - generic [ref=e220]: ➤
+          - text: DP MOTORHUB
+        - generic [ref=e221]:
+          - link "Facebook" [ref=e222] [cursor=pointer]:
+            - /url: "#"
+          - link "YouTube" [ref=e225] [cursor=pointer]:
+            - /url: "#"
+          - link "X" [ref=e229] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e233]: DP MOTORHUB
+  - contentinfo [ref=e234]:
+    - generic [ref=e235]:
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - link "DP MOTORHUB" [ref=e238] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e241]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=e242]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=e247]:
+            - link "WhatsApp" [ref=e248] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email" [ref=e251] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone" [ref=e255] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global" [ref=e258] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e262]:
+          - heading "M PARTS CATALOG" [level=4] [ref=e263]
+          - list [ref=e264]:
+            - listitem [ref=e265]:
+              - link "Engine & Performance" [ref=e266] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=e267]:
+              - link "Brakes & Suspension" [ref=e268] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=e269]:
+              - link "Exterior & Carbon Aero" [ref=e270] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=e271]:
+              - link "Wheels & Spacers" [ref=e272] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=e273]:
+              - link "Interior & Trim" [ref=e274] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=e275]:
+          - heading "BMW M CHASSIS" [level=4] [ref=e276]
+          - list [ref=e277]:
+            - listitem [ref=e278]:
+              - link "BMW G80 M3 / G82 M4" [ref=e279] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=e280]:
+              - link "BMW F80 M3 / F82 M4" [ref=e281] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=e282]:
+              - link "BMW F90 M5 Competition" [ref=e283] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=e284]:
+              - link "BMW F87 M2 / G87 M2" [ref=e285] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=e286]:
+              - link "About DP Motorhub" [ref=e287] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e288]:
+              - link "Technical Fitment Support" [ref=e289] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e290]:
+          - heading "INSIDER ACCESS" [level=4] [ref=e291]
+          - paragraph [ref=e292]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=e293]:
+            - textbox "Enter your email address..." [ref=e294]
+            - button "Subscribe" [ref=e295] [cursor=pointer]
+      - generic [ref=e296]:
+        - paragraph [ref=e297]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=e298]:
+          - generic [ref=e299]: VISA
+          - generic [ref=e300]: MASTERCARD
+          - generic [ref=e301]: APPLE PAY
+          - generic [ref=e302]: PAYPAL
+          - generic [ref=e303]: KLARNA
+        - generic [ref=e304]:
+          - link "Privacy Policy" [ref=e305] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=e306] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=e307] [cursor=pointer]:
+            - /url: /contact
+  - generic [ref=e308]:
+    - generic [ref=e309]:
+      - heading "Your Cart (2)" [level=2] [ref=e315]
+      - button "Close cart" [ref=e316] [cursor=pointer]
+    - generic [ref=e320]:
+      - generic [ref=e321]:
+        - img "M Performance Carbon Fiber Front Splitter" [ref=e322]
+        - generic [ref=e323]:
+          - generic [ref=e324]: G80 M3, G82 M4
+          - heading "M Performance Carbon Fiber Front Splitter" [level=4] [ref=e325]
+          - generic [ref=e326]: $1850.00
+          - generic [ref=e327]:
+            - generic [ref=e328]:
+              - button "Decrease quantity" [ref=e329] [cursor=pointer]
+              - generic [ref=e331]: "1"
+              - button "Increase quantity" [ref=e332] [cursor=pointer]
+            - button "Remove" [ref=e334] [cursor=pointer]
+      - generic [ref=e338]:
+        - img "M Performance Steering Wheel V2 (Alcantara / Carbon)" [ref=e339]
+        - generic [ref=e340]:
+          - generic [ref=e341]: F80 M3, F82 M4, F87 M2
+          - heading "M Performance Steering Wheel V2 (Alcantara / Carbon)" [level=4] [ref=e342]
+          - generic [ref=e343]: $1250.00
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - button "Decrease quantity" [ref=e346] [cursor=pointer]
+              - generic [ref=e348]: "1"
+              - button "Increase quantity" [ref=e349] [cursor=pointer]
+            - button "Remove" [ref=e351] [cursor=pointer]
+    - generic [ref=e355]:
+      - generic [ref=e356]: Guaranteed Fitment & Genuine OEM Quality
+      - generic [ref=e360]:
+        - generic [ref=e361]: Subtotal
+        - generic [ref=e362]: $3100.00
+      - paragraph [ref=e363]: Shipping & taxes calculated at checkout.
+      - button "Proceed to Secure Checkout" [ref=e364] [cursor=pointer]
+      - button "Continue Shopping" [ref=e367] [cursor=pointer]

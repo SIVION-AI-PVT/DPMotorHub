@@ -1,119 +1,375 @@
-.footer {
-  padding: var(--space-8) 0 var(--space-4);
+/* ==========================================================================
+   DP MOTORHUB - GLASSMORPHISM FOOTER STYLES
+   ========================================================================== */
+
+.glass-footer {
+  background: rgba(8, 8, 12, 0.95);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 80px 0 32px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+/* --- COLUMN 1: BRAND --- */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
   display: inline-flex;
   flex-direction: column;
-  margin-bottom: var(--space-3);
+  align-items: flex-start;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
 
-.footer-brand-line {
-  color: #A0A0A5;
-  margin-bottom: var(--space-4);
-  max-width: 280px;
+.footer-logo-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ffffff, #a0a0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.social-icons {
-  display: flex;
-  gap: 16px;
+.footer-m-stripe {
+  height: 4px;
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    #008ac9 33.33%,
+    #2b115a 33.33%,
+    #2b115a 66.66%,
+    #f11a22 66.66%,
+    #f11a22 100%
+  );
 }
 
-.social-icons a {
-  color: var(--white);
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-.social-icons a:hover {
-  opacity: 1;
-}
-
-.footer-heading {
-  margin-bottom: var(--space-3);
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links a {
-  color: #A0A0A5;
+.footer-description {
+  font-family: "Inter", sans-serif;
   font-size: 14px;
-  transition: color 0.2s;
+  color: #8a8a93;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 380px;
 }
 
-.footer-links a:hover {
-  color: var(--white);
-}
-
-.footer-text {
-  color: #A0A0A5;
-  font-size: 14px;
-  margin-bottom: var(--space-3);
-}
-
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-bottom {
-  border-top: 1px solid var(--graphite);
-  padding-top: var(--space-4);
-  display: flex;
-  justify-content: space-between;
+/* Genuine Badge */
+.footer-trust-badge {
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(20, 20, 26, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 16px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  transition: all 0.3s ease;
 }
 
-.copyright {
-  font-size: 12px;
-  color: #A0A0A5;
+.footer-trust-badge:hover {
+  border-color: rgba(0, 138, 201, 0.4);
+  box-shadow: 0 0 20px rgba(0, 138, 201, 0.25);
+  transform: translateY(-2px);
 }
 
-.footer-fineprint {
+.footer-trust-badge svg {
+  color: #008ac9;
+}
+
+/* Social Icons */
+.footer-social-row {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
 }
 
-.footer-fineprint a {
-  font-size: 12px;
-  color: #A0A0A5;
+.social-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a93;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-fineprint a:hover {
-  color: var(--white);
-  text-decoration: underline;
+.social-icon-btn:hover {
+  background: rgba(0, 138, 201, 0.15);
+  color: #ffffff;
+  border-color: #008ac9;
+  box-shadow: 0 0 20px rgba(0, 138, 201, 0.4);
+  transform: translateY(-3px);
 }
 
+/* --- COLUMN HEADINGS & LINKS --- */
+.footer-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-nav-link {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #8a8a93;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.footer-nav-link:hover {
+  color: #008ac9;
+  transform: translateX(4px);
+}
+
+/* --- COLUMN 4: INSIDER ACCESS / NEWSLETTER --- */
+.newsletter-subtext {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #8a8a93;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.glass-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.glass-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.glass-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-input::placeholder {
+  color: #8a8a93;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: #008ac9 !important;
+  box-shadow: 0 0 25px rgba(0, 138, 201, 0.35);
+}
+
+/* Glass Pill Button */
+.glass-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: rgba(20, 20, 26, 0.7);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.glass-pill-btn:hover {
+  background: rgba(0, 138, 201, 0.25);
+  border-color: #008ac9;
+  color: #ffffff;
+  box-shadow: 0 0 30px rgba(0, 138, 201, 0.45);
+  transform: translateY(-2px);
+}
+
+.glass-pill-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.glass-pill-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.glass-subscribed-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: rgba(0, 138, 201, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 138, 201, 0.4);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(0, 138, 201, 0.25);
+}
+
+/* --- BOTTOM BAR --- */
+.footer-bottom-bar {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-copyright {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #8a8a93;
+  margin: 0;
+}
+
+.payment-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.payment-chip-badge {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 5px 12px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.payment-chip-badge:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-legal-link {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #8a8a93;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-legal-link:hover {
+  color: #008ac9;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-5);
+    gap: 40px;
   }
 }
 
 @media (max-width: 640px) {
+  .glass-footer {
+    padding: 60px 0 28px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 44px;
   }
-  .footer-bottom {
+
+  .footer-bottom-bar {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 16px;
-    align-items: flex-start;
+  }
+
+  .payment-badges-row {
+    justify-content: center;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 }

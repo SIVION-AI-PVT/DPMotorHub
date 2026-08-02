@@ -1,102 +1,464 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import Button from '../components/Button';
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+  ArrowUpRight,
+  CheckCircle2,
+} from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import "./Home.css";
+
+const glassCard = {
+  background: "rgba(20, 20, 26, 0.65)",
+  backdropFilter: "blur(20px) saturate(190%)",
+  WebkitBackdropFilter: "blur(20px) saturate(190%)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  borderRadius: "16px",
+  padding: "32px",
+};
+
+const glassInput = {
+  background: "rgba(255,255,255,0.05)",
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(12px)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  color: "white",
+  borderRadius: "8px",
+  width: "100%",
+  padding: "14px 18px",
+  outline: "none",
+  fontFamily: "inherit",
+  fontSize: "15px",
+  transition: "all 0.3s",
+};
 
 export default function Contact() {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      // Header
+      const tl = gsap.timeline();
+      tl.from(".stitch-hero-eyebrow", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        delay: 0.1,
+      })
+        .from(
+          ".section h1",
+          { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" },
+          "-=0.4",
+        )
+        .from(
+          ".section p",
+          { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
+          "-=0.5",
+        );
+
+      // Grid columns
+      gsap.from(".grid-cols-2 > div", {
+        scrollTrigger: { trigger: ".grid-cols-2", start: "top 80%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+    },
+    { scope: container },
+  );
+
   return (
-    <div className="contact-page" style={{ paddingTop: '120px', paddingBottom: '96px' }}>
-      <div className="container">
-        <h1 className="h1" style={{ marginBottom: '48px', textAlign: 'center' }}>GET IN TOUCH</h1>
-        
-        <div className="grid grid-cols-2" style={{ gap: '64px' }}>
-          {/* Contact Form */}
-          <div className="contact-form-container">
-            <h2 className="h2" style={{ marginBottom: '8px' }}>Send a Message</h2>
-            <p className="body-text" style={{ color: 'var(--mid-gray)', marginBottom: '32px' }}>Have a question about fitment, sourcing a specific part, or an existing order? Drop us a line.</p>
-            
-            <form className="contact-form" onSubmit={e => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div className="grid grid-cols-2" style={{ gap: '24px' }}>
-                <div>
-                  <label className="eyebrow" style={{ display: 'block', marginBottom: '8px' }}>Name</label>
-                  <input type="text" placeholder="John Doe" required style={{ width: '100%', padding: '14px', background: 'var(--light-gray)', border: '1px solid transparent', outline: 'none' }} />
-                </div>
-                <div>
-                  <label className="eyebrow" style={{ display: 'block', marginBottom: '8px' }}>Email</label>
-                  <input type="email" placeholder="john@example.com" required style={{ width: '100%', padding: '14px', background: 'var(--light-gray)', border: '1px solid transparent', outline: 'none' }} />
-                </div>
-              </div>
-              
-              <div>
-                <label className="eyebrow" style={{ display: 'block', marginBottom: '8px' }}>Phone (Optional)</label>
-                <input type="text" placeholder="+1 (555) 000-0000" style={{ width: '100%', padding: '14px', background: 'var(--light-gray)', border: '1px solid transparent', outline: 'none' }} />
-              </div>
-              
-              <div>
-                <label className="eyebrow" style={{ display: 'block', marginBottom: '8px' }}>Message</label>
-                <textarea rows="5" placeholder="How can we help you?" required style={{ width: '100%', padding: '14px', background: 'var(--light-gray)', border: '1px solid transparent', outline: 'none', fontFamily: 'inherit', resize: 'vertical' }}></textarea>
-              </div>
-              
-              <Button variant="primary" style={{ alignSelf: 'flex-start' }}>Send Message</Button>
-            </form>
+    <div style={{ width: "100%", overflow: "hidden" }} ref={container}>
+      {/* Header */}
+      <section
+        className="section"
+        style={{ paddingTop: "100px", textAlign: "center" }}
+      >
+        <div
+          className="container"
+          style={{ maxWidth: "840px", margin: "0 auto" }}
+        >
+          <div
+            className="stitch-hero-eyebrow"
+            style={{ justifyContent: "center", margin: "0 auto 20px" }}
+          >
+            <span className="m-stripe-pill"></span> EXPERT TECHNICAL SUPPORT
           </div>
-          
-          {/* Info Side */}
-          <div className="contact-info-container">
-            <div style={{ background: 'var(--light-gray)', width: '100%', height: '300px', marginBottom: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {/* Placeholder for map */}
-              <span className="caption">[ Map Integration ]</span>
+          <h1
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "clamp(32px, 5vw, 56px)",
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+              color: "var(--white)",
+              marginBottom: "16px",
+            }}
+          >
+            Get In Touch With Our
+            <br />M Specialists
+          </h1>
+          <p
+            style={{
+              color: "var(--mid-gray)",
+              fontSize: "17px",
+              lineHeight: 1.7,
+              maxWidth: "640px",
+              margin: "0 auto",
+            }}
+          >
+            VIN fitment questions, rare part sourcing, or technical installation
+            guidance — our BMW Master Technicians are ready to assist.
+          </p>
+        </div>
+      </section>
+
+      {/* 2 Column Layout */}
+      <section className="section" style={{ paddingTop: "40px" }}>
+        <div className="container">
+          <div
+            className="grid grid-cols-2"
+            style={{ gap: "40px", alignItems: "flex-start" }}
+          >
+            {/* LEFT: Contact Form */}
+            <div style={glassCard}>
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: "22px",
+                  fontWeight: 700,
+                  color: "var(--white)",
+                  marginBottom: "28px",
+                }}
+              >
+                Send Us A Message
+              </h2>
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Message sent!");
+                }}
+              >
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "16px",
+                    marginBottom: "16px",
+                  }}
+                >
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        color: "var(--m-blue)",
+                        marginBottom: "6px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      FULL NAME
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="John Schmidt"
+                      style={glassInput}
+                    />
+                  </div>
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        color: "var(--m-blue)",
+                        marginBottom: "6px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      EMAIL
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      style={glassInput}
+                    />
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "16px",
+                    marginBottom: "16px",
+                  }}
+                >
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        color: "var(--m-blue)",
+                        marginBottom: "6px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      PHONE
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="+49 176 12345678"
+                      style={glassInput}
+                    />
+                  </div>
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        color: "var(--m-blue)",
+                        marginBottom: "6px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      CHASSIS CODE
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="G80 M3 / F90 M5"
+                      style={glassInput}
+                    />
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: "24px" }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      color: "var(--m-blue)",
+                      marginBottom: "6px",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    YOUR MESSAGE
+                  </label>
+                  <textarea
+                    rows={5}
+                    placeholder="Describe your project, chassis details, or the specific M part you need..."
+                    style={{ ...glassInput, resize: "vertical" }}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="wix-pill-btn dark"
+                  style={{ width: "100%" }}
+                >
+                  Submit Enquiry <ArrowUpRight size={18} />
+                </button>
+              </form>
             </div>
-            
-            <div className="grid grid-cols-2" style={{ gap: '32px' }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+
+            {/* RIGHT: Info Cards */}
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+            >
+              {/* WhatsApp Hotline */}
+              <div style={{ ...glassCard, borderLeft: "4px solid #25D366" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <MessageCircle size={22} color="#25D366" />
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      color: "var(--white)",
+                    }}
+                  >
+                    WhatsApp Hotline
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    color: "var(--mid-gray)",
+                    fontSize: "14px",
+                    marginBottom: "16px",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Get instant technical support and VIN fitment verification
+                  from our BMW Master Technicians.
+                </p>
+                <a
+                  href="https://wa.me/15556769377"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="wix-pill-btn orange"
+                  style={{ fontSize: "13px", padding: "12px 28px" }}
+                >
+                  Chat Now <ArrowUpRight size={16} />
+                </a>
+              </div>
+
+              {/* HQ Address */}
+              <div style={glassCard}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginBottom: "12px",
+                  }}
+                >
                   <MapPin size={20} color="var(--m-blue)" />
-                  <h3 className="h3" style={{ fontSize: '18px' }}>Headquarters</h3>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: "16px",
+                      fontWeight: 700,
+                      color: "var(--white)",
+                    }}
+                  >
+                    Munich Headquarters
+                  </h3>
                 </div>
-                <p className="body-text" style={{ color: 'var(--mid-gray)' }}>
-                  123 Performance Way<br/>
-                  Munich District<br/>
-                  CA 90210, USA
+                <p
+                  style={{
+                    color: "var(--mid-gray)",
+                    fontSize: "14px",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  DP Motorhub GmbH
+                  <br />
+                  Schleißheimer Str. 200, 80809 Munich, Germany
                 </p>
               </div>
-              
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                  <Clock size={20} color="var(--m-blue)" />
-                  <h3 className="h3" style={{ fontSize: '18px' }}>Business Hours</h3>
+
+              {/* Operating Hours + Direct Email */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "20px",
+                }}
+              >
+                <div style={{ ...glassCard, padding: "24px" }}>
+                  <Clock
+                    size={20}
+                    color="var(--m-blue)"
+                    style={{ marginBottom: "12px" }}
+                  />
+                  <h4
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      color: "var(--white)",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Operating Hours
+                  </h4>
+                  <p
+                    style={{
+                      color: "var(--mid-gray)",
+                      fontSize: "13px",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    Mon — Fri: 9:00 — 18:00 CET
+                    <br />
+                    Sat: 10:00 — 14:00 CET
+                  </p>
                 </div>
-                <p className="body-text" style={{ color: 'var(--mid-gray)' }}>
-                  Mon-Fri: 9:00 AM - 6:00 PM<br/>
-                  Sat: 10:00 AM - 2:00 PM<br/>
-                  Sun: Closed
-                </p>
-              </div>
-              
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                  <Phone size={20} color="var(--m-blue)" />
-                  <h3 className="h3" style={{ fontSize: '18px' }}>Phone / WhatsApp</h3>
+
+                <div style={{ ...glassCard, padding: "24px" }}>
+                  <Mail
+                    size={20}
+                    color="var(--m-blue)"
+                    style={{ marginBottom: "12px" }}
+                  />
+                  <h4
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      color: "var(--white)",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Direct Email
+                  </h4>
+                  <a
+                    href="mailto:sales@dpmotorhub.com"
+                    style={{
+                      color: "var(--m-blue)",
+                      fontSize: "13px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    sales@dpmotorhub.com
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:support@dpmotorhub.com"
+                    style={{
+                      color: "var(--mid-gray)",
+                      fontSize: "13px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    support@dpmotorhub.com
+                  </a>
                 </div>
-                <p className="body-text" style={{ color: 'var(--mid-gray)' }}>
-                  +1 (555) M-POWER<br/>
-                  (+1 555-676-9377)
-                </p>
-              </div>
-              
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                  <Mail size={20} color="var(--m-blue)" />
-                  <h3 className="h3" style={{ fontSize: '18px' }}>Email</h3>
-                </div>
-                <p className="body-text" style={{ color: 'var(--mid-gray)' }}>
-                  sales@dpmotorhub.com<br/>
-                  support@dpmotorhub.com
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="section wix-promo-banner-section">
+        <div className="container" style={{ textAlign: "center" }}>
+          <h2 className="wix-promo-title">
+            Can't find what you need?
+            <br />
+            Our sourcing team locates any BMW M part worldwide.
+          </h2>
+          <div style={{ marginTop: "32px" }}>
+            <Link to="/shop" className="wix-pill-btn dark">
+              Browse Full Catalog <ArrowUpRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
