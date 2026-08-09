@@ -5,6 +5,7 @@ import {
   ShoppingBag,
   User,
   X,
+  Menu,
   ArrowUpRight,
   CheckCircle2,
 } from "lucide-react";
@@ -14,6 +15,7 @@ import "./Header.css";
 export default function Header() {
   const { totalItems, setIsCartOpen, searchQuery, setSearchQuery } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -26,6 +28,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
   // Keyboard shortcut Cmd+K or Ctrl+K to toggle search modal
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -35,6 +42,7 @@ export default function Header() {
       }
       if (e.key === "Escape") {
         setIsSearchOpen(false);
+        setIsMobileMenuOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -59,11 +67,17 @@ export default function Header() {
 
   const navLinks = [
     { path: "/shop", label: "SHOP CATALOG" },
-    { path: "/shop?category=exterior", label: "CARBON AERO" },
-    { path: "/shop?sort=model", label: "BMW MODELS" },
     { path: "/about", label: "ABOUT US" },
     { path: "/contact", label: "CONTACT" },
   ];
+
+  const isLinkActive = (linkPath) => {
+    const currentFull = location.pathname + location.search;
+    if (linkPath.includes("?")) {
+      return currentFull === linkPath;
+    }
+    return location.pathname === linkPath && !location.search;
+  };
 
   return (
     <>
@@ -89,19 +103,26 @@ export default function Header() {
             className="header-logo"
             aria-label="DP Motorhub Homepage"
           >
-            <span className="logo-brand logo-text-premium">DP MOTORHUB</span>
-            <div className="m-stripe"></div>
+            <img
+              src="/assets/Artboard 1 copy.png"
+              alt="DP Emblem"
+              className="header-logo-icon"
+            />
+            <div className="header-logo-text-wrapper">
+              <span className="logo-brand logo-text-premium">MOTORHUB</span>
+              <div className="m-stripe"></div>
+            </div>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <nav className="header-nav" aria-label="Main Navigation">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const active = isLinkActive(link.path);
               return (
                 <Link
                   key={link.label}
                   to={link.path}
-                  className={`nav-link ${isActive ? "active" : ""}`}
+                  className={`nav-link ${active ? "active" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -118,12 +139,12 @@ export default function Header() {
               title="Search Parts (Ctrl+K)"
             >
               <Search size={18} />
-              <span className="kbd-shortcut">⌘K</span>
+              <span className="kbd-shortcut">Ctrl K</span>
             </button>
 
-            <button className="action-icon-btn" aria-label="User Account">
+            <Link to="/contact" className="action-icon-btn" aria-label="User Support / Account">
               <User size={18} />
-            </button>
+            </Link>
 
             <button
               className="action-icon-btn cart-btn"
@@ -135,8 +156,39 @@ export default function Header() {
                 <span className="cart-badge">{totalItems}</span>
               )}
             </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="action-icon-btn mobile-menu-toggle"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle Mobile Navigation Menu"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Slide-Down Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="mobile-nav-drawer">
+            <div className="mobile-nav-links">
+              {navLinks.map((link) => {
+                const active = isLinkActive(link.path);
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.path}
+                    className={`mobile-nav-link ${active ? "active" : ""}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>{link.label}</span>
+                    <ArrowUpRight size={16} />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Search Modal Overlay */}
@@ -168,38 +220,38 @@ export default function Header() {
               </button>
             </div>
 
-            {searchResults.length > 0 && (
-              <div className="search-results-container">
-                <div className="search-results-count">
-                  {searchResults.length} genuine parts found
-                </div>
-                <div className="search-results-list">
-                  {searchResults.map((item) => (
-                    <Link
-                      key={item.id}
-                      to={`/product/${item.id}`}
-                      className="search-result-item"
-                      onClick={() => setIsSearchOpen(false)}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="search-item-thumb"
-                      />
-                      <div className="search-item-info">
-                        <div className="search-item-title">{item.name}</div>
-                        <div className="search-item-oem">
-                          OEM #{item.oem} • {item.models.join(", ")}
-                        </div>
-                      </div>
-                      <div className="search-item-price price">
-                        LKR {item.price.toLocaleString()}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+            <div className="search-results-container">
+              <div className="search-results-count">
+                {searchQuery.trim()
+                  ? `${searchResults.length} genuine parts found`
+                  : "POPULAR M PERFORMANCE PARTS"}
               </div>
-            )}
+              <div className="search-results-list">
+                {(searchQuery.trim() ? searchResults : INITIAL_PRODUCTS).map((item) => (
+                  <Link
+                    key={item.id}
+                    to={`/product/${item.id}`}
+                    className="search-result-item"
+                    onClick={() => setIsSearchOpen(false)}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="search-item-thumb"
+                    />
+                    <div className="search-item-info">
+                      <div className="search-item-title">{item.name}</div>
+                      <div className="search-item-oem">
+                        OEM #{item.oem} • {item.models.join(", ")}
+                      </div>
+                    </div>
+                    <div className="search-item-price price">
+                      LKR {item.price.toLocaleString()}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

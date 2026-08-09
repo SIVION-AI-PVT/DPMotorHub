@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
@@ -8,10 +8,15 @@ import {
   MessageCircle,
   ArrowUpRight,
   CheckCircle2,
+  Send,
+  Sparkles,
 } from "lucide-react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "./Home.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const glassCard = {
   background: "rgba(20, 20, 26, 0.65)",
@@ -37,43 +42,58 @@ const glassInput = {
   transition: "all 0.3s",
 };
 
+const topics = [
+  "VIN Fitment Check",
+  "Order Status & Shipping",
+  "Custom Carbon Aero Sourcing",
+  "Technical Installation Guide",
+];
+
 export default function Contact() {
   const container = useRef(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState("VIN Fitment Check");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    chassis: "",
+    message: "",
+  });
 
   useGSAP(
     () => {
       // Header
       const tl = gsap.timeline();
-      tl.from(".stitch-hero-eyebrow", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        delay: 0.1,
-      })
+      tl.from(
+        ".stitch-hero-eyebrow",
+        { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.1 }
+      )
         .from(
           ".section h1",
           { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" },
-          "-=0.4",
+          "-=0.4"
         )
         .from(
           ".section p",
           { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
-          "-=0.5",
+          "-=0.5"
         );
 
       // Grid columns
-      gsap.from(".grid-cols-2 > div", {
-        scrollTrigger: { trigger: ".grid-cols-2", start: "top 80%" },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
+      tl.from(
+        ".grid-cols-2 > div",
+        { y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out" },
+        "-=0.4"
+      );
     },
     { scope: container },
   );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }} ref={container}>
@@ -102,8 +122,8 @@ export default function Contact() {
               marginBottom: "16px",
             }}
           >
-            Get In Touch With Our
-            <br />M Specialists
+            GET IN TOUCH WITH OUR
+            <br />M SPECIALISTS
           </h1>
           <p
             style={{
@@ -135,147 +155,221 @@ export default function Contact() {
                   fontSize: "22px",
                   fontWeight: 700,
                   color: "var(--white)",
-                  marginBottom: "28px",
+                  marginBottom: "20px",
                 }}
               >
                 Send Us A Message
               </h2>
 
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Message sent!");
-                }}
-              >
-                <div
+              {/* Inquiry Topic Pills */}
+              <div style={{ marginBottom: "24px" }}>
+                <label
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "16px",
-                    marginBottom: "16px",
+                    display: "block",
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    color: "var(--m-blue)",
+                    marginBottom: "10px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  <div>
-                    <label
+                  INQUIRY SUBJECT
+                </label>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {topics.map((t) => (
+                    <button
+                      key={t}
+                      type="button"
+                      onClick={() => setSelectedTopic(t)}
                       style={{
-                        display: "block",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        color: "var(--m-blue)",
-                        marginBottom: "6px",
-                        textTransform: "uppercase",
+                        padding: "8px 14px",
+                        borderRadius: "50px",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        border: selectedTopic === t ? "1px solid var(--m-blue)" : "1px solid rgba(255,255,255,0.12)",
+                        background: selectedTopic === t ? "rgba(0, 138, 201, 0.2)" : "rgba(255,255,255,0.04)",
+                        color: selectedTopic === t ? "#fff" : "var(--mid-gray)",
+                        cursor: "pointer",
+                        transition: "all 0.2s",
                       }}
                     >
-                      FULL NAME
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John Schmidt"
-                      style={glassInput}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        color: "var(--m-blue)",
-                        marginBottom: "6px",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      EMAIL
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      style={glassInput}
-                    />
-                  </div>
+                      {t}
+                    </button>
+                  ))}
                 </div>
+              </div>
 
+              {submitted ? (
                 <div
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "16px",
-                    marginBottom: "16px",
+                    background: "rgba(0, 138, 201, 0.15)",
+                    border: "1px solid var(--m-blue)",
+                    borderRadius: "12px",
+                    padding: "32px 24px",
+                    textAlign: "center",
                   }}
                 >
-                  <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        color: "var(--m-blue)",
-                        marginBottom: "6px",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      PHONE
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="+49 176 12345678"
-                      style={glassInput}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      style={{
-                        display: "block",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        color: "var(--m-blue)",
-                        marginBottom: "6px",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      CHASSIS CODE
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="G80 M3 / F90 M5"
-                      style={glassInput}
-                    />
-                  </div>
+                  <CheckCircle2 size={48} color="var(--m-blue)" style={{ margin: "0 auto 16px" }} />
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "20px", color: "#fff", marginBottom: "8px" }}>
+                    Enquiry Submitted Successfully!
+                  </h3>
+                  <p style={{ color: "var(--mid-gray)", fontSize: "14px", lineHeight: 1.6, marginBottom: "20px" }}>
+                    Our BMW Master Technicians in Munich have received your request regarding <strong>"{selectedTopic}"</strong>. We will review your chassis details and get back to you within 4 hours.
+                  </p>
+                  <button
+                    type="button"
+                    className="wix-pill-btn dark"
+                    onClick={() => setSubmitted(false)}
+                  >
+                    Send Another Message
+                  </button>
                 </div>
-
-                <div style={{ marginBottom: "24px" }}>
-                  <label
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div
                     style={{
-                      display: "block",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      letterSpacing: "0.08em",
-                      color: "var(--m-blue)",
-                      marginBottom: "6px",
-                      textTransform: "uppercase",
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "16px",
+                      marginBottom: "16px",
                     }}
                   >
-                    YOUR MESSAGE
-                  </label>
-                  <textarea
-                    rows={5}
-                    placeholder="Describe your project, chassis details, or the specific M part you need..."
-                    style={{ ...glassInput, resize: "vertical" }}
-                  />
-                </div>
+                    <div>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          color: "var(--m-blue)",
+                          marginBottom: "6px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        FULL NAME *
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="John Schmidt"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        style={glassInput}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          color: "var(--m-blue)",
+                          marginBottom: "6px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        EMAIL ADDRESS *
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        style={glassInput}
+                      />
+                    </div>
+                  </div>
 
-                <button
-                  type="submit"
-                  className="wix-pill-btn dark"
-                  style={{ width: "100%" }}
-                >
-                  Submit Enquiry <ArrowUpRight size={18} />
-                </button>
-              </form>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "16px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <div>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          color: "var(--m-blue)",
+                          marginBottom: "6px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        PHONE / WHATSAPP
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="+49 176 12345678"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        style={glassInput}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          color: "var(--m-blue)",
+                          marginBottom: "6px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        CHASSIS CODE / VIN
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="G80 M3 / F90 M5"
+                        value={formData.chassis}
+                        onChange={(e) => setFormData({ ...formData, chassis: e.target.value })}
+                        style={glassInput}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: "24px" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        color: "var(--m-blue)",
+                        marginBottom: "6px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      YOUR MESSAGE *
+                    </label>
+                    <textarea
+                      rows={5}
+                      required
+                      placeholder="Describe your project, chassis details, or the specific M part you need..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      style={{ ...glassInput, resize: "vertical" }}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="wix-pill-btn dark"
+                    style={{ width: "100%" }}
+                  >
+                    Submit Technical Enquiry <Send size={16} />
+                  </button>
+                </form>
+              )}
             </div>
 
             {/* RIGHT: Info Cards */}
@@ -301,7 +395,7 @@ export default function Contact() {
                       color: "var(--white)",
                     }}
                   >
-                    WhatsApp Hotline
+                    WhatsApp Technical Hotline
                   </h3>
                 </div>
                 <p
@@ -312,8 +406,7 @@ export default function Contact() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Get instant technical support and VIN fitment verification
-                  from our BMW Master Technicians.
+                  Get instant technical support and VIN fitment verification directly from our Munich Master Technicians.
                 </p>
                 <a
                   href="https://wa.me/15556769377"
@@ -345,7 +438,7 @@ export default function Contact() {
                       color: "var(--white)",
                     }}
                   >
-                    Munich Headquarters
+                    Munich Headquarters & Facility
                   </h3>
                 </div>
                 <p

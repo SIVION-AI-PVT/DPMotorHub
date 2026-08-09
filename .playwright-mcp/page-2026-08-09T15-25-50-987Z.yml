@@ -1,0 +1,161 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e4]:
+    - generic [ref=f5e5]: 100% Genuine BMW M Performance Hardware
+    - generic [ref=f5e7]: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+  - banner [ref=f5e8]:
+    - generic [ref=f5e9]:
+      - link "DP Motorhub Homepage" [ref=f5e10] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f5e11]: DP MOTORHUB
+      - navigation "Main Navigation" [ref=f5e13]:
+        - link "SHOP CATALOG" [ref=f5e14] [cursor=pointer]:
+          - /url: /shop
+        - link "CARBON AERO" [ref=f5e15] [cursor=pointer]:
+          - /url: /shop?category=exterior
+        - link "BMW MODELS" [ref=f5e16] [cursor=pointer]:
+          - /url: /shop?sort=model
+        - link "ABOUT US" [ref=f5e17] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=f5e18] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f5e19]:
+        - button "Open Search Modal (Press Ctrl+K)" [ref=f5e20] [cursor=pointer]
+        - link "User Support / Account" [ref=f5e24] [cursor=pointer]:
+          - /url: /contact
+        - button "Open Shopping Cart with 2 items" [ref=f5e28] [cursor=pointer]:
+          - generic [ref=f5e32]: "2"
+  - main [ref=f5e33]:
+    - generic [ref=f5e34]:
+      - generic [ref=f5e36]:
+        - generic [ref=f5e37]: EXPERT TECHNICAL SUPPORT
+        - heading "Get In Touch With Our M Specialists" [level=1] [ref=f5e39]: Get In Touch With OurM Specialists
+        - paragraph [ref=f5e40]: VIN fitment questions, rare part sourcing, or technical installation guidance — our BMW Master Technicians are ready to assist.
+      - generic [ref=f5e43]:
+        - generic [ref=f5e44]:
+          - heading "Send Us A Message" [level=2] [ref=f5e45]
+          - generic [ref=f5e46]:
+            - generic [ref=f5e47]: INQUIRY SUBJECT
+            - generic [ref=f5e48]:
+              - button "VIN Fitment Check" [ref=f5e49] [cursor=pointer]
+              - button "Order Status & Shipping" [ref=f5e50] [cursor=pointer]
+              - button "Custom Carbon Aero Sourcing" [ref=f5e51] [cursor=pointer]
+              - button "Technical Installation Guide" [ref=f5e52] [cursor=pointer]
+          - generic [ref=f5e53]:
+            - generic [ref=f5e54]:
+              - generic [ref=f5e55]:
+                - generic [ref=f5e56]: FULL NAME *
+                - textbox "John Schmidt" [ref=f5e57]
+              - generic [ref=f5e58]:
+                - generic [ref=f5e59]: EMAIL ADDRESS *
+                - textbox "john@example.com" [ref=f5e60]
+            - generic [ref=f5e61]:
+              - generic [ref=f5e62]:
+                - generic [ref=f5e63]: PHONE / WHATSAPP
+                - textbox "+49 176 12345678" [ref=f5e64]
+              - generic [ref=f5e65]:
+                - generic [ref=f5e66]: CHASSIS CODE / VIN
+                - textbox "G80 M3 / F90 M5" [ref=f5e67]
+            - generic [ref=f5e68]:
+              - generic [ref=f5e69]: YOUR MESSAGE *
+              - textbox "Describe your project, chassis details, or the specific M part you need..." [ref=f5e70]
+            - button "Submit Technical Enquiry" [ref=f5e71] [cursor=pointer]
+        - generic [ref=f5e75]:
+          - generic [ref=f5e76]:
+            - heading "WhatsApp Technical Hotline" [level=3] [ref=f5e80]
+            - paragraph [ref=f5e81]: Get instant technical support and VIN fitment verification directly from our Munich Master Technicians.
+            - link "Chat Now" [ref=f5e82] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+          - generic [ref=f5e86]:
+            - heading "Munich Headquarters & Facility" [level=3] [ref=f5e91]
+            - paragraph [ref=f5e92]: DP Motorhub GmbHSchleißheimer Str. 200, 80809 Munich, Germany
+          - generic [ref=f5e93]:
+            - generic [ref=f5e94]:
+              - heading "Operating Hours" [level=4] [ref=f5e98]
+              - paragraph [ref=f5e99]: "Mon — Fri: 9:00 — 18:00 CETSat: 10:00 — 14:00 CET"
+            - generic [ref=f5e100]:
+              - heading "Direct Email" [level=4] [ref=f5e104]
+              - link "sales@dpmotorhub.com" [ref=f5e105] [cursor=pointer]:
+                - /url: mailto:sales@dpmotorhub.com
+              - link "support@dpmotorhub.com" [ref=f5e106] [cursor=pointer]:
+                - /url: mailto:support@dpmotorhub.com
+      - generic [ref=f5e108]:
+        - heading "Can't find what you need? Our sourcing team locates any BMW M part worldwide." [level=2] [ref=f5e109]: Can't find what you need?Our sourcing team locates any BMW M part worldwide.
+        - link "Browse Full Catalog" [ref=f5e111] [cursor=pointer]:
+          - /url: /shop
+  - contentinfo [ref=f5e115]:
+    - generic [ref=f5e116]:
+      - generic [ref=f5e117]:
+        - generic [ref=f5e118]:
+          - link "DP MOTORHUB" [ref=f5e119] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f5e122]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=f5e123]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=f5e128]:
+            - link "WhatsApp Support" [ref=f5e129] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email Support" [ref=f5e132] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone Support" [ref=f5e136] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global Support" [ref=f5e139] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f5e143]:
+          - heading "M PARTS CATALOG" [level=4] [ref=f5e144]
+          - list [ref=f5e145]:
+            - listitem [ref=f5e146]:
+              - link "Engine & Performance" [ref=f5e147] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=f5e148]:
+              - link "Brakes & Suspension" [ref=f5e149] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=f5e150]:
+              - link "Exterior & Carbon Aero" [ref=f5e151] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=f5e152]:
+              - link "Wheels & Spacers" [ref=f5e153] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=f5e154]:
+              - link "Interior & Trim" [ref=f5e155] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=f5e156]:
+          - heading "BMW M CHASSIS" [level=4] [ref=f5e157]
+          - list [ref=f5e158]:
+            - listitem [ref=f5e159]:
+              - link "BMW G80 M3 / G82 M4" [ref=f5e160] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=f5e161]:
+              - link "BMW F80 M3 / F82 M4" [ref=f5e162] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=f5e163]:
+              - link "BMW F90 M5 Competition" [ref=f5e164] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=f5e165]:
+              - link "BMW F87 M2 / G87 M2" [ref=f5e166] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=f5e167]:
+              - link "About DP Motorhub" [ref=f5e168] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f5e169]:
+              - link "Technical Fitment Support" [ref=f5e170] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f5e171]:
+          - heading "INSIDER ACCESS" [level=4] [ref=f5e172]
+          - paragraph [ref=f5e173]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=f5e174]:
+            - textbox "Enter your email address..." [ref=f5e176]
+            - button "SUBSCRIBE" [ref=f5e177] [cursor=pointer]
+      - generic [ref=f5e182]:
+        - paragraph [ref=f5e183]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=f5e184]:
+          - generic [ref=f5e185]: VISA
+          - generic [ref=f5e186]: MASTERCARD
+          - generic [ref=f5e187]: APPLE PAY
+          - generic [ref=f5e188]: PAYPAL
+          - generic [ref=f5e189]: KLARNA
+        - generic [ref=f5e190]:
+          - link "Privacy Policy" [ref=f5e191] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=f5e192] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=f5e193] [cursor=pointer]:
+            - /url: /contact

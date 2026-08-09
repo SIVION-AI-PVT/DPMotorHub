@@ -4,6 +4,19 @@
   overflow-x: hidden;
 }
 
+.wix-main-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+.wix-main-h2.dark {
+  color: var(--white);
+}
+
 /* 1. Stitch Hero Section */
 .stitch-hero {
   position: relative;
@@ -296,6 +309,24 @@
   padding: 120px 0;
 }
 
+.wix-section-split-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.stitch-spec-card,
+.wix-why-card,
+.stitch-showcase-media,
+.stitch-inventory-section .shop-grid > div,
+.shop-grid > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 .tab-buttons-container {
   display: flex;
   gap: 10px;
@@ -403,10 +434,12 @@
   background-color: var(--charcoal);
 }
 
-.wix-media-img {
+.wix-media-break img,
+.wix-why-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
 }
 
 /* Contact & Dark Map Glass */
@@ -540,13 +573,43 @@
   .stitch-showcase-grid {
     grid-template-columns: 1fr;
   }
+  .stitch-showcase-media {
+    height: 400px;
+  }
   .wix-why-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .hero-finder-form {
     flex-direction: column;
   }
   .stitch-vin-form {
     flex-direction: column;
+  }
+  .wix-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-cols-3.shop-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .wix-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .stitch-showcase-media {
+    height: 300px;
+  }
+  .grid-cols-3.shop-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .stitch-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .stitch-hero-actions a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }

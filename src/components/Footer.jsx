@@ -38,10 +38,17 @@ export default function Footer() {
           {/* Column 1: DP MOTORHUB Logo, M Tri-Stripe, Description, Badge, Social Icons */}
           <div className="footer-brand-col">
             <Link to="/" className="footer-logo">
-              <span className="footer-logo-text logo-text-premium">
-                DP MOTORHUB
-              </span>
-              <div className="footer-m-stripe"></div>
+              <img
+                src="/assets/Artboard 1 copy.png"
+                alt="DP Emblem"
+                className="footer-logo-icon"
+              />
+              <div className="footer-logo-text-wrapper">
+                <span className="footer-logo-text logo-text-premium">
+                  MOTORHUB
+                </span>
+                <div className="footer-m-stripe"></div>
+              </div>
             </Link>
             <p className="footer-description">
               Specialist retailer of authentic BMW M Performance parts, dry

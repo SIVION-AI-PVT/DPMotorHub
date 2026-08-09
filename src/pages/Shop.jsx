@@ -125,32 +125,7 @@ export default function Shop() {
   const container = useRef(null);
   useGSAP(
     () => {
-      // Header Animation
-      gsap.from(".wix-section-split-header > div", {
-        y: 30,
-        opacity: 0,
-        filter: "blur(5px)",
-        duration: 0.8,
-        ease: "power3.out",
-      });
-      gsap.from(".wix-section-split-header p", {
-        y: 20,
-        opacity: 0,
-        filter: "blur(5px)",
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.2,
-      });
-
-      // Sidebar Animation
-      gsap.from(".shop-sidebar", {
-        x: -40,
-        opacity: 0,
-        filter: "blur(10px)",
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.3,
-      });
+      // Clean mount
     },
     { scope: container },
   );
@@ -190,7 +165,7 @@ export default function Shop() {
             <div className="eyebrow" style={{ marginBottom: "8px" }}>
               BMW MOTORSPORT CATALOG
             </div>
-            <h1 className="wix-main-h2">M Performance Catalog</h1>
+            <h1 className="wix-main-h2">M PERFORMANCE CATALOG</h1>
           </div>
           <p
             className="body-text"

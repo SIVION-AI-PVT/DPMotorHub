@@ -1,0 +1,149 @@
+- generic [ref=f9e2]:
+  - generic [ref=f9e4]:
+    - generic [ref=f9e5]: 100% Genuine BMW M Performance Hardware
+    - generic [ref=f9e7]: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+  - banner [ref=f9e8]:
+    - generic [ref=f9e9]:
+      - link "DP Motorhub Homepage" [ref=f9e10] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f9e11]: DP MOTORHUB
+      - navigation "Main Navigation" [ref=f9e13]:
+        - link "SHOP CATALOG" [ref=f9e14] [cursor=pointer]:
+          - /url: /shop
+        - link "CARBON AERO" [ref=f9e15] [cursor=pointer]:
+          - /url: /shop?category=exterior
+        - link "BMW MODELS" [ref=f9e16] [cursor=pointer]:
+          - /url: /shop?sort=model
+        - link "ABOUT US" [ref=f9e17] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=f9e18] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f9e19]:
+        - button "Open Search Modal (Press Ctrl+K)" [ref=f9e20] [cursor=pointer]
+        - button "User Account" [ref=f9e24] [cursor=pointer]
+        - button "Open Shopping Cart with 2 items" [ref=f9e28] [cursor=pointer]:
+          - generic [ref=f9e32]: "2"
+  - main [ref=f9e33]:
+    - generic [ref=f9e34]:
+      - generic [ref=f9e35]:
+        - img "BMW M Engineering" [ref=f9e37]
+        - generic [ref=f9e38]:
+          - generic [ref=f9e39]: OUR HERITAGE & MOTORSPORT PASSION
+          - heading "Born On The Track. Built For The Road." [level=1] [ref=f9e41]: Born On The Track.Built For The Road.
+          - link "Explore Catalog" [ref=f9e43] [cursor=pointer]:
+            - /url: /shop
+      - generic [ref=f9e48]:
+        - generic [ref=f9e49]: THE PURSUIT OF PERFECTION
+        - heading "Uncompromising German Engineering" [level=2] [ref=f9e50]
+        - paragraph [ref=f9e51]: DP Motorhub was established by a collective of BMW M enthusiasts who were tired of navigating generic auto parts marketplaces to find genuine performance upgrades. We created a dedicated sanctuary that matches the exact engineering standards of Nürburgring-tested M-cars.
+        - paragraph [ref=f9e52]: Every splitter, steering wheel, titanium exhaust, and carbon ceramic brake system in our catalog has been verified by our in-house engineering team to guarantee 100% factory fitment and authentic BMW provenance.
+      - generic [ref=f9e54]:
+        - generic [ref=f9e55]:
+          - generic [ref=f9e56]: OUR PRINCIPLES
+          - heading "Why BMW Enthusiasts Choose Us" [level=2] [ref=f9e57]
+        - generic [ref=f9e58]:
+          - generic [ref=f9e59]:
+            - heading "100% Genuine Provenance" [level=3] [ref=f9e63]
+            - paragraph [ref=f9e64]: Only authentic BMW OEM parts and top-tier verified motorsport manufacturers.
+          - generic [ref=f9e65]:
+            - heading "Technical Precision" [level=3] [ref=f9e70]
+            - paragraph [ref=f9e71]: Engineered by enthusiasts. We know exact chassis codes, torque specs, and fitment nuances.
+          - generic [ref=f9e72]:
+            - heading "24-Hour Fulfillment" [level=3] [ref=f9e75]
+            - paragraph [ref=f9e76]: Rapid dispatch with tracked global logistics to get your car back on track swiftly.
+          - generic [ref=f9e77]:
+            - heading "Direct Master Support" [level=3] [ref=f9e83]
+            - paragraph [ref=f9e84]: VIN verification and technical fitment guidance directly via WhatsApp or Email.
+      - generic [ref=f9e87]:
+        - generic [ref=f9e88]:
+          - generic [ref=f9e89]: OUR FACILITY
+          - heading "Track-Tested Quality Control" [level=2] [ref=f9e90]
+          - paragraph [ref=f9e91]: Inside our specialized Munich workshop and fulfillment facility, every carbon fiber piece is inspected under high-intensity lighting for weave symmetry and UV finish clarity before being packaged with protective foam.
+          - generic [ref=f9e92]:
+            - generic [ref=f9e93]: 100% Autoclave Pre-preg Dry Carbon Fiber Inspection
+            - generic [ref=f9e97]: Ultrasonic Fitment Tolerance Checking
+            - generic [ref=f9e101]: Factory-Sealed Genuine BMW Hologram Verification
+          - link "Explore Catalog" [ref=f9e105] [cursor=pointer]:
+            - /url: /shop
+        - img "DP Motorhub Facility" [ref=f9e110]
+      - generic [ref=f9e112]:
+        - heading "Ready to elevate your BMW M experience? Browse our curated inventory or reach out to our technicians" [level=2] [ref=f9e113]: Ready to elevate your BMW M experience?Browse our curated inventory or reach out to our technicians
+        - link "Shop M Catalog" [ref=f9e115] [cursor=pointer]:
+          - /url: /shop
+  - contentinfo [ref=f9e119]:
+    - generic [ref=f9e120]:
+      - generic [ref=f9e121]:
+        - generic [ref=f9e122]:
+          - link "DP MOTORHUB" [ref=f9e123] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f9e126]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=f9e127]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=f9e132]:
+            - link "WhatsApp Support" [ref=f9e133] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email Support" [ref=f9e136] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone Support" [ref=f9e140] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global Support" [ref=f9e143] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f9e147]:
+          - heading "M PARTS CATALOG" [level=4] [ref=f9e148]
+          - list [ref=f9e149]:
+            - listitem [ref=f9e150]:
+              - link "Engine & Performance" [ref=f9e151] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=f9e152]:
+              - link "Brakes & Suspension" [ref=f9e153] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=f9e154]:
+              - link "Exterior & Carbon Aero" [ref=f9e155] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=f9e156]:
+              - link "Wheels & Spacers" [ref=f9e157] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=f9e158]:
+              - link "Interior & Trim" [ref=f9e159] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=f9e160]:
+          - heading "BMW M CHASSIS" [level=4] [ref=f9e161]
+          - list [ref=f9e162]:
+            - listitem [ref=f9e163]:
+              - link "BMW G80 M3 / G82 M4" [ref=f9e164] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=f9e165]:
+              - link "BMW F80 M3 / F82 M4" [ref=f9e166] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=f9e167]:
+              - link "BMW F90 M5 Competition" [ref=f9e168] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=f9e169]:
+              - link "BMW F87 M2 / G87 M2" [ref=f9e170] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=f9e171]:
+              - link "About DP Motorhub" [ref=f9e172] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f9e173]:
+              - link "Technical Fitment Support" [ref=f9e174] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f9e175]:
+          - heading "INSIDER ACCESS" [level=4] [ref=f9e176]
+          - paragraph [ref=f9e177]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=f9e178]:
+            - textbox "Enter your email address..." [ref=f9e180]
+            - button "SUBSCRIBE" [ref=f9e181] [cursor=pointer]
+      - generic [ref=f9e186]:
+        - paragraph [ref=f9e187]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=f9e188]:
+          - generic [ref=f9e189]: VISA
+          - generic [ref=f9e190]: MASTERCARD
+          - generic [ref=f9e191]: APPLE PAY
+          - generic [ref=f9e192]: PAYPAL
+          - generic [ref=f9e193]: KLARNA
+        - generic [ref=f9e194]:
+          - link "Privacy Policy" [ref=f9e195] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=f9e196] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=f9e197] [cursor=pointer]:
+            - /url: /contact

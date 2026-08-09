@@ -114,53 +114,6 @@ export default function Home() {
           "-=0.5",
         );
 
-      // Scroll Animations
-      gsap.from(".stitch-showcase-media", {
-        scrollTrigger: {
-          trigger: ".stitch-showcase-section",
-          start: "top 70%",
-        },
-        x: -60,
-        opacity: 0,
-        filter: "blur(10px)",
-        duration: 1.2,
-        ease: "expo.out",
-      });
-
-      gsap.from(".stitch-spec-card", {
-        scrollTrigger: { trigger: ".stitch-showcase-info", start: "top 75%" },
-        x: 40,
-        opacity: 0,
-        filter: "blur(5px)",
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
-
-      gsap.from(".shop-grid > div", {
-        scrollTrigger: {
-          trigger: ".stitch-inventory-section",
-          start: "top 70%",
-        },
-        y: 50,
-        opacity: 0,
-        filter: "blur(8px)",
-        scale: 0.95,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-
-      gsap.from(".wix-why-card", {
-        scrollTrigger: { trigger: ".wix-why-section", start: "top 75%" },
-        y: 40,
-        opacity: 0,
-        filter: "blur(5px)",
-        scale: 0.95,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
     },
     { scope: container },
   );
