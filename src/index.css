@@ -170,6 +170,16 @@ body::after {
   background: var(--m-blue);
 }
 
+/* Global Select & Option Dark Theme Styling */
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #0b0e14 !important;
+  color: #ffffff !important;
+}
+
 /* Typography Utility Classes */
 h1,
 .h1 {

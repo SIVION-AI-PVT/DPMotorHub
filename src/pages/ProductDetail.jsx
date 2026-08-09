@@ -22,6 +22,7 @@ import ProductCard from "../components/ProductCard";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProductDetail() {
+  const container = useRef(null);
   const { id } = useParams();
   const { addToCart } = useCart();
   const [activeTab, setActiveTab] = useState("description");
@@ -31,38 +32,12 @@ export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const product = INITIAL_PRODUCTS.find(
-    (p) => p.id === parseInt(id) || p.id === String(id),
+    (p) => p && (String(p.id) === String(id) || p.id == id),
   );
 
-  const container = useRef(null);
   useGSAP(
     () => {
-      const tl = gsap.timeline();
-      tl.from(".breadcrumb", { y: -10, opacity: 0, duration: 0.4, ease: "power3.out" })
-        .from(
-          ".product-gallery",
-          { y: 20, opacity: 0, duration: 0.5, ease: "power3.out" },
-          "-=0.2"
-        )
-        .from(
-          ".product-info",
-          { y: 20, opacity: 0, duration: 0.5, ease: "power3.out" },
-          "-=0.4"
-        )
-        .from(
-          ".product-tabs",
-          { y: 20, opacity: 0, duration: 0.5, ease: "power3.out" },
-          "-=0.3"
-        );
-
-      gsap.from(".related-grid > div", {
-        scrollTrigger: { trigger: ".related-products", start: "top 90%" },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
+      // Clean mount
     },
     { scope: container },
   );

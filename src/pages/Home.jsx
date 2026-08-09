@@ -61,25 +61,15 @@ export default function Home() {
     () => {
       // Hero Animation
       const tl = gsap.timeline();
-      tl.from(".stitch-hero-eyebrow", {
-        y: 20,
+      tl.from(".stitch-hero-title", {
+        y: 60,
         opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
+        filter: "blur(10px)",
+        scale: 0.95,
+        duration: 1,
+        ease: "expo.out",
         delay: 0.2,
       })
-        .from(
-          ".stitch-hero-title",
-          {
-            y: 60,
-            opacity: 0,
-            filter: "blur(10px)",
-            scale: 0.95,
-            duration: 1,
-            ease: "expo.out",
-          },
-          "-=0.5",
-        )
         .from(
           ".stitch-hero-subtitle",
           {
@@ -166,11 +156,6 @@ export default function Home() {
         </div>
 
         <div className="container stitch-hero-container">
-          <div className="stitch-hero-eyebrow">
-            <span className="m-stripe-pill"></span> M PERFORMANCE • MOTORSPORT
-            HARDWARE
-          </div>
-
           <h1 className="stitch-hero-title">BORN ON THE TRACK</h1>
 
           <p className="stitch-hero-subtitle">
@@ -231,6 +216,31 @@ export default function Home() {
                 FIND FITMENT <Search size={16} />
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* LUXURY MOTORSPORT STATS BAR */}
+      <section className="luxury-stats-bar">
+        <div className="container luxury-stats-grid">
+          <div className="luxury-stat-item">
+            <div className="stat-value">100%</div>
+            <div className="stat-label">GENUINE BMW M OEM</div>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="luxury-stat-item">
+            <div className="stat-value">NÜRBURGRING</div>
+            <div className="stat-label">TRACK-ENGINEERED</div>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="luxury-stat-item">
+            <div className="stat-value">24-HOUR</div>
+            <div className="stat-label">EXPRESS AIR FREIGHT</div>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="luxury-stat-item">
+            <div className="stat-value">5,000+</div>
+            <div className="stat-label">M CARS EQUIPPED</div>
           </div>
         </div>
       </section>
@@ -554,34 +564,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. GIANT BOTTOM TYPOGRAPHY FOOTER BRANDING */}
-      <section className="wix-footer-brand-section dark-section">
-        <div className="container text-center" style={{ textAlign: "center" }}>
-          <div className="wix-footer-logo-row">
-            <span className="logo-arrow">➤</span>{" "}
-            <span className="logo-text-premium" style={{ fontSize: "inherit" }}>
-              DP MOTORHUB
-            </span>
-          </div>
-
-          <div className="wix-footer-socials">
-            <a href="#" aria-label="Facebook">
-              <MessageCircle size={20} />
-            </a>
-            <a href="#" aria-label="YouTube">
-              <Award size={20} />
-            </a>
-            <a href="#" aria-label="X">
-              <ArrowUpRight size={20} />
-            </a>
-          </div>
-
-          <div className="wix-giant-brand-text logo-text-premium">
-            DP MOTORHUB
           </div>
         </div>
       </section>

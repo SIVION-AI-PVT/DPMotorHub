@@ -5,9 +5,9 @@ const CartContext = createContext();
 const productFiles = import.meta.glob("../data/products/*.json", {
   eager: true,
 });
-export const INITIAL_PRODUCTS = Object.values(productFiles).map(
-  (mod) => mod.default || mod
-);
+export const INITIAL_PRODUCTS = Object.values(productFiles)
+  .map((mod) => (mod && mod.default ? mod.default : mod))
+  .filter((p) => p && p.id);
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([

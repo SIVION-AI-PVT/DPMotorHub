@@ -8,6 +8,28 @@
   font-family: "Inter", sans-serif;
 }
 
+.product-info,
+.product-info *,
+.product-gallery,
+.breadcrumb,
+.product-tabs,
+.related-grid > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.product-title,
+.product-price,
+.vin-checker h4 {
+  color: #ffffff !important;
+}
+
+.stock-status,
+.review-count,
+.vin-checker p {
+  color: #a0a5b5 !important;
+}
+
 h1,
 h2,
 h3,
