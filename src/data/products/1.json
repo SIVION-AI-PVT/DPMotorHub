@@ -1,0 +1,14 @@
+{
+  "id": "1",
+  "name": "M Performance Carbon Fiber Front Splitter",
+  "price": 555000,
+  "category": "exterior",
+  "models": ["G80 M3", "G82 M4"],
+  "image": "/assets/front_splitter.jpg",
+  "isMPerformance": true,
+  "oem": "51192475168",
+  "material": "Pre-preg Dry Carbon Fiber (CFRP)",
+  "stock": "In Stock",
+  "rating": 5.0,
+  "reviewsCount": 14
+}

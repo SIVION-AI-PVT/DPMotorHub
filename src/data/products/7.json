@@ -1,0 +1,14 @@
+{
+  "id": "7",
+  "name": "M Performance Carbon Rear Diffuser",
+  "price": 495000,
+  "category": "exterior",
+  "models": ["G80 M3", "G82 M4"],
+  "image": "/assets/rear_diffuser.jpg",
+  "isMPerformance": true,
+  "oem": "51192475169",
+  "material": "Dry Carbon Fiber",
+  "stock": "In Stock",
+  "rating": 5.0,
+  "reviewsCount": 12
+}

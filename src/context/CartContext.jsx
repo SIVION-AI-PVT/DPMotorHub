@@ -1,9 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
-import productsData from "../data/products.json";
 
 const CartContext = createContext();
 
-export const INITIAL_PRODUCTS = productsData.products || productsData;
+const productFiles = import.meta.glob("../data/products/*.json", {
+  eager: true,
+});
+export const INITIAL_PRODUCTS = Object.values(productFiles).map(
+  (mod) => mod.default || mod
+);
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([

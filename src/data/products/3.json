@@ -1,0 +1,14 @@
+{
+  "id": "3",
+  "name": "Titanium Exhaust System with Carbon Tips",
+  "price": 1260000,
+  "category": "engine",
+  "models": ["F90 M5"],
+  "image": "/assets/exhaust_system.jpg",
+  "isMPerformance": false,
+  "oem": "18302456070",
+  "material": "Grade-1 Titanium & Dry Carbon",
+  "stock": "Low Stock (2 Left)",
+  "rating": 5.0,
+  "reviewsCount": 9
+}

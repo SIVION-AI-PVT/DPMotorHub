@@ -1,0 +1,14 @@
+{
+  "id": "6",
+  "name": "M Performance Carbon Fiber Mirror Caps",
+  "price": 135000,
+  "category": "exterior",
+  "models": ["G80 M3", "G82 M4", "G87 M2"],
+  "image": "/assets/mirror_caps.jpg",
+  "isMPerformance": true,
+  "oem": "51162465741",
+  "material": "Autoclave Carbon Fiber",
+  "stock": "In Stock",
+  "rating": 4.9,
+  "reviewsCount": 31
+}

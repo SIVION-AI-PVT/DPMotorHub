@@ -1,0 +1,14 @@
+{
+  "id": "4",
+  "name": "Forged Lightweight Alloy Wheels 763M Set",
+  "price": 1140000,
+  "category": "wheels",
+  "models": ["F87 M2", "F80 M3"],
+  "image": "/assets/alloy_wheels.jpg",
+  "isMPerformance": true,
+  "oem": "36112449763",
+  "material": "Forged Aluminum Alloy",
+  "stock": "In Stock",
+  "rating": 4.8,
+  "reviewsCount": 18
+}

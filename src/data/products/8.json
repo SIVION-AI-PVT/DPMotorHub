@@ -1,0 +1,14 @@
+{
+  "id": "8",
+  "name": "S58 High-Flow Cold Air Intake System",
+  "price": 345000,
+  "category": "engine",
+  "models": ["G80 M3", "G82 M4", "G87 M2"],
+  "image": "/assets/air_intake.jpg",
+  "isMPerformance": false,
+  "oem": "13712470088",
+  "material": "Gloss Carbon Fiber & Pleated Synthetic",
+  "stock": "In Stock",
+  "rating": 4.9,
+  "reviewsCount": 19
+}

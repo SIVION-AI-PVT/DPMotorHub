@@ -1,0 +1,14 @@
+{
+  "id": "2",
+  "name": "M Performance Steering Wheel V2 (Alcantara / Carbon)",
+  "price": 375000,
+  "category": "interior",
+  "models": ["F80 M3", "F82 M4", "F87 M2"],
+  "image": "/assets/steering_wheel.jpg",
+  "isMPerformance": true,
+  "oem": "32302413014",
+  "material": "Alcantara / Tricolor M Stitching",
+  "stock": "In Stock",
+  "rating": 4.9,
+  "reviewsCount": 22
+}

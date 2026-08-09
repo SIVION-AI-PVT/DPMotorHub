@@ -8,65 +8,62 @@ media:
 content:
   - name: products
     label: M Performance Parts Catalog
-    type: file
-    file: src/data/products.json
+    type: collection
+    path: src/data/products
+    format: json
     fields:
-      - name: products
-        label: Products List
+      - name: id
+        label: SKU / Part ID
+        type: string
+        required: true
+      - name: name
+        label: Product Name
+        type: string
+        required: true
+      - name: price
+        label: Price (LKR)
+        type: number
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          - label: Exterior & Carbon Aero
+            value: exterior
+          - label: Interior & Cockpit
+            value: interior
+          - label: Engine & Performance
+            value: engine
+          - label: Wheels & Fitment
+            value: wheels
+          - label: Brakes & Suspension
+            value: brakes-suspension
+      - name: models
+        label: Compatible BMW Models
         type: list
-        fields:
-          - name: id
-            label: SKU / Part ID
-            type: string
-            required: true
-          - name: name
-            label: Product Name
-            type: string
-            required: true
-          - name: price
-            label: Price (LKR)
-            type: number
-            required: true
-          - name: category
-            label: Category
-            type: select
-            options:
-              - label: Exterior & Carbon Aero
-                value: exterior
-              - label: Interior & Cockpit
-                value: interior
-              - label: Engine & Performance
-                value: engine
-              - label: Wheels & Fitment
-                value: wheels
-              - label: Brakes & Suspension
-                value: brakes-suspension
-          - name: models
-            label: Compatible BMW Models (e.g. G80 M3, G82 M4)
-            type: list
-            field:
-              type: string
-          - name: image
-            label: Product Image Path / Upload
-            type: image
-          - name: isMPerformance
-            label: Genuine M Performance Badge
-            type: boolean
-          - name: oem
-            label: OEM Part Number
-            type: string
-          - name: material
-            label: Construction Material
-            type: string
-          - name: stock
-            label: Stock Status (e.g. In Stock)
-            type: string
-          - name: rating
-            label: Customer Rating (1.0 to 5.0)
-            type: number
-          - name: reviewsCount
-            label: Total Reviews Count
-            type: number
+        field:
+          type: string
+      - name: image
+        label: Product Image Path / Upload
+        type: image
+      - name: isMPerformance
+        label: Genuine M Performance Badge
+        type: boolean
+      - name: oem
+        label: OEM Part Number
+        type: string
+      - name: material
+        label: Construction Material
+        type: string
+      - name: stock
+        label: Stock Status
+        type: string
+      - name: rating
+        label: Customer Rating
+        type: number
+      - name: reviewsCount
+        label: Total Reviews Count
+        type: number
 
   - name: settings
     label: Global Site Settings & Contact Info
