@@ -11,6 +11,10 @@ content:
     type: collection
     path: src/data/products
     format: json
+    filename: "{fields.id}.json"
+    view:
+      primary: name
+      fields: [id, name, price, category, stock]
     fields:
       - name: id
         label: SKU / Part ID
