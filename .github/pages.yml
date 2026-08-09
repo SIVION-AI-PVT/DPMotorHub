@@ -38,11 +38,6 @@ content:
             value: wheels
           - label: Brakes & Suspension
             value: brakes-suspension
-      - name: models
-        label: Compatible BMW Models
-        type: list
-        field:
-          type: string
       - name: image
         label: Product Image Path / Upload
         type: image
