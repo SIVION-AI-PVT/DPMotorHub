@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=dpmotorhub"
+    "deploy": "npm run build && wrangler pages deploy dist"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
