@@ -224,6 +224,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-legal-links">
+            <a
+              href="https://app.pagescms.org/SIVION-AI-PVT/DPMotorHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-legal-link"
+              style={{ color: "#008AC9", fontWeight: "bold" }}
+            >
+              Admin Panel
+            </a>
             <Link to="/contact" className="footer-legal-link">
               Privacy Policy
             </Link>
