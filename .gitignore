@@ -1,4 +1,14 @@
-# Logs
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build & Production Outputs
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
+
+# Logs & Debugging
 logs
 *.log
 npm-debug.log*
@@ -7,18 +17,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Environment Variables & Local Configs
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Editor directories and files
+# IDE & Editor Files
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.sublime-project
+*.sublime-workspace
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test Screenshots & Automation Artifacts
+.playwright-mcp/
+test-results/
+playwright-report/
+playwright/.cache/
+/*.png
+
+# Temporary Files
+tmp/
+temp/
