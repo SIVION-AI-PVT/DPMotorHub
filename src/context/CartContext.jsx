@@ -3,7 +3,7 @@ import productsData from "../data/products.json";
 
 const CartContext = createContext();
 
-export const INITIAL_PRODUCTS = productsData;
+export const INITIAL_PRODUCTS = productsData.products || productsData;
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([
