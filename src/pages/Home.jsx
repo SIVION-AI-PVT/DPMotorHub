@@ -246,39 +246,32 @@ export default function Home() {
       </section>
 
       {/* 2. STITCH FEATURE SHOWCASE: M5 CS THE PEAK OF PERFORMANCE */}
-      <section className="section stitch-showcase-section dark-section">
+      <section className="section stitch-showcase-section">
         <div className="container">
           <div className="stitch-showcase-grid">
             {/* Left Image Showcase */}
             <div className="stitch-showcase-media">
               <img
                 src="/assets/exhaust_system.jpg"
-                alt="BMW M Parts"
+                alt="BMW M5 CS Titanium Exhaust System"
                 className="w-full h-full object-cover"
               />
               <div className="stitch-showcase-badge">
-                <Zap size={18} color="var(--m-blue)" />
+                <Zap size={16} />
                 <span>M5 CS SPECIFICATION</span>
               </div>
               <div className="stitch-media-title-overlay">
-                <div className="caption" style={{ color: "var(--m-blue)" }}>
-                  THE ALL-NEW
-                </div>
-                <h2 className="h1" style={{ fontSize: "42px", color: "#fff" }}>
-                  BMW M5 CS
-                </h2>
+                <div className="caption">THE ALL-NEW</div>
+                <h3 className="h1">BMW M5 CS</h3>
               </div>
             </div>
 
             {/* Right Specs List */}
             <div className="stitch-showcase-info">
-              <div
-                className="eyebrow"
-                style={{ color: "var(--m-blue)", marginBottom: "12px" }}
-              >
+              <div className="eyebrow" style={{ color: "var(--m-blue)", marginBottom: "10px" }}>
                 ENGINEERING HIGHLIGHTS
               </div>
-              <h2 className="wix-main-h2 dark" style={{ marginBottom: "32px" }}>
+              <h2 className="wix-main-h2" style={{ marginBottom: "28px" }}>
                 The Peak Of Performance
               </h2>
 
@@ -286,7 +279,7 @@ export default function Home() {
                 {M5_FEATURES.map((spec) => (
                   <div key={spec.id} className="stitch-spec-card">
                     <span className="stitch-spec-id">{spec.id}</span>
-                    <div>
+                    <div style={{ flex: 1 }}>
                       <h4 className="stitch-spec-name">{spec.name}</h4>
                       <p className="stitch-spec-detail">{spec.detail}</p>
                     </div>
@@ -294,8 +287,8 @@ export default function Home() {
                 ))}
               </div>
 
-              <div style={{ marginTop: "36px" }}>
-                <Link to="/shop?chassis=F90" className="wix-pill-btn dark">
+              <div style={{ marginTop: "32px" }}>
+                <Link to="/shop?chassis=F90" className="wix-pill-btn dark" style={{ width: "100%", justifyContent: "center" }}>
                   EXPLORE M5 CS PARTS <ArrowUpRight size={18} />
                 </Link>
               </div>

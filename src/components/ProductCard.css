@@ -242,3 +242,57 @@
     opacity: 0.3;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE OVERLAY BADGES & ACTION BUTTONS (HIGH CONTRAST ENFORCEMENT)
+   ═══════════════════════════════════════════════════════════════ */
+.product-card-badge,
+html[data-theme="light"] .product-card-badge,
+body.light-theme .product-card-badge {
+  background: rgba(11, 11, 13, 0.88) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-left: 3px solid #008ac9 !important;
+}
+
+.product-card-badge span,
+.product-card-badge svg,
+html[data-theme="light"] .product-card-badge span,
+html[data-theme="light"] .product-card-badge svg,
+body.light-theme .product-card-badge span,
+body.light-theme .product-card-badge svg {
+  color: #ffffff !important;
+}
+
+.quick-add-btn,
+html[data-theme="light"] .quick-add-btn,
+body.light-theme .quick-add-btn {
+  background: #0b0e14 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.quick-add-btn:hover,
+html[data-theme="light"] .quick-add-btn:hover,
+body.light-theme .quick-add-btn:hover {
+  background: #008ac9 !important;
+  color: #ffffff !important;
+  border-color: #008ac9 !important;
+  box-shadow: 0 6px 20px rgba(0, 138, 201, 0.4) !important;
+}
+
+.quick-view-btn,
+html[data-theme="light"] .quick-view-btn,
+body.light-theme .quick-view-btn {
+  background: rgba(11, 11, 13, 0.88) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.quick-view-btn:hover,
+html[data-theme="light"] .quick-view-btn:hover,
+body.light-theme .quick-view-btn:hover {
+  background: #008ac9 !important;
+  color: #ffffff !important;
+}

@@ -618,8 +618,6 @@ html[data-theme="light"] .about-stat-item,
 html[data-theme="light"] .contact-form-card,
 html[data-theme="light"] .contact-info-card,
 html[data-theme="light"] .contact-method-card,
-html[data-theme="light"] .stitch-showcase-media,
-html[data-theme="light"] .stitch-showcase-info,
 html[data-theme="light"] .stitch-spec-card,
 html[data-theme="light"] .vin-checker,
 html[data-theme="light"] .shop-filters-sidebar,
@@ -635,8 +633,6 @@ body.light-theme .about-stat-item,
 body.light-theme .contact-form-card,
 body.light-theme .contact-info-card,
 body.light-theme .contact-method-card,
-body.light-theme .stitch-showcase-media,
-body.light-theme .stitch-showcase-info,
 body.light-theme .stitch-spec-card,
 body.light-theme .vin-checker,
 body.light-theme .shop-filters-sidebar,
@@ -646,6 +642,14 @@ body.light-theme .product-info {
   border-color: rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
   color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .stitch-showcase-info,
+body.light-theme .stitch-showcase-info {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 html[data-theme="light"] .header-logo-icon,

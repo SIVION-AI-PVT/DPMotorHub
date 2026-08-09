@@ -234,12 +234,23 @@
 
 .stitch-showcase-media {
   position: relative;
-  height: 540px;
-  border-radius: var(--radius-md);
+  height: 560px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
-  box-shadow: var(--glass-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15);
+  background: #0b0e14;
+}
+
+.stitch-showcase-media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #008ac9 0%, #2b115a 50%, #f11a22 100%);
+  z-index: 5;
 }
 
 .stitch-showcase-img {
@@ -252,30 +263,52 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  background: rgba(11, 11, 13, 0.85);
-  backdrop-filter: var(--glass-blur);
+  background: rgba(11, 11, 13, 0.88) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 8px 18px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--glass-border);
-  border-left: 3px solid var(--m-blue);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-left: 3px solid var(--m-blue) !important;
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 4;
 }
 
 .stitch-media-title-overlay {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  padding: 24px;
-  border-radius: var(--radius-sm);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.6) 60%, transparent 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 40px 32px 28px !important;
+  border-radius: 0 !important;
+  z-index: 4;
+}
+
+.stitch-media-title-overlay .caption {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  color: #008ac9 !important;
+  margin-bottom: 4px !important;
+}
+
+.stitch-media-title-overlay .h1 {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
 }
 
 .stitch-specs-list {
@@ -286,41 +319,49 @@
 
 .stitch-spec-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
   padding: 20px 24px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--glass-border);
-  transition: all 0.3s;
+  border-radius: 16px;
+  background: rgba(20, 20, 26, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .stitch-spec-card:hover {
-  border-color: var(--m-blue);
-  background: var(--glass-bg-hover);
-  box-shadow: var(--glass-glow-blue);
-  transform: translateX(6px);
+  border-color: rgba(0, 138, 201, 0.5);
+  box-shadow: 0 12px 35px rgba(0, 138, 201, 0.25);
+  transform: translateX(8px);
 }
 
 .stitch-spec-id {
   font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--m-blue);
+  font-size: 16px;
+  font-weight: 800;
+  color: #008ac9 !important;
+  background: rgba(0, 138, 201, 0.12) !important;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 138, 201, 0.3);
+  min-width: 44px;
+  text-align: center;
 }
 
 .stitch-spec-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 4px;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 4px !important;
 }
 
 .stitch-spec-detail {
-  font-size: 13px;
-  color: var(--mid-gray);
+  font-size: 14px !important;
+  color: #94a3b8 !important;
+  line-height: 1.5 !important;
 }
 
 /* 3. Stitch Precision Verification & VIN Section */
@@ -757,4 +798,80 @@ body.light-theme .contact-info-card {
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
   color: #0b0e14 !important;
+}
+
+/* Showcase Badge Overlay (Always White on Dark Image Overlay) */
+.stitch-showcase-badge,
+html[data-theme="light"] .stitch-showcase-badge,
+body.light-theme .stitch-showcase-badge {
+  background: rgba(11, 11, 13, 0.88) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.stitch-showcase-badge span,
+.stitch-showcase-badge svg,
+html[data-theme="light"] .stitch-showcase-badge span,
+html[data-theme="light"] .stitch-showcase-badge svg,
+body.light-theme .stitch-showcase-badge span,
+body.light-theme .stitch-showcase-badge svg {
+  color: #ffffff !important;
+}
+
+/* Light Mode Spec Cards Override */
+html[data-theme="light"] .stitch-spec-card,
+body.light-theme .stitch-spec-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .stitch-spec-name,
+body.light-theme .stitch-spec-name {
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .stitch-spec-detail,
+body.light-theme .stitch-spec-detail {
+  color: #475569 !important;
+}
+
+/* Topic Pill Buttons (Contact Form Subject Selector) */
+.topic-pill-btn {
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--mid-gray);
+}
+
+.topic-pill-btn:hover {
+  border-color: #008ac9;
+  color: #008ac9;
+}
+
+.topic-pill-btn.selected {
+  background: #008ac9 !important;
+  color: #ffffff !important;
+  border-color: #008ac9 !important;
+  box-shadow: 0 4px 16px rgba(0, 138, 201, 0.4) !important;
+}
+
+html[data-theme="light"] .topic-pill-btn,
+body.light-theme .topic-pill-btn {
+  background: #f1f5f9;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #475569;
+}
+
+html[data-theme="light"] .topic-pill-btn.selected,
+body.light-theme .topic-pill-btn.selected {
+  background: #008ac9 !important;
+  color: #ffffff !important;
+  border-color: #008ac9 !important;
+  box-shadow: 0 4px 16px rgba(0, 138, 201, 0.3) !important;
 }

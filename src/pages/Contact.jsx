@@ -171,17 +171,7 @@ export default function Contact() {
                       key={t}
                       type="button"
                       onClick={() => setSelectedTopic(t)}
-                      style={{
-                        padding: "8px 14px",
-                        borderRadius: "50px",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                        border: selectedTopic === t ? "1px solid var(--m-blue)" : "1px solid rgba(255,255,255,0.12)",
-                        background: selectedTopic === t ? "rgba(0, 138, 201, 0.2)" : "rgba(255,255,255,0.04)",
-                        color: selectedTopic === t ? "#fff" : "var(--mid-gray)",
-                        cursor: "pointer",
-                        transition: "all 0.2s",
-                      }}
+                      className={`topic-pill-btn ${selectedTopic === t ? "selected" : ""}`}
                     >
                       {t}
                     </button>
