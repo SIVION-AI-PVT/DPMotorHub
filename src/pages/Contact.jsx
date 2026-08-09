@@ -19,20 +19,11 @@ import "./Home.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const glassCard = {
-  background: "rgba(20, 20, 26, 0.65)",
-  backdropFilter: "blur(20px) saturate(190%)",
-  WebkitBackdropFilter: "blur(20px) saturate(190%)",
-  border: "1px solid rgba(255,255,255,0.12)",
   borderRadius: "16px",
   padding: "32px",
 };
 
 const glassInput = {
-  background: "rgba(255,255,255,0.05)",
-  backdropFilter: "blur(12px)",
-  WebkitBackdropFilter: "blur(12px)",
-  border: "1px solid rgba(255,255,255,0.12)",
-  color: "white",
   borderRadius: "8px",
   width: "100%",
   padding: "14px 18px",
@@ -118,7 +109,6 @@ export default function Contact() {
               fontSize: "clamp(32px, 5vw, 56px)",
               fontWeight: 800,
               letterSpacing: "-0.03em",
-              color: "var(--white)",
               marginBottom: "16px",
             }}
           >
@@ -148,13 +138,12 @@ export default function Contact() {
             style={{ gap: "40px", alignItems: "flex-start" }}
           >
             {/* LEFT: Contact Form */}
-            <div style={glassCard}>
+            <div className="glass-card contact-form-card" style={glassCard}>
               <h2
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontSize: "22px",
                   fontWeight: 700,
-                  color: "var(--white)",
                   marginBottom: "20px",
                 }}
               >
@@ -377,7 +366,7 @@ export default function Contact() {
               style={{ display: "flex", flexDirection: "column", gap: "20px" }}
             >
               {/* WhatsApp Hotline */}
-              <div style={{ ...glassCard, borderLeft: "4px solid #25D366" }}>
+              <div className="glass-card contact-info-card" style={{ ...glassCard, borderLeft: "4px solid #25D366" }}>
                 <div
                   style={{
                     display: "flex",
@@ -392,7 +381,6 @@ export default function Contact() {
                       fontFamily: "var(--font-heading)",
                       fontSize: "18px",
                       fontWeight: 700,
-                      color: "var(--white)",
                     }}
                   >
                     WhatsApp Technical Hotline
@@ -420,7 +408,7 @@ export default function Contact() {
               </div>
 
               {/* HQ Address */}
-              <div style={glassCard}>
+              <div className="glass-card contact-info-card" style={glassCard}>
                 <div
                   style={{
                     display: "flex",
@@ -435,7 +423,6 @@ export default function Contact() {
                       fontFamily: "var(--font-heading)",
                       fontSize: "16px",
                       fontWeight: 700,
-                      color: "var(--white)",
                     }}
                   >
                     Munich Headquarters & Facility
@@ -462,7 +449,7 @@ export default function Contact() {
                   gap: "20px",
                 }}
               >
-                <div style={{ ...glassCard, padding: "24px" }}>
+                <div className="glass-card contact-info-card" style={{ ...glassCard, padding: "24px" }}>
                   <Clock
                     size={20}
                     color="var(--m-blue)"
@@ -473,7 +460,6 @@ export default function Contact() {
                       fontFamily: "var(--font-heading)",
                       fontSize: "14px",
                       fontWeight: 700,
-                      color: "var(--white)",
                       marginBottom: "8px",
                     }}
                   >
@@ -492,7 +478,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                <div style={{ ...glassCard, padding: "24px" }}>
+                <div className="glass-card contact-info-card" style={{ ...glassCard, padding: "24px" }}>
                   <Mail
                     size={20}
                     color="var(--m-blue)"
@@ -503,7 +489,6 @@ export default function Contact() {
                       fontFamily: "var(--font-heading)",
                       fontSize: "14px",
                       fontWeight: 700,
-                      color: "var(--white)",
                       marginBottom: "8px",
                     }}
                   >

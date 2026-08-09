@@ -1,0 +1,373 @@
+- generic [ref=f34e2]:
+  - generic [ref=f34e4]:
+    - generic [ref=f34e5]: 100% Genuine BMW M Performance Hardware
+    - generic [ref=f34e7]: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+  - banner [ref=f34e8]:
+    - generic [ref=f34e9]:
+      - link "DP Motorhub Homepage" [ref=f34e10] [cursor=pointer]:
+        - /url: /
+        - img "DP Emblem" [ref=f34e11]
+        - generic [ref=f34e12]: MOTORHUB
+      - navigation "Main Navigation" [ref=f34e15]:
+        - link "SHOP CATALOG" [ref=f34e16] [cursor=pointer]:
+          - /url: /shop
+        - link "ABOUT US" [ref=f34e17] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=f34e18] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f34e19]:
+        - button "Open Search Modal (Press Ctrl+K)" [ref=f34e20] [cursor=pointer]
+        - button "Switch to Dark theme" [ref=f34e24] [cursor=pointer]
+        - link "User Support / Account" [ref=f34e27] [cursor=pointer]:
+          - /url: /contact
+        - button "Open Shopping Cart with 2 items" [ref=f34e31] [cursor=pointer]:
+          - generic [ref=f34e35]: "2"
+  - main [ref=f34e36]:
+    - generic [ref=f34e37]:
+      - generic [ref=f34e38]:
+        - img "BMW M5 Hero" [ref=f34e40]
+        - generic [ref=f34e42]:
+          - heading "BORN ON THE TRACK" [level=1] [ref=f34e43]
+          - paragraph [ref=f34e44]: Uncompromising dynamics. Precision engineering. Experience the pinnacle of motorsport performance where every detail is designed for velocity.
+          - generic [ref=f34e45]:
+            - link "EXPLORE PARTS" [ref=f34e46] [cursor=pointer]:
+              - /url: /shop
+            - link "CONFIGURE M-CAR" [ref=f34e50] [cursor=pointer]:
+              - /url: /shop?sort=model
+          - generic [ref=f34e55]:
+            - generic [ref=f34e56]:
+              - generic [ref=f34e57]: CHASSIS / MODEL
+              - combobox [ref=f34e58]:
+                - option "Select BMW Model (e.g. G80 M3, F90 M5)..." [selected]
+                - option "G80 M3 Sedan (2021+)"
+                - option "G82 M4 Coupe (2021+)"
+                - option "F80 M3 Sedan (2014-2018)"
+                - option "F82 M4 Coupe (2014-2020)"
+                - option "F90 M5 Sedan (2018+)"
+                - option "F87 M2 Coupe (2016-2021)"
+            - generic [ref=f34e59]:
+              - generic [ref=f34e60]: PART CATEGORY
+              - combobox [ref=f34e61]:
+                - option "All Categories..." [selected]
+                - option "Engine & Performance"
+                - option "Brakes & Suspension"
+                - option "Exterior & Carbon Aero"
+                - option "Wheels & Spacers"
+                - option "Interior & Trim"
+            - button "FIND FITMENT" [ref=f34e62] [cursor=pointer]
+      - generic [ref=f34e67]:
+        - generic [ref=f34e68]:
+          - generic [ref=f34e69]: 100%
+          - generic [ref=f34e70]: GENUINE BMW M OEM
+        - generic [ref=f34e72]:
+          - generic [ref=f34e73]: NÜRBURGRING
+          - generic [ref=f34e74]: TRACK-ENGINEERED
+        - generic [ref=f34e76]:
+          - generic [ref=f34e77]: 24-HOUR
+          - generic [ref=f34e78]: EXPRESS AIR FREIGHT
+        - generic [ref=f34e80]:
+          - generic [ref=f34e81]: 5,000+
+          - generic [ref=f34e82]: M CARS EQUIPPED
+      - generic [ref=f34e85]:
+        - generic [ref=f34e86]:
+          - img "BMW M Parts" [ref=f34e87]
+          - generic [ref=f34e88]: M5 CS SPECIFICATION
+          - generic [ref=f34e92]:
+            - generic [ref=f34e93]: THE ALL-NEW
+            - heading "BMW M5 CS" [level=2] [ref=f34e94]
+        - generic [ref=f34e95]:
+          - generic [ref=f34e96]: ENGINEERING HIGHLIGHTS
+          - heading "The Peak Of Performance" [level=2] [ref=f34e97]
+          - generic [ref=f34e98]:
+            - generic [ref=f34e99]:
+              - generic [ref=f34e100]: "01"
+              - generic [ref=f34e101]:
+                - heading "THE TRACK" [level=4] [ref=f34e102]
+                - paragraph [ref=f34e103]: 635 HP, S63 4.4L V8 Twin-Turbo Engine
+            - generic [ref=f34e104]:
+              - generic [ref=f34e105]: "02"
+              - generic [ref=f34e106]:
+                - heading "EXHAUST SYSTEM" [level=4] [ref=f34e107]
+                - paragraph [ref=f34e108]: Grade-1 Titanium Quad Acoustics
+            - generic [ref=f34e109]:
+              - generic [ref=f34e110]: "03"
+              - generic [ref=f34e111]:
+                - heading "AERODYNAMICS" [level=4] [ref=f34e112]
+                - paragraph [ref=f34e113]: Pre-preg Carbon Fiber Hood & Splitter
+            - generic [ref=f34e114]:
+              - generic [ref=f34e115]: "04"
+              - generic [ref=f34e116]:
+                - heading "ALCANTARA & TRIM" [level=4] [ref=f34e117]
+                - paragraph [ref=f34e118]: M Carbon Bucket Seats & Tricolor Stitch
+          - link "EXPLORE M5 CS PARTS" [ref=f34e120] [cursor=pointer]:
+            - /url: /shop?chassis=F90
+      - generic [ref=f34e125]:
+        - generic [ref=f34e126]: VIN FITMENT SEARCH
+        - heading "PRECISION VERIFICATION" [level=2] [ref=f34e127]
+        - paragraph [ref=f34e128]: Select your M chassis code or enter your 17-digit VIN to unlock a bespoke catalog of genuine M Performance parts engineered specifically for your vehicle.
+        - generic [ref=f34e129]:
+          - textbox "ENTER 17-DIGIT VIN HERE (e.g. WBS83AY000)..." [ref=f34e130]
+          - button "VERIFY" [ref=f34e131] [cursor=pointer]
+      - generic [ref=f34e136]:
+        - generic [ref=f34e137]:
+          - generic [ref=f34e138]:
+            - generic [ref=f34e139]: CATALOG SELECTION
+            - heading "AVAILABLE M-INVENTORY" [level=2] [ref=f34e140]
+          - generic [ref=f34e141]:
+            - button "ALL MODELS" [ref=f34e142] [cursor=pointer]
+            - button "G80 M3" [ref=f34e143] [cursor=pointer]
+            - button "G82 M4" [ref=f34e144] [cursor=pointer]
+            - button "F90 M5" [ref=f34e145] [cursor=pointer]
+            - button "F87 M2" [ref=f34e146] [cursor=pointer]
+        - generic [ref=f34e147]:
+          - button "View M Performance Carbon Fiber Front Splitter" [ref=f34e148] [cursor=pointer]:
+            - generic [ref=f34e149]:
+              - img "M Performance Carbon Fiber Front Splitter" [ref=f34e150]
+              - generic [ref=f34e151]: GENUINE M
+              - generic [ref=f34e155]:
+                - button "Add M Performance Carbon Fiber Front Splitter to cart" [ref=f34e156]: ADD TO CART
+                - button "Quick view M Performance Carbon Fiber Front Splitter" [ref=f34e160]
+            - generic [ref=f34e164]:
+              - generic [ref=f34e165]: G80 M3 • G82 M4
+              - link [ref=f34e166]:
+                - /url: /product/1
+                - heading "M Performance Carbon Fiber Front Splitter" [level=3] [ref=f34e167]
+              - generic [ref=f34e168]: "OEM #51192475168"
+              - generic [ref=f34e169]:
+                - generic [ref=f34e170]: LKR 555,000
+                - generic [ref=f34e171]: IN STOCK
+          - button "View M Performance Steering Wheel V2 (Alcantara / Carbon)" [ref=f34e173] [cursor=pointer]:
+            - generic [ref=f34e174]:
+              - img "M Performance Steering Wheel V2 (Alcantara / Carbon)" [ref=f34e175]
+              - generic [ref=f34e176]: GENUINE M
+              - generic [ref=f34e180]:
+                - button "Add M Performance Steering Wheel V2 (Alcantara / Carbon) to cart" [ref=f34e181]: ADD TO CART
+                - button "Quick view M Performance Steering Wheel V2 (Alcantara / Carbon)" [ref=f34e185]
+            - generic [ref=f34e189]:
+              - generic [ref=f34e190]: F80 M3 • F82 M4 • F87 M2
+              - link [ref=f34e191]:
+                - /url: /product/2
+                - heading "M Performance Steering Wheel V2 (Alcantara / Carbon)" [level=3] [ref=f34e192]
+              - generic [ref=f34e193]: "OEM #32302413014"
+              - generic [ref=f34e194]:
+                - generic [ref=f34e195]: LKR 375,000
+                - generic [ref=f34e196]: IN STOCK
+          - button "View Titanium Exhaust System with Carbon Tips" [ref=f34e198] [cursor=pointer]:
+            - generic [ref=f34e199]:
+              - img "Titanium Exhaust System with Carbon Tips" [ref=f34e200]
+              - generic [ref=f34e201]: GENUINE M
+              - generic [ref=f34e205]:
+                - button "Add Titanium Exhaust System with Carbon Tips to cart" [ref=f34e206]: ADD TO CART
+                - button "Quick view Titanium Exhaust System with Carbon Tips" [ref=f34e210]
+            - generic [ref=f34e214]:
+              - generic [ref=f34e215]: F90 M5
+              - link [ref=f34e216]:
+                - /url: /product/3
+                - heading "Titanium Exhaust System with Carbon Tips" [level=3] [ref=f34e217]
+              - generic [ref=f34e218]: "OEM #18302456070"
+              - generic [ref=f34e219]:
+                - generic [ref=f34e220]: LKR 1,260,000
+                - generic [ref=f34e221]: IN STOCK
+          - button "View Forged Lightweight Alloy Wheels 763M Set" [ref=f34e223] [cursor=pointer]:
+            - generic [ref=f34e224]:
+              - img "Forged Lightweight Alloy Wheels 763M Set" [ref=f34e225]
+              - generic [ref=f34e226]: GENUINE M
+              - generic [ref=f34e230]:
+                - button "Add Forged Lightweight Alloy Wheels 763M Set to cart" [ref=f34e231]: ADD TO CART
+                - button "Quick view Forged Lightweight Alloy Wheels 763M Set" [ref=f34e235]
+            - generic [ref=f34e239]:
+              - generic [ref=f34e240]: F87 M2 • F80 M3
+              - link [ref=f34e241]:
+                - /url: /product/4
+                - heading "Forged Lightweight Alloy Wheels 763M Set" [level=3] [ref=f34e242]
+              - generic [ref=f34e243]: "OEM #36112449763"
+              - generic [ref=f34e244]:
+                - generic [ref=f34e245]: LKR 1,140,000
+                - generic [ref=f34e246]: IN STOCK
+          - button "View Carbon Ceramic Brake Package (Front & Rear)" [ref=f34e248] [cursor=pointer]:
+            - generic [ref=f34e249]:
+              - img "Carbon Ceramic Brake Package (Front & Rear)" [ref=f34e250]
+              - generic [ref=f34e251]: GENUINE M
+              - generic [ref=f34e255]:
+                - button "Add Carbon Ceramic Brake Package (Front & Rear) to cart" [ref=f34e256]: ADD TO CART
+                - button "Quick view Carbon Ceramic Brake Package (Front & Rear)" [ref=f34e260]
+            - generic [ref=f34e264]:
+              - generic [ref=f34e265]: G80 M3 • G82 M4 • F90 M5
+              - link [ref=f34e266]:
+                - /url: /product/5
+                - heading "Carbon Ceramic Brake Package (Front & Rear)" [level=3] [ref=f34e267]
+              - generic [ref=f34e268]: "OEM #34112456071"
+              - generic [ref=f34e269]:
+                - generic [ref=f34e270]: LKR 2,550,000
+                - generic [ref=f34e271]: IN STOCK
+          - button "View M Performance Carbon Fiber Mirror Caps" [ref=f34e273] [cursor=pointer]:
+            - generic [ref=f34e274]:
+              - img "M Performance Carbon Fiber Mirror Caps" [ref=f34e275]
+              - generic [ref=f34e276]: GENUINE M
+              - generic [ref=f34e280]:
+                - button "Add M Performance Carbon Fiber Mirror Caps to cart" [ref=f34e281]: ADD TO CART
+                - button "Quick view M Performance Carbon Fiber Mirror Caps" [ref=f34e285]
+            - generic [ref=f34e289]:
+              - generic [ref=f34e290]: G80 M3 • G82 M4 • G87 M2
+              - link [ref=f34e291]:
+                - /url: /product/6
+                - heading "M Performance Carbon Fiber Mirror Caps" [level=3] [ref=f34e292]
+              - generic [ref=f34e293]: "OEM #51162465741"
+              - generic [ref=f34e294]:
+                - generic [ref=f34e295]: LKR 135,000
+                - generic [ref=f34e296]: IN STOCK
+          - button "View M Performance Carbon Rear Diffuser" [ref=f34e298] [cursor=pointer]:
+            - generic [ref=f34e299]:
+              - img "M Performance Carbon Rear Diffuser" [ref=f34e300]
+              - generic [ref=f34e301]: GENUINE M
+              - generic [ref=f34e305]:
+                - button "Add M Performance Carbon Rear Diffuser to cart" [ref=f34e306]: ADD TO CART
+                - button "Quick view M Performance Carbon Rear Diffuser" [ref=f34e310]
+            - generic [ref=f34e314]:
+              - generic [ref=f34e315]: G80 M3 • G82 M4
+              - link [ref=f34e316]:
+                - /url: /product/7
+                - heading "M Performance Carbon Rear Diffuser" [level=3] [ref=f34e317]
+              - generic [ref=f34e318]: "OEM #51192475169"
+              - generic [ref=f34e319]:
+                - generic [ref=f34e320]: LKR 495,000
+                - generic [ref=f34e321]: IN STOCK
+          - button "View S58 High-Flow Cold Air Intake System" [ref=f34e323] [cursor=pointer]:
+            - generic [ref=f34e324]:
+              - img "S58 High-Flow Cold Air Intake System" [ref=f34e325]
+              - generic [ref=f34e326]: GENUINE M
+              - generic [ref=f34e330]:
+                - button "Add S58 High-Flow Cold Air Intake System to cart" [ref=f34e331]: ADD TO CART
+                - button "Quick view S58 High-Flow Cold Air Intake System" [ref=f34e335]
+            - generic [ref=f34e339]:
+              - generic [ref=f34e340]: G80 M3 • G82 M4 • G87 M2
+              - link [ref=f34e341]:
+                - /url: /product/8
+                - heading "S58 High-Flow Cold Air Intake System" [level=3] [ref=f34e342]
+              - generic [ref=f34e343]: "OEM #13712470088"
+              - generic [ref=f34e344]:
+                - generic [ref=f34e345]: LKR 345,000
+                - generic [ref=f34e346]: IN STOCK
+        - link "VIEW FULL INVENTORY" [ref=f34e349] [cursor=pointer]:
+          - /url: /shop
+      - generic [ref=f34e354]:
+        - heading "Why DP Motorhub?" [level=2] [ref=f34e355]: Why DPMotorhub?
+        - generic [ref=f34e356]:
+          - generic [ref=f34e357]:
+            - heading "Only Certified Motors & OEM" [level=3] [ref=f34e362]
+            - paragraph [ref=f34e363]: 100% genuine BMW M parts and certified tuning components with factory warranties.
+          - generic [ref=f34e364]:
+            - heading "VIN Fitment Verification" [level=3] [ref=f34e370]
+            - paragraph [ref=f34e371]: Enter your 17-digit VIN to confirm exact factory compatibility before ordering.
+          - generic [ref=f34e372]:
+            - heading "Free Express Delivery" [level=3] [ref=f34e379]
+            - paragraph [ref=f34e380]: Worldwide 24-hour dispatch on all in-stock carbon fiber and performance parts.
+          - generic [ref=f34e381]:
+            - heading "30 Days Money Back" [level=3] [ref=f34e386]
+            - paragraph [ref=f34e387]: Full 30-day return policy for uninstalled components in original packaging.
+          - generic [ref=f34e388]:
+            - heading "Pre-Approved Quality" [level=3] [ref=f34e393]
+            - paragraph [ref=f34e394]: Every part is inspected under high-intensity UV lighting for weave symmetry and finish.
+          - generic [ref=f34e395]:
+            - heading "Extra Service & Support" [level=3] [ref=f34e400]
+            - paragraph [ref=f34e401]: BMW Master Technicians on standby for torque specs, installation guides, and support.
+      - generic [ref=f34e403]:
+        - 'heading "Need a rare M part? We''re here for you: 100% genuine VIN fitment & express sourcing" [level=2] [ref=f34e404]': "Need a rare M part?We're here for you: 100% genuineVIN fitment & express sourcing"
+        - link "Find Out More" [ref=f34e406] [cursor=pointer]:
+          - /url: https://wa.me/15556769377
+      - img "BMW M Performance Engineering" [ref=f34e411]
+      - generic [ref=f34e414]:
+        - generic [ref=f34e415]:
+          - heading "Visit us & upgrade your M car today!" [level=2] [ref=f34e416]: Visit us & upgradeyour M car today!
+          - link "sales@dpmotorhub.com" [ref=f34e418] [cursor=pointer]:
+            - /url: mailto:sales@dpmotorhub.com
+          - generic [ref=f34e419]: DP Motorhub GmbHSchleißheimer Str. 200, 80809 Munich, Germany
+          - generic [ref=f34e420]: +1 555-676-9377+1 555-M-POWER
+        - generic [ref=f34e421]:
+          - generic [ref=f34e422]: Map | Satellite
+          - generic [ref=f34e424]:
+            - strong [ref=f34e425]: DP Motorhub Munich HQ
+            - paragraph [ref=f34e426]: Schleißheimer Str. 200, Munich
+            - link "Directions ↗" [ref=f34e427] [cursor=pointer]:
+              - /url: https://maps.google.com
+  - contentinfo [ref=f34e428]:
+    - generic [ref=f34e429]:
+      - generic [ref=f34e430]:
+        - generic [ref=f34e431]:
+          - link "DP Emblem MOTORHUB" [ref=f34e432] [cursor=pointer]:
+            - /url: /
+            - img "DP Emblem" [ref=f34e433]
+            - generic [ref=f34e434]: MOTORHUB
+          - paragraph [ref=f34e437]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=f34e438]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=f34e443]:
+            - link "WhatsApp Support" [ref=f34e444] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email Support" [ref=f34e447] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone Support" [ref=f34e451] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global Support" [ref=f34e454] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f34e458]:
+          - heading "M PARTS CATALOG" [level=4] [ref=f34e459]
+          - list [ref=f34e460]:
+            - listitem [ref=f34e461]:
+              - link "Engine & Performance" [ref=f34e462] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=f34e463]:
+              - link "Brakes & Suspension" [ref=f34e464] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=f34e465]:
+              - link "Exterior & Carbon Aero" [ref=f34e466] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=f34e467]:
+              - link "Wheels & Spacers" [ref=f34e468] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=f34e469]:
+              - link "Interior & Trim" [ref=f34e470] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=f34e471]:
+          - heading "BMW M CHASSIS" [level=4] [ref=f34e472]
+          - list [ref=f34e473]:
+            - listitem [ref=f34e474]:
+              - link "BMW G80 M3 / G82 M4" [ref=f34e475] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=f34e476]:
+              - link "BMW F80 M3 / F82 M4" [ref=f34e477] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=f34e478]:
+              - link "BMW F90 M5 Competition" [ref=f34e479] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=f34e480]:
+              - link "BMW F87 M2 / G87 M2" [ref=f34e481] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=f34e482]:
+              - link "About DP Motorhub" [ref=f34e483] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f34e484]:
+              - link "Technical Fitment Support" [ref=f34e485] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f34e486]:
+          - heading "INSIDER ACCESS" [level=4] [ref=f34e487]
+          - paragraph [ref=f34e488]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=f34e489]:
+            - textbox "Enter your email address..." [ref=f34e491]
+            - button "SUBSCRIBE" [ref=f34e492] [cursor=pointer]
+      - generic [ref=f34e497]:
+        - paragraph [ref=f34e498]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=f34e499]:
+          - generic [ref=f34e500]: VISA
+          - generic [ref=f34e501]: MASTERCARD
+          - generic [ref=f34e502]: APPLE PAY
+          - generic [ref=f34e503]: PAYPAL
+          - generic [ref=f34e504]: KLARNA
+        - generic [ref=f34e505]:
+          - link "Admin Panel" [ref=f34e506] [cursor=pointer]:
+            - /url: https://app.pagescms.org/SIVION-AI-PVT/DPMotorHub
+          - link "Privacy Policy" [ref=f34e507] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=f34e508] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=f34e509] [cursor=pointer]:
+            - /url: /contact

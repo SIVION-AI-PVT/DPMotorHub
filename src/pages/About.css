@@ -237,3 +237,42 @@
     height: 320px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES FOR ABOUT PAGE COMPONENTS
+   ═══════════════════════════════════════════════════════════════ */
+html[data-theme="light"] .about-value-card,
+html[data-theme="light"] .about-team-card,
+html[data-theme="light"] .about-stats-grid,
+html[data-theme="light"] .about-media-badge,
+body.light-theme .about-value-card,
+body.light-theme .about-team-card,
+body.light-theme .about-stats-grid,
+body.light-theme .about-media-badge {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .about-team-card h3,
+html[data-theme="light"] .about-value-card h3,
+html[data-theme="light"] .about-media-badge h4,
+html[data-theme="light"] .about-stat-number,
+body.light-theme .about-team-card h3,
+body.light-theme .about-value-card h3,
+body.light-theme .about-media-badge h4,
+body.light-theme .about-stat-number {
+  color: #0b0e14 !important;
+  background: none !important;
+  -webkit-text-fill-color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .about-team-card p,
+html[data-theme="light"] .about-value-card p,
+html[data-theme="light"] .about-stat-label,
+body.light-theme .about-team-card p,
+body.light-theme .about-value-card p,
+body.light-theme .about-stat-label {
+  color: #475569 !important;
+}

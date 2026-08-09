@@ -1,0 +1,201 @@
+- generic [ref=f41e2]:
+  - generic [ref=f41e4]:
+    - generic [ref=f41e5]: 100% Genuine BMW M Performance Hardware
+    - generic [ref=f41e7]: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+  - banner [ref=f41e8]:
+    - generic [ref=f41e9]:
+      - link "DP Motorhub Homepage" [ref=f41e10] [cursor=pointer]:
+        - /url: /
+        - img "DP Emblem" [ref=f41e11]
+        - generic [ref=f41e12]: MOTORHUB
+      - navigation "Main Navigation" [ref=f41e15]:
+        - link "SHOP CATALOG" [ref=f41e16] [cursor=pointer]:
+          - /url: /shop
+        - link "ABOUT US" [ref=f41e17] [cursor=pointer]:
+          - /url: /about
+        - link "CONTACT" [ref=f41e18] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f41e19]:
+        - button "Open Search Modal (Press Ctrl+K)" [ref=f41e20] [cursor=pointer]
+        - button "Switch to Dark theme" [ref=f41e24] [cursor=pointer]
+        - link "User Support / Account" [ref=f41e27] [cursor=pointer]:
+          - /url: /contact
+        - button "Open Shopping Cart with 2 items" [ref=f41e31] [cursor=pointer]:
+          - generic [ref=f41e35]: "2"
+  - main [ref=f41e36]:
+    - generic [ref=f41e37]:
+      - generic [ref=f41e38]:
+        - img "BMW M Motorsport Hardware" [ref=f41e40]
+        - generic [ref=f41e42]:
+          - generic [ref=f41e43]: OUR HERITAGE & MOTORSPORT PASSION
+          - heading "BORN ON THE TRACK. BUILT FOR THE ROAD." [level=1] [ref=f41e45]: BORN ON THE TRACK.BUILT FOR THE ROAD.
+          - paragraph [ref=f41e46]: DP Motorhub is a dedicated sanctuary for BMW M performance hardware, genuine OEM components, and track-engineered aerodynamics built to factory specs.
+          - generic [ref=f41e47]:
+            - link "EXPLORE CATALOG" [ref=f41e48] [cursor=pointer]:
+              - /url: /shop
+            - link "CONTACT TECHNICIAN" [ref=f41e52] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=f41e58]:
+        - generic [ref=f41e59]:
+          - generic [ref=f41e60]: 100%
+          - generic [ref=f41e61]: Genuine BMW OEM Parts
+        - generic [ref=f41e62]:
+          - generic [ref=f41e63]: 15,000+
+          - generic [ref=f41e64]: M Chassis Upgraded
+        - generic [ref=f41e65]:
+          - generic [ref=f41e66]: < 0.01%
+          - generic [ref=f41e67]: Fitment Tolerance
+        - generic [ref=f41e68]:
+          - generic [ref=f41e69]: 24-HOUR
+          - generic [ref=f41e70]: Dispatch Guarantee
+      - generic [ref=f41e73]:
+        - generic [ref=f41e74]:
+          - generic [ref=f41e75]: THE PURSUIT OF PERFECTION
+          - heading "Uncompromising German Motorsport Engineering" [level=2] [ref=f41e76]
+          - paragraph [ref=f41e77]: DP Motorhub was established by a collective of BMW M enthusiasts who were tired of navigating generic auto parts marketplaces to find genuine performance upgrades. We created a dedicated sanctuary that matches the exact engineering standards of Nürburgring-tested M-cars.
+          - paragraph [ref=f41e78]: Every splitter, steering wheel, titanium exhaust, and carbon ceramic brake system in our catalog has been verified by our in-house engineering team to guarantee 100% factory fitment and authentic BMW provenance.
+        - generic [ref=f41e79]:
+          - img "DP Motorhub Carbon Aero" [ref=f41e80]
+          - generic [ref=f41e81]:
+            - generic [ref=f41e82]: M PERFORMANCE STANDARDS
+            - heading "Factory-Gapped 100% Pre-preg Dry Carbon" [level=4] [ref=f41e83]
+      - generic [ref=f41e85]:
+        - generic [ref=f41e86]:
+          - generic [ref=f41e87]: OUR GUIDING PRINCIPLES
+          - heading "Why BMW Enthusiasts Trust Us" [level=2] [ref=f41e88]
+        - generic [ref=f41e89]:
+          - generic [ref=f41e90]:
+            - heading "100% Genuine Provenance" [level=3] [ref=f41e94]
+            - paragraph [ref=f41e95]: Only authentic BMW OEM parts and top-tier verified motorsport manufacturers.
+          - generic [ref=f41e96]:
+            - heading "Technical Precision" [level=3] [ref=f41e101]
+            - paragraph [ref=f41e102]: Engineered by enthusiasts. We know exact chassis codes, torque specs, and fitment nuances.
+          - generic [ref=f41e103]:
+            - heading "24-Hour Fulfillment" [level=3] [ref=f41e106]
+            - paragraph [ref=f41e107]: Rapid dispatch with tracked global logistics to get your car back on track swiftly.
+          - generic [ref=f41e108]:
+            - heading "Direct Master Support" [level=3] [ref=f41e114]
+            - paragraph [ref=f41e115]: VIN verification and technical fitment guidance directly via WhatsApp or Email.
+      - generic [ref=f41e118]:
+        - generic [ref=f41e119]:
+          - img "Munich Quality Assurance Facility" [ref=f41e120]
+          - generic [ref=f41e121]:
+            - generic [ref=f41e122]: MUNICH HEADQUARTERS
+            - heading "Track & Fitment Inspection Facility" [level=4] [ref=f41e123]
+        - generic [ref=f41e124]:
+          - generic [ref=f41e125]: OUR WORKSHOP & FACILITY
+          - heading "Track-Tested Quality Control" [level=2] [ref=f41e126]
+          - paragraph [ref=f41e127]: Inside our specialized Munich workshop and fulfillment facility, every carbon fiber component and performance hardware piece undergoes rigorous multi-point verification before dispatch.
+          - generic [ref=f41e128]:
+            - generic [ref=f41e129]: 100% Autoclave Pre-preg Dry Carbon Fiber Inspection
+            - generic [ref=f41e134]: Ultrasonic Fitment Tolerance Checking
+            - generic [ref=f41e139]: Factory-Sealed Genuine BMW Hologram Verification
+            - generic [ref=f41e144]: High-Intensity UV Weave Symmetry Audit
+          - link "EXPLORE M-CATALOG" [ref=f41e149] [cursor=pointer]:
+            - /url: /shop
+      - generic [ref=f41e154]:
+        - generic [ref=f41e155]:
+          - generic [ref=f41e156]: IN-HOUSE EXPERTISE
+          - heading "BMW Master Technician Support" [level=2] [ref=f41e157]
+          - paragraph [ref=f41e158]: Our support team consists of certified master mechanics and chassis engineers dedicated to answering your technical fitment queries.
+        - generic [ref=f41e159]:
+          - generic [ref=f41e160]:
+            - generic [ref=f41e164]: VIN & Fitment Verification
+            - heading "Master Chassis Engineers" [level=3] [ref=f41e165]
+            - paragraph [ref=f41e166]: Cross-referencing factory schematics and ETK databases to guarantee 100% bolt-on precision for your specific M chassis.
+          - generic [ref=f41e167]:
+            - generic [ref=f41e172]: Motorsport & Aerodynamics
+            - heading "Carbon Aero Technicians" [level=3] [ref=f41e173]
+            - paragraph [ref=f41e174]: Specialized in pre-preg autoclave dry carbon splitters, rear wings, and diffusers engineered for functional downforce.
+          - generic [ref=f41e175]:
+            - generic [ref=f41e180]: Track & Performance Tuning
+            - heading "Powertrain Specialists" [level=3] [ref=f41e181]
+            - paragraph [ref=f41e182]: Advising on S55, S58, S63, and S68 power upgrades, titanium acoustics, and brake cooling thermodynamics.
+      - generic [ref=f41e184]:
+        - heading "Ready to elevate your BMW M experience? Browse our curated inventory or reach out to our technicians" [level=2] [ref=f41e185]: Ready to elevate your BMW M experience?Browse our curated inventory or reach out to our technicians
+        - generic [ref=f41e186]:
+          - link "Shop M Catalog" [ref=f41e187] [cursor=pointer]:
+            - /url: /shop
+          - link "Get Technical Advice" [ref=f41e191] [cursor=pointer]:
+            - /url: /contact
+  - contentinfo [ref=f41e195]:
+    - generic [ref=f41e196]:
+      - generic [ref=f41e197]:
+        - generic [ref=f41e198]:
+          - link "DP Emblem MOTORHUB" [ref=f41e199] [cursor=pointer]:
+            - /url: /
+            - img "DP Emblem" [ref=f41e200]
+            - generic [ref=f41e201]: MOTORHUB
+          - paragraph [ref=f41e204]: Specialist retailer of authentic BMW M Performance parts, dry carbon fiber aerodynamic components, and track-engineered upgrades.
+          - generic [ref=f41e205]: 100% Genuine BMW OEM Guaranteed
+          - generic [ref=f41e210]:
+            - link "WhatsApp Support" [ref=f41e211] [cursor=pointer]:
+              - /url: https://wa.me/15556769377
+            - link "Email Support" [ref=f41e214] [cursor=pointer]:
+              - /url: mailto:sales@dpmotorhub.com
+            - link "Phone Support" [ref=f41e218] [cursor=pointer]:
+              - /url: tel:+15556769377
+            - link "Global Support" [ref=f41e221] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f41e225]:
+          - heading "M PARTS CATALOG" [level=4] [ref=f41e226]
+          - list [ref=f41e227]:
+            - listitem [ref=f41e228]:
+              - link "Engine & Performance" [ref=f41e229] [cursor=pointer]:
+                - /url: /shop?category=engine
+            - listitem [ref=f41e230]:
+              - link "Brakes & Suspension" [ref=f41e231] [cursor=pointer]:
+                - /url: /shop?category=brakes-suspension
+            - listitem [ref=f41e232]:
+              - link "Exterior & Carbon Aero" [ref=f41e233] [cursor=pointer]:
+                - /url: /shop?category=exterior
+            - listitem [ref=f41e234]:
+              - link "Wheels & Spacers" [ref=f41e235] [cursor=pointer]:
+                - /url: /shop?category=wheels
+            - listitem [ref=f41e236]:
+              - link "Interior & Trim" [ref=f41e237] [cursor=pointer]:
+                - /url: /shop?category=interior
+        - generic [ref=f41e238]:
+          - heading "BMW M CHASSIS" [level=4] [ref=f41e239]
+          - list [ref=f41e240]:
+            - listitem [ref=f41e241]:
+              - link "BMW G80 M3 / G82 M4" [ref=f41e242] [cursor=pointer]:
+                - /url: /shop?chassis=G80
+            - listitem [ref=f41e243]:
+              - link "BMW F80 M3 / F82 M4" [ref=f41e244] [cursor=pointer]:
+                - /url: /shop?chassis=F80
+            - listitem [ref=f41e245]:
+              - link "BMW F90 M5 Competition" [ref=f41e246] [cursor=pointer]:
+                - /url: /shop?chassis=F90
+            - listitem [ref=f41e247]:
+              - link "BMW F87 M2 / G87 M2" [ref=f41e248] [cursor=pointer]:
+                - /url: /shop?chassis=F87
+            - listitem [ref=f41e249]:
+              - link "About DP Motorhub" [ref=f41e250] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f41e251]:
+              - link "Technical Fitment Support" [ref=f41e252] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f41e253]:
+          - heading "INSIDER ACCESS" [level=4] [ref=f41e254]
+          - paragraph [ref=f41e255]: Subscribe for limited M Performance part drops and technical fitment bulletins.
+          - generic [ref=f41e256]:
+            - textbox "Enter your email address..." [ref=f41e258]
+            - button "SUBSCRIBE" [ref=f41e259] [cursor=pointer]
+      - generic [ref=f41e264]:
+        - paragraph [ref=f41e265]: © 2026 DP Motorhub GmbH. All Rights Reserved. Not affiliated with BMW AG.
+        - generic [ref=f41e266]:
+          - generic [ref=f41e267]: VISA
+          - generic [ref=f41e268]: MASTERCARD
+          - generic [ref=f41e269]: APPLE PAY
+          - generic [ref=f41e270]: PAYPAL
+          - generic [ref=f41e271]: KLARNA
+        - generic [ref=f41e272]:
+          - link "Admin Panel" [ref=f41e273] [cursor=pointer]:
+            - /url: https://app.pagescms.org/SIVION-AI-PVT/DPMotorHub
+          - link "Privacy Policy" [ref=f41e274] [cursor=pointer]:
+            - /url: /contact
+          - link "Terms of Service" [ref=f41e275] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping & Return Policy" [ref=f41e276] [cursor=pointer]:
+            - /url: /contact

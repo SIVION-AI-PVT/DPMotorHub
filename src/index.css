@@ -508,3 +508,365 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ULTRA-PREMIUM LIGHT THEME OVERRIDES ([data-theme="light"] / .light-theme)
+   ═══════════════════════════════════════════════════════════════ */
+html[data-theme="light"],
+body.light-theme {
+  --charcoal: #f4f6fa;
+  --charcoal-elevated: #ffffff;
+  --white: #0b0e14;
+  --graphite: #e2e7f0;
+  --graphite-light: #cbd5e1;
+  --light-gray: #1e293b;
+  --mid-gray: #475569;
+  --border-color: rgba(0, 0, 0, 0.08);
+
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg-hover: rgba(255, 255, 255, 0.98);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-glow: rgba(0, 138, 201, 0.4);
+  --glass-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+
+  background-color: #f4f6fa !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] body {
+  background-color: #f4f6fa !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] body::before,
+body.light-theme::before {
+  background: radial-gradient(circle at 10% 20%, rgba(0, 138, 201, 0.06) 0%, transparent 60%);
+}
+
+html[data-theme="light"] body::after,
+body.light-theme::after {
+  background: radial-gradient(circle at 90% 80%, rgba(241, 26, 34, 0.04) 0%, transparent 60%);
+}
+
+/* Light Theme Header & Top Announcement Bar */
+html[data-theme="light"] .top-announcement-bar,
+body.light-theme .top-announcement-bar {
+  background: #eef2f7 !important;
+  color: #0b0e14 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .announcement-info,
+body.light-theme .announcement-info {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .header-main,
+body.light-theme .header-main {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="light"] .logo-text-premium,
+body.light-theme .logo-text-premium {
+  background: linear-gradient(135deg, #0b0e14 0%, #1e293b 60%, #008ac9 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="light"] .nav-link,
+body.light-theme .nav-link {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .nav-link:hover,
+html[data-theme="light"] .nav-link.active,
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active {
+  color: #008ac9 !important;
+  background: rgba(0, 138, 201, 0.08) !important;
+  border-color: rgba(0, 138, 201, 0.3) !important;
+}
+
+html[data-theme="light"] .action-icon-btn,
+body.light-theme .action-icon-btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #0b0e14 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .action-icon-btn:hover,
+body.light-theme .action-icon-btn:hover {
+  background: rgba(0, 138, 201, 0.1) !important;
+  color: #008ac9 !important;
+  border-color: rgba(0, 138, 201, 0.4) !important;
+}
+
+/* Light Theme Cards, Containers & Sections */
+html[data-theme="light"] .glass-card,
+html[data-theme="light"] .product-card,
+html[data-theme="light"] .wix-map-card,
+html[data-theme="light"] .wix-why-card,
+html[data-theme="light"] .about-team-card,
+html[data-theme="light"] .about-value-card,
+html[data-theme="light"] .about-stat-item,
+html[data-theme="light"] .contact-form-card,
+html[data-theme="light"] .contact-info-card,
+html[data-theme="light"] .contact-method-card,
+html[data-theme="light"] .stitch-showcase-media,
+html[data-theme="light"] .stitch-showcase-info,
+html[data-theme="light"] .stitch-spec-card,
+html[data-theme="light"] .vin-checker,
+html[data-theme="light"] .shop-filters-sidebar,
+html[data-theme="light"] .cart-drawer,
+html[data-theme="light"] .product-info,
+body.light-theme .glass-card,
+body.light-theme .product-card,
+body.light-theme .wix-map-card,
+body.light-theme .wix-why-card,
+body.light-theme .about-team-card,
+body.light-theme .about-value-card,
+body.light-theme .about-stat-item,
+body.light-theme .contact-form-card,
+body.light-theme .contact-info-card,
+body.light-theme .contact-method-card,
+body.light-theme .stitch-showcase-media,
+body.light-theme .stitch-showcase-info,
+body.light-theme .stitch-spec-card,
+body.light-theme .vin-checker,
+body.light-theme .shop-filters-sidebar,
+body.light-theme .cart-drawer,
+body.light-theme .product-info {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .header-logo-icon,
+body.light-theme .header-logo-icon,
+html[data-theme="light"] .footer-logo-icon,
+body.light-theme .footer-logo-icon {
+  filter: invert(1) !important;
+  mix-blend-mode: multiply !important;
+}
+
+html[data-theme="light"] .dark-section,
+body.light-theme .dark-section,
+html[data-theme="light"] .section[style*="background"],
+body.light-theme .section[style*="background"] {
+  background: #f4f6fa !important;
+}
+
+html[data-theme="light"] .product-card-image,
+body.light-theme .product-card-image {
+  background: #f1f4f9 !important;
+}
+
+html[data-theme="light"] .product-card-name,
+html[data-theme="light"] .product-title,
+html[data-theme="light"] .wix-main-h2,
+html[data-theme="light"] .stitch-spec-name,
+html[data-theme="light"] .wix-why-card h3,
+html[data-theme="light"] .about-team-card h3,
+html[data-theme="light"] .contact-form-card h2,
+html[data-theme="light"] .contact-info-card h3,
+html[data-theme="light"] h1:not(.stitch-hero-title),
+html[data-theme="light"] h2:not(.stitch-hero-title),
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+body.light-theme .product-card-name,
+body.light-theme .product-title,
+body.light-theme .wix-main-h2,
+body.light-theme .stitch-spec-name,
+body.light-theme .wix-why-card h3,
+body.light-theme .about-team-card h3,
+body.light-theme .contact-form-card h2,
+body.light-theme .contact-info-card h3,
+body.light-theme h1:not(.stitch-hero-title),
+body.light-theme h2:not(.stitch-hero-title),
+body.light-theme h3,
+body.light-theme h4 {
+  color: #0b0e14 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+}
+
+html[data-theme="light"] p,
+html[data-theme="light"] .wix-why-card p,
+html[data-theme="light"] .about-team-card p,
+html[data-theme="light"] .stitch-spec-detail,
+body.light-theme p,
+body.light-theme .wix-why-card p,
+body.light-theme .about-team-card p,
+body.light-theme .stitch-spec-detail {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+body.light-theme input,
+body.light-theme textarea {
+  background: #ffffff !important;
+  color: #0b0e14 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder,
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .wix-map-pin-popup,
+body.light-theme .wix-map-pin-popup {
+  background: #ffffff !important;
+  color: #0b0e14 !important;
+  border: 1px solid rgba(0, 138, 201, 0.4) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="light"] .wix-map-pin-popup strong,
+html[data-theme="light"] .wix-map-pin-popup p,
+body.light-theme .wix-map-pin-popup strong,
+body.light-theme .wix-map-pin-popup p {
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .product-card-price,
+html[data-theme="light"] .product-price,
+body.light-theme .product-card-price,
+body.light-theme .product-price {
+  color: #008ac9 !important;
+  font-weight: 800 !important;
+}
+
+/* Light Theme Hero Text & Vehicle Finder */
+html[data-theme="light"] .stitch-hero-title,
+body.light-theme .stitch-hero-title {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 40%, #e2e8f0 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+html[data-theme="light"] .stitch-hero-subtitle,
+body.light-theme .stitch-hero-subtitle {
+  color: #f1f5f9 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+html[data-theme="light"] .hero-finder-bar,
+body.light-theme .hero-finder-bar {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="light"] .hero-finder-bar label,
+body.light-theme .hero-finder-bar label {
+  color: #008ac9 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .hero-finder-bar select,
+html[data-theme="light"] .sort-select,
+body.light-theme .hero-finder-bar select,
+body.light-theme .sort-select {
+  background: #ffffff !important;
+  color: #0b0e14 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color-scheme: light !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="light"] select option,
+body.light-theme select option {
+  background-color: #ffffff !important;
+  color: #0b0e14 !important;
+}
+
+/* Light Theme Stats Bar & Buttons */
+html[data-theme="light"] .luxury-stats-bar,
+body.light-theme .luxury-stats-bar {
+  background: #eef2f7 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .stat-value,
+body.light-theme .stat-value {
+  color: #0b0e14 !important;
+  background: linear-gradient(135deg, #0b0e14 40%, #008ac9 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+html[data-theme="light"] .stat-label,
+body.light-theme .stat-label {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .wix-pill-btn.dark,
+body.light-theme .wix-pill-btn.dark {
+  background: #0b0e14 !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(11, 14, 20, 0.2) !important;
+}
+
+html[data-theme="light"] .wix-pill-btn.dark:hover,
+body.light-theme .wix-pill-btn.dark:hover {
+  background: #008ac9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 32px rgba(0, 138, 201, 0.35) !important;
+}
+
+html[data-theme="light"] .wix-pill-btn.orange,
+html[data-theme="light"] .wix-pill-btn.accent,
+body.light-theme .wix-pill-btn.orange,
+body.light-theme .wix-pill-btn.accent {
+  background: #ffffff !important;
+  color: #0b0e14 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .wix-pill-btn.orange:hover,
+html[data-theme="light"] .wix-pill-btn.accent:hover,
+body.light-theme .wix-pill-btn.orange:hover,
+body.light-theme .wix-pill-btn.accent:hover {
+  border-color: #008ac9 !important;
+  color: #008ac9 !important;
+  box-shadow: 0 8px 24px rgba(0, 138, 201, 0.2) !important;
+}
+
+/* Light Theme Footer */
+html[data-theme="light"] .glass-footer,
+body.light-theme .glass-footer {
+  background: #eef2f7 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .footer-logo-text,
+html[data-theme="light"] .footer-brand-col p,
+html[data-theme="light"] .footer-legal-link,
+body.light-theme .footer-logo-text,
+body.light-theme .footer-brand-col p,
+body.light-theme .footer-legal-link {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .social-icon-btn,
+body.light-theme .social-icon-btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #0b0e14 !important;
+}

@@ -658,6 +658,9 @@
   .stitch-showcase-media {
     height: 300px;
   }
+  .wix-main-h2 {
+    font-size: 28px !important;
+  }
   .grid-cols-3.shop-grid {
     grid-template-columns: 1fr !important;
   }
@@ -670,4 +673,88 @@
     text-align: center;
     justify-content: center;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES FOR HOME PAGE COMPONENTS
+   ═══════════════════════════════════════════════════════════════ */
+html[data-theme="light"] .wix-why-card,
+body.light-theme .wix-why-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .wix-why-title,
+body.light-theme .wix-why-title {
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .wix-why-desc,
+body.light-theme .wix-why-desc {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .wix-why-icon,
+body.light-theme .wix-why-icon {
+  background: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="light"] .wix-map-card,
+body.light-theme .wix-map-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .wix-map-header,
+body.light-theme .wix-map-header {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .wix-map-pin-popup,
+body.light-theme .wix-map-pin-popup {
+  background: #ffffff !important;
+  color: #0b0e14 !important;
+  border: 1px solid rgba(0, 138, 201, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="light"] .wix-map-pin-popup strong,
+html[data-theme="light"] .wix-map-pin-popup p,
+body.light-theme .wix-map-pin-popup strong,
+body.light-theme .wix-map-pin-popup p {
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .wix-contact-phones,
+body.light-theme .wix-contact-phones {
+  color: #0b0e14 !important;
+}
+
+html[data-theme="light"] .wix-contact-address,
+body.light-theme .wix-contact-address {
+  color: #475569 !important;
+}
+
+/* Contact Page Safety & Legibility */
+.contact-form-card,
+.contact-info-card,
+.grid-cols-2 > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html[data-theme="light"] .contact-form-card,
+html[data-theme="light"] .contact-info-card,
+body.light-theme .contact-form-card,
+body.light-theme .contact-info-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  color: #0b0e14 !important;
 }
