@@ -1,4 +1,4 @@
-# Pages CMS Configuration File for DP MotorHub
+# Pages CMS Configuration
 # Documentation: https://pagescms.org/docs
 
 media:
@@ -39,7 +39,7 @@ content:
           - label: Brakes & Suspension
             value: brakes-suspension
       - name: image
-        label: Product Image Path / Upload
+        label: Product Image Path
         type: image
       - name: isMPerformance
         label: Genuine M Performance Badge
@@ -63,7 +63,7 @@ content:
   - name: settings
     label: Global Site Settings & Contact Info
     type: file
-    file: src/data/settings.json
+    path: src/data/settings.json
     fields:
       - name: siteName
         label: Brand Name
