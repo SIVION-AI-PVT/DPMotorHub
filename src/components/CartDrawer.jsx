@@ -37,8 +37,8 @@ export default function CartDrawer() {
           <div className="cart-drawer-title">
             <ShoppingBag size={20} color="var(--m-blue)" />
             <h2
-              className="h3"
-              style={{ fontSize: "18px", color: "var(--white)" }}
+              className="h3 cart-heading-title"
+              style={{ fontSize: "18px" }}
             >
               YOUR CART (
               {cartItems.reduce((acc, item) => acc + item.quantity, 0)})
@@ -63,9 +63,8 @@ export default function CartDrawer() {
                 style={{ opacity: 0.5 }}
               />
               <h3
-                className="h3"
+                className="h3 cart-empty-title"
                 style={{
-                  color: "var(--white)",
                   marginTop: "16px",
                   marginBottom: "8px",
                 }}

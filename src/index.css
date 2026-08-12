@@ -621,7 +621,6 @@ html[data-theme="light"] .contact-method-card,
 html[data-theme="light"] .stitch-spec-card,
 html[data-theme="light"] .vin-checker,
 html[data-theme="light"] .shop-filters-sidebar,
-html[data-theme="light"] .cart-drawer,
 html[data-theme="light"] .product-info,
 body.light-theme .glass-card,
 body.light-theme .product-card,
@@ -636,7 +635,6 @@ body.light-theme .contact-method-card,
 body.light-theme .stitch-spec-card,
 body.light-theme .vin-checker,
 body.light-theme .shop-filters-sidebar,
-body.light-theme .cart-drawer,
 body.light-theme .product-info {
   background: #ffffff !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
