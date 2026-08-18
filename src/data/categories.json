@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "id": "exterior",
+      "name": "Exterior & Carbon Aero",
+      "stockStatus": "In Stock (Kadawatha Showroom)",
+      "description": "Front splitters, rear diffusers, mirror caps, and side skirts in 2x2 pre-preg dry carbon fiber.",
+      "image": "/assets/front_splitter.jpg",
+      "badgeColor": "#008AC9",
+      "featured": true
+    },
+    {
+      "id": "interior",
+      "name": "Interior & Cockpit",
+      "stockStatus": "In Stock",
+      "description": "Alcantara steering wheels with tricolor M stitching, carbon paddle shifters, and interior trim kits.",
+      "image": "/assets/steering_wheel.jpg",
+      "badgeColor": "#2b115a",
+      "featured": true
+    },
+    {
+      "id": "engine",
+      "name": "Engine & Performance",
+      "stockStatus": "In Stock",
+      "description": "Titanium exhaust systems, high-flow cold air intakes, and carbon engine covers.",
+      "image": "/assets/exhaust_system.jpg",
+      "badgeColor": "#f11a22",
+      "featured": true
+    },
+    {
+      "id": "wheels",
+      "name": "Wheels & Fitment",
+      "stockStatus": "In Stock",
+      "description": "Forged lightweight alloy wheel sets, wheel spacers, and floating hub center caps.",
+      "image": "/assets/alloy_wheels.jpg",
+      "badgeColor": "#eab308",
+      "featured": true
+    },
+    {
+      "id": "brakes-suspension",
+      "name": "Brakes & Suspension",
+      "stockStatus": "In Stock",
+      "description": "Carbon ceramic brake discs, M Compound 6-piston calipers, and adjustable coilover suspensions.",
+      "image": "/assets/brakes.jpg",
+      "badgeColor": "#22c55e",
+      "featured": true
+    },
+    {
+      "id": "exhaust",
+      "name": "Exhaust Systems & Downpipes",
+      "stockStatus": "Limited Stock (2 Left)",
+      "description": "Track-tested Grade-1 titanium valved exhaust systems with carbon acoustic tips.",
+      "image": "/assets/exhaust_system.jpg",
+      "badgeColor": "#f97316",
+      "featured": false
+    },
+    {
+      "id": "aerodynamics",
+      "name": "Aerodynamic Wings & Spoilers",
+      "stockStatus": "In Stock",
+      "description": "High-downforce carbon swan-neck GT wings and trunk lip spoilers.",
+      "image": "/assets/rear_diffuser.jpg",
+      "badgeColor": "#06b6d4",
+      "featured": false
+    },
+    {
+      "id": "forged-carbon",
+      "name": "Forged Carbon Fiber Edition",
+      "stockStatus": "Custom / Made to Order",
+      "description": "Bespoke forged chopped-carbon components custom manufactured to order.",
+      "image": "/assets/mirror_caps.jpg",
+      "badgeColor": "#8b5cf6",
+      "featured": false
+    }
+  ]
+}

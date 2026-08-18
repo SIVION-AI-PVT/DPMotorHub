@@ -162,10 +162,10 @@ export default function Header() {
             </button>
 
             <Link
-              to="/admin"
+              to="/contact"
               className="action-icon-btn"
-              aria-label="Admin Management Console"
-              title="Admin Console"
+              aria-label="Contact & Customer Support"
+              title="Customer Support"
             >
               <User size={18} />
             </Link>
@@ -210,14 +210,6 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <Link
-                to="/admin"
-                className="mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <span>ADMIN CONSOLE</span>
-                <ArrowUpRight size={16} />
-              </Link>
             </div>
           </div>
         )}

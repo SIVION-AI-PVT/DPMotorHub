@@ -1,0 +1,34 @@
+{
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Kavinda Wickramasinghe",
+      "vehicle": "2023 BMW G80 M3 Competition",
+      "rating": 5,
+      "date": "2026-08-10",
+      "title": "Flawless OEM Dry Carbon Fitment",
+      "comment": "Installed the M Performance Front Splitter and Carbon Diffuser at the Kadawatha showroom. 100% genuine weave alignment, zero gaps. The DP Motorhub team verified my VIN beforehand.",
+      "verifiedBuyer": true
+    },
+    {
+      "id": "rev-2",
+      "author": "Dr. Nishantha Silva",
+      "vehicle": "2022 BMW F90 M5 LCI",
+      "rating": 5,
+      "date": "2026-07-28",
+      "title": "Acoustic Perfection with Titanium Exhaust",
+      "comment": "The genuine titanium exhaust system with carbon tips completely transformed the S63 V8 roar. Fast delivery and professional support via hello@dpmotorhub.com.",
+      "verifiedBuyer": true
+    },
+    {
+      "id": "rev-3",
+      "author": "Roshan De Alwis",
+      "vehicle": "2021 BMW F87 M2 CS",
+      "rating": 5,
+      "date": "2026-07-14",
+      "title": "763M Forged Wheels - Sub-zero Unsprung Weight",
+      "comment": "Authentic matte black 763M alloys arrived securely boxed with BMW hologram seal. Handling precision is noticeably sharper.",
+      "verifiedBuyer": true
+    }
+  ]
+}

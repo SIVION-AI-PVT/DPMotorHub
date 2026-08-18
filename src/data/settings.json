@@ -6,5 +6,7 @@
   "contactPhone": "+94 77 123 4567",
   "contactEmail": "hello@dpmotorhub.com",
   "location": "325/1/A/3, Ihala Biyanwila, Kadawatha",
-  "businessHours": "Mon - Sat: 9:00 AM - 7:00 PM IST"
+  "businessHours": "Mon - Sat: 9:00 AM - 7:00 PM IST",
+  "googleMapsUrl": "https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw",
+  "coordinates": "6.998970, 79.963791"
 }

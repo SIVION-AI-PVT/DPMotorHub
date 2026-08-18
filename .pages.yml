@@ -6,6 +6,9 @@ media:
   output: /assets
 
 content:
+  # ══════════════════════════════════════════════════════════════
+  # 1. M PERFORMANCE PARTS CATALOG (COLLECTION)
+  # ══════════════════════════════════════════════════════════════
   - name: products
     label: M Performance Parts Catalog
     type: collection
@@ -14,78 +17,168 @@ content:
     filename: "{fields.id}.json"
     view:
       primary: name
-      fields: [id, name, price, category, stock]
+      fields: [id, name, price, category, stock, isMPerformance]
+      default_sort: id
     fields:
       - name: id
         label: SKU / Part ID
         type: string
         required: true
+        description: "Unique numeric SKU identifier (e.g. 1, 2, 3)"
       - name: name
-        label: Product Name
+        label: Product Title
         type: string
         required: true
+        description: "Full descriptive part name"
       - name: price
-        label: Price (LKR)
+        label: Price in LKR (Sri Lankan Rupee)
         type: number
         required: true
+        description: "Standard retail price in LKR (e.g. 555000)"
       - name: category
         label: Category
         type: select
+        required: true
         options:
-          - label: Exterior & Carbon Aero
+          - label: "Exterior & Carbon Aero"
             value: exterior
-          - label: Interior & Cockpit
+          - label: "Interior & Cockpit"
             value: interior
-          - label: Engine & Performance
+          - label: "Engine & Performance"
             value: engine
-          - label: Wheels & Fitment
+          - label: "Wheels & Fitment"
             value: wheels
-          - label: Brakes & Suspension
+          - label: "Brakes & Suspension"
             value: brakes-suspension
+          - label: "Exhaust Systems & Downpipes"
+            value: exhaust
+          - label: "Aerodynamic Wings & Spoilers"
+            value: aerodynamics
+          - label: "Forged Carbon Fiber Edition"
+            value: forged-carbon
+          - label: "Custom / Special Category"
+            value: custom
+        description: "Select standard system category or choose 'Custom / Special Category'"
+      - name: customCategory
+        label: Custom Category Name (If Custom Selected)
+        type: string
+        description: "Specify custom category name if 'Custom / Special Category' was selected above"
+      - name: stock
+        label: Part Stock Availability Status
+        type: select
+        required: true
+        options:
+          - label: "In Stock"
+            value: "In Stock"
+          - label: "In Stock (Kadawatha Showroom Ready)"
+            value: "In Stock (Kadawatha Showroom Ready)"
+          - label: "Low Stock (1 Left)"
+            value: "Low Stock (1 Left)"
+          - label: "Low Stock (2 Left)"
+            value: "Low Stock (2 Left)"
+          - label: "Low Stock (3 Left)"
+            value: "Low Stock (3 Left)"
+          - label: "Pre-Order (7-10 Days)"
+            value: "Pre-Order (7-10 Days)"
+          - label: "Made to Order / Custom Build"
+            value: "Made to Order / Custom Build"
+          - label: "Out of Stock / Restocking Soon"
+            value: "Out of Stock / Restocking Soon"
+        description: "Select real-time stock and fulfillment status"
       - name: models
         label: Compatible BMW Chassis Codes
         type: list
         field:
           type: string
+        description: "List of compatible chassis (e.g. G80 M3, G82 M4, F90 M5, F87 M2, G87 M2)"
       - name: image
-        label: Product Image Path
+        label: Main Image Asset
         type: image
+        description: "Path to product photo in /assets"
       - name: isMPerformance
-        label: Genuine M Performance Badge
+        label: Genuine BMW M Performance OEM Badge
         type: boolean
         default: true
+        description: "Display the signature M Motorsport tricolor badge"
       - name: oem
-        label: OEM Part Number
+        label: BMW OEM Part Number
         type: string
+        description: "11-digit authentic BMW part number (e.g. 51192475168)"
       - name: material
         label: Construction Material
         type: string
-      - name: stock
-        label: Stock Status
-        type: select
-        options:
-          - label: In Stock
-            value: In Stock
-          - label: Low Stock (2 Left)
-            value: Low Stock (2 Left)
-          - label: Pre-Order (7-10 Days)
-            value: Pre-Order (7-10 Days)
-          - label: Out of Stock
-            value: Out of Stock
+        description: "Component material (e.g. Pre-preg Dry Carbon Fiber CFRP, Grade-1 Titanium, Forged Aluminum)"
       - name: rating
-        label: Customer Rating (1.0 - 5.0)
+        label: Customer Rating
         type: number
         default: 5.0
+        description: "Score from 1.0 to 5.0"
       - name: reviewsCount
         label: Total Reviews Count
         type: number
         default: 12
       - name: description
-        label: Full Technical Description
+        label: Technical Product Description
         type: rich-text
+        description: "Detailed description of manufacturing method, aerodynamic benefit, and installation guide"
 
+  # ══════════════════════════════════════════════════════════════
+  # 2. CUSTOM CATEGORIES & CATEGORY STOCK STATUS (FILE)
+  # ══════════════════════════════════════════════════════════════
+  - name: categories
+    label: Custom Categories & Category Stock Status
+    type: file
+    path: src/data/categories.json
+    fields:
+      - name: categories
+        label: Categories List
+        type: list
+        fields:
+          - name: id
+            label: Category Slug / Identifier
+            type: string
+            description: "Unique slug identifier (e.g. exterior, aerodynamics, forged-carbon, custom-exhaust)"
+          - name: name
+            label: Category Title
+            type: string
+            description: "Display name for the category"
+          - name: stockStatus
+            label: Category Stock Status
+            type: select
+            options:
+              - label: "In Stock"
+                value: "In Stock"
+              - label: "In Stock (Kadawatha Showroom)"
+                value: "In Stock (Kadawatha Showroom)"
+              - label: "Limited Stock (1-2 Left)"
+                value: "Limited Stock (1-2 Left)"
+              - label: "Pre-Order Available (7-10 Days)"
+                value: "Pre-Order Available (7-10 Days)"
+              - label: "Custom / Made to Order"
+                value: "Custom / Made to Order"
+              - label: "Out of Stock / Restocking Soon"
+                value: "Out of Stock / Restocking Soon"
+            description: "Stock fulfillment status across this category"
+          - name: description
+            label: Category Description
+            type: string
+          - name: image
+            label: Category Hero Image
+            type: image
+          - name: badgeColor
+            label: Accent / Badge Color
+            type: string
+            default: "#008AC9"
+          - name: featured
+            label: Featured in Storefront Navigation
+            type: boolean
+            default: true
+
+  # ══════════════════════════════════════════════════════════════
+  # 3. GLOBAL STORE & VERIFIED CONTACT SETTINGS (FILE)
+  # ══════════════════════════════════════════════════════════════
   - name: settings
-    label: Global Site Settings & Verified Contact Info
+    label: Global Store & Verified Contact Settings
     type: file
     path: src/data/settings.json
     fields:
@@ -94,30 +187,113 @@ content:
         type: string
         default: MOTORHUB
       - name: tagline
-        label: Tagline
+        label: Brand Tagline
         type: string
         default: Genuine BMW M Performance Parts
       - name: announcementText
-        label: Top Announcement Bar Title
+        label: Top Announcement Banner Text
         type: string
         default: 100% Genuine BMW M Performance Hardware
       - name: announcementSubtext
-        label: Top Announcement Bar Subtitle
+        label: Top Announcement Banner Subtext
         type: string
         default: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+      - name: contactEmail
+        label: Sole Official Email Address
+        type: string
+        default: hello@dpmotorhub.com
+        description: "The only official email for customer inquiries and orders"
+      - name: location
+        label: Showroom & Workshop Address
+        type: string
+        default: 325/1/A/3, Ihala Biyanwila, Kadawatha
+        description: "Official DP Motorhub showroom and workshop facility address"
       - name: contactPhone
-        label: Contact Phone / WhatsApp
+        label: Contact Phone / WhatsApp Hotline
         type: string
         default: "+94 77 123 4567"
-      - name: contactEmail
-        label: Official Sole Email Address
-        type: string
-        default: "hello@dpmotorhub.com"
-      - name: location
-        label: Official Showroom Location Address
-        type: string
-        default: "325/1/A/3, Ihala Biyanwila, Kadawatha"
       - name: businessHours
-        label: Business Opening Hours
+        label: Showroom Operating Hours
         type: string
-        default: "Mon - Fri: 9:00 AM - 6:00 PM | Sat: 10:00 AM - 4:00 PM"
+        default: "Mon - Sat: 9:00 AM - 7:00 PM IST"
+      - name: googleMapsUrl
+        label: Google Maps Showroom URL
+        type: string
+        default: "https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw"
+      - name: coordinates
+        label: GPS Latitude, Longitude
+        type: string
+        default: "6.998970, 79.963791"
+
+  # ══════════════════════════════════════════════════════════════
+  # 4. VERIFIED CUSTOMER REVIEWS (FILE)
+  # ══════════════════════════════════════════════════════════════
+  - name: reviews
+    label: Customer Testimonials & Reviews
+    type: file
+    path: src/data/reviews.json
+    fields:
+      - name: reviews
+        label: Reviews List
+        type: list
+        fields:
+          - name: id
+            label: Review ID
+            type: string
+          - name: author
+            label: Customer Name
+            type: string
+          - name: vehicle
+            label: BMW Vehicle & Model
+            type: string
+          - name: rating
+            label: Rating (1-5 Stars)
+            type: number
+            default: 5
+          - name: date
+            label: Review Date
+            type: string
+          - name: title
+            label: Review Headline
+            type: string
+          - name: comment
+            label: Customer Review Text
+            type: string
+          - name: verifiedBuyer
+            label: Verified BMW Owner Badge
+            type: boolean
+            default: true
+
+  # ══════════════════════════════════════════════════════════════
+  # 5. FREQUENTLY ASKED QUESTIONS / FAQS (FILE)
+  # ══════════════════════════════════════════════════════════════
+  - name: faqs
+    label: Technical Fitment & Store FAQs
+    type: file
+    path: src/data/faqs.json
+    fields:
+      - name: faqs
+        label: FAQ List
+        type: list
+        fields:
+          - name: id
+            label: FAQ ID
+            type: string
+          - name: question
+            label: Question
+            type: string
+          - name: answer
+            label: Detailed Answer
+            type: string
+          - name: category
+            label: Category
+            type: select
+            options:
+              - label: Authenticity & Warranty
+                value: Authenticity & Warranty
+              - label: Fitment & Technical
+                value: Fitment & Technical
+              - label: Showroom & Installation
+                value: Showroom & Installation
+              - label: Customer Support
+                value: Customer Support

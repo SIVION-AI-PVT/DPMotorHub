@@ -1,0 +1,28 @@
+{
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "Are all DP Motorhub parts 100% authentic BMW M Performance OEM?",
+      "answer": "Yes. Every single component in our catalog is guaranteed 100% authentic BMW M Performance hardware, manufactured according to rigorous BMW AG motorsport tolerances and sealed in official factory packaging with hologram security tags.",
+      "category": "Authenticity & Warranty"
+    },
+    {
+      "id": "faq-2",
+      "question": "How does VIN fitment verification work?",
+      "answer": "Before preparing any shipment or installation, our technical team verifies your vehicle's 17-digit Chassis VIN against the BMW AG electronic parts catalog (ETK) to guarantee 100% compatibility with your exact build options.",
+      "category": "Fitment & Technical"
+    },
+    {
+      "id": "faq-3",
+      "question": "Can I visit the Kadawatha showroom for collection and workshop installation?",
+      "answer": "Absolutely. You can collect your parts or have them professionally installed by our certified technicians at our facility located at 325/1/A/3, Ihala Biyanwila, Kadawatha.",
+      "category": "Showroom & Installation"
+    },
+    {
+      "id": "faq-4",
+      "question": "How do I contact DP Motorhub for technical support or special orders?",
+      "answer": "You can reach our dedicated technical team via our official email hello@dpmotorhub.com or via WhatsApp at +94 77 123 4567 during business hours (Mon - Sat: 9:00 AM - 7:00 PM).",
+      "category": "Customer Support"
+    }
+  ]
+}
