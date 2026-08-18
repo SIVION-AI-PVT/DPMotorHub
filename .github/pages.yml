@@ -40,61 +40,76 @@ content:
         type: select
         required: true
         options:
-          - label: "Exterior & Carbon Aero"
-            value: exterior
-          - label: "Interior & Cockpit"
-            value: interior
-          - label: "Engine & Performance"
-            value: engine
-          - label: "Wheels & Fitment"
-            value: wheels
-          - label: "Brakes & Suspension"
-            value: brakes-suspension
-          - label: "Exhaust Systems & Downpipes"
-            value: exhaust
-          - label: "Aerodynamic Wings & Spoilers"
-            value: aerodynamics
-          - label: "Forged Carbon Fiber Edition"
-            value: forged-carbon
-          - label: "Custom / Special Category"
-            value: custom
+          values:
+            - label: "Exterior & Carbon Aero"
+              value: "exterior"
+            - label: "Interior & Cockpit"
+              value: "interior"
+            - label: "Engine & Performance"
+              value: "engine"
+            - label: "Wheels & Fitment"
+              value: "wheels"
+            - label: "Brakes & Suspension"
+              value: "brakes-suspension"
+            - label: "Exhaust Systems & Downpipes"
+              value: "exhaust"
+            - label: "Aerodynamic Wings & Spoilers"
+              value: "aerodynamics"
+            - label: "Forged Carbon Fiber Edition"
+              value: "forged-carbon"
+            - label: "Custom / Special Category"
+              value: "custom"
         description: "Select standard system category or choose 'Custom / Special Category'"
       - name: customCategory
         label: Custom Category Name (If Custom Selected)
         type: string
         description: "Specify custom category name if 'Custom / Special Category' was selected above"
       - name: stock
-        label: Part Stock Availability Status
+        label: Stock Status
         type: select
         required: true
         options:
-          - label: "In Stock"
-            value: "In Stock"
-          - label: "In Stock (Kadawatha Showroom Ready)"
-            value: "In Stock (Kadawatha Showroom Ready)"
-          - label: "Low Stock (1 Left)"
-            value: "Low Stock (1 Left)"
-          - label: "Low Stock (2 Left)"
-            value: "Low Stock (2 Left)"
-          - label: "Low Stock (3 Left)"
-            value: "Low Stock (3 Left)"
-          - label: "Pre-Order (7-10 Days)"
-            value: "Pre-Order (7-10 Days)"
-          - label: "Made to Order / Custom Build"
-            value: "Made to Order / Custom Build"
-          - label: "Out of Stock / Restocking Soon"
-            value: "Out of Stock / Restocking Soon"
+          values:
+            - label: "In Stock"
+              value: "In Stock"
+            - label: "In Stock (Kadawatha Showroom Ready)"
+              value: "In Stock (Kadawatha Showroom Ready)"
+            - label: "Low Stock (1 Left)"
+              value: "Low Stock (1 Left)"
+            - label: "Low Stock (2 Left)"
+              value: "Low Stock (2 Left)"
+            - label: "Low Stock (3 Left)"
+              value: "Low Stock (3 Left)"
+            - label: "Pre-Order (7-10 Days)"
+              value: "Pre-Order (7-10 Days)"
+            - label: "Made to Order / Custom Build"
+              value: "Made to Order / Custom Build"
+            - label: "Out of Stock / Restocking Soon"
+              value: "Out of Stock / Restocking Soon"
         description: "Select real-time stock and fulfillment status"
       - name: models
         label: Compatible BMW Chassis Codes
-        type: list
-        field:
-          type: string
-        description: "List of compatible chassis (e.g. G80 M3, G82 M4, F90 M5, F87 M2, G87 M2)"
+        type: select
+        multiple: true
+        options:
+          values:
+            - "G80 M3"
+            - "G82 M4"
+            - "F80 M3"
+            - "F82 M4"
+            - "F90 M5"
+            - "F87 M2"
+            - "G87 M2"
+            - "G81 M3 Touring"
+            - "F92 M8"
+            - "G20 3-Series"
+            - "G30 5-Series"
+            - "Universal M Fitment"
+        description: "Select one or multiple compatible BMW chassis models"
       - name: image
-        label: Main Image Asset
+        label: Product Image Path
         type: image
-        description: "Path to product photo in /assets"
+        description: "Select or upload product image in /assets"
       - name: isMPerformance
         label: Genuine BMW M Performance OEM Badge
         type: boolean
@@ -146,18 +161,19 @@ content:
             label: Category Stock Status
             type: select
             options:
-              - label: "In Stock"
-                value: "In Stock"
-              - label: "In Stock (Kadawatha Showroom)"
-                value: "In Stock (Kadawatha Showroom)"
-              - label: "Limited Stock (1-2 Left)"
-                value: "Limited Stock (1-2 Left)"
-              - label: "Pre-Order Available (7-10 Days)"
-                value: "Pre-Order Available (7-10 Days)"
-              - label: "Custom / Made to Order"
-                value: "Custom / Made to Order"
-              - label: "Out of Stock / Restocking Soon"
-                value: "Out of Stock / Restocking Soon"
+              values:
+                - label: "In Stock"
+                  value: "In Stock"
+                - label: "In Stock (Kadawatha Showroom)"
+                  value: "In Stock (Kadawatha Showroom)"
+                - label: "Limited Stock (1-2 Left)"
+                  value: "Limited Stock (1-2 Left)"
+                - label: "Pre-Order Available (7-10 Days)"
+                  value: "Pre-Order Available (7-10 Days)"
+                - label: "Custom / Made to Order"
+                  value: "Custom / Made to Order"
+                - label: "Out of Stock / Restocking Soon"
+                  value: "Out of Stock / Restocking Soon"
             description: "Stock fulfillment status across this category"
           - name: description
             label: Category Description
@@ -289,11 +305,12 @@ content:
             label: Category
             type: select
             options:
-              - label: Authenticity & Warranty
-                value: Authenticity & Warranty
-              - label: Fitment & Technical
-                value: Fitment & Technical
-              - label: Showroom & Installation
-                value: Showroom & Installation
-              - label: Customer Support
-                value: Customer Support
+              values:
+                - label: "Authenticity & Warranty"
+                  value: "Authenticity & Warranty"
+                - label: "Fitment & Technical"
+                  value: "Fitment & Technical"
+                - label: "Showroom & Installation"
+                  value: "Showroom & Installation"
+                - label: "Customer Support"
+                  value: "Customer Support"
