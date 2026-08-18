@@ -2,18 +2,18 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
-  Phone,
   Mail,
   Clock,
   MessageCircle,
   ArrowUpRight,
   CheckCircle2,
   Send,
-  Sparkles,
+  Compass,
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import GoogleMapEmbed from "../components/GoogleMapEmbed";
 import "./Home.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -397,7 +397,7 @@ export default function Contact() {
                 </a>
               </div>
 
-              {/* HQ Address */}
+              {/* Showroom & Workshop Location Card */}
               <div className="glass-card contact-info-card" style={glassCard}>
                 <div
                   style={{
@@ -415,7 +415,7 @@ export default function Contact() {
                       fontWeight: 700,
                     }}
                   >
-                    Munich Headquarters & Facility
+                    Showroom &amp; Engineering Hub
                   </h3>
                 </div>
                 <p
@@ -423,12 +423,35 @@ export default function Contact() {
                     color: "var(--mid-gray)",
                     fontSize: "14px",
                     lineHeight: 1.6,
+                    marginBottom: "14px",
                   }}
                 >
-                  DP Motorhub GmbH
+                  <strong style={{ color: "var(--white)" }}>DP Motorhub</strong>
                   <br />
-                  Schleißheimer Str. 200, 80809 Munich, Germany
+                  325/1/A/3, Ihala Biyanwila, Kadawatha
+                  <br />
+                  Western Province, Sri Lanka
                 </p>
+                <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                  <a
+                    href="https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wix-pill-btn dark"
+                    style={{ fontSize: "12px", padding: "8px 16px" }}
+                  >
+                    Google Maps <ArrowUpRight size={14} />
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=6.998970,79.963791"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wix-pill-btn orange"
+                    style={{ fontSize: "12px", padding: "8px 16px" }}
+                  >
+                    Directions <Compass size={14} />
+                  </a>
+                </div>
               </div>
 
               {/* Operating Hours + Direct Email */}
@@ -462,9 +485,9 @@ export default function Contact() {
                       lineHeight: 1.6,
                     }}
                   >
-                    Mon — Fri: 9:00 — 18:00 CET
+                    Mon — Fri: 9:00 — 18:00
                     <br />
-                    Sat: 10:00 — 14:00 CET
+                    Sat: 10:00 — 16:00
                   </p>
                 </div>
 
@@ -485,30 +508,66 @@ export default function Contact() {
                     Direct Email
                   </h4>
                   <a
-                    href="mailto:sales@dpmotorhub.com"
+                    href="mailto:hello@dpmotorhub.com"
                     style={{
                       color: "var(--m-blue)",
                       fontSize: "13px",
+                      fontWeight: 600,
                       textDecoration: "none",
+                      display: "inline-block",
+                      wordBreak: "break-all",
                     }}
                   >
-                    sales@dpmotorhub.com
+                    hello@dpmotorhub.com
                   </a>
-                  <br />
-                  <a
-                    href="mailto:support@dpmotorhub.com"
-                    style={{
-                      color: "var(--mid-gray)",
-                      fontSize: "13px",
-                      textDecoration: "none",
-                    }}
-                  >
-                    support@dpmotorhub.com
-                  </a>
+                  <p style={{ color: "var(--mid-gray)", fontSize: "11px", marginTop: "4px" }}>
+                    Primary response within 2-4 hrs
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Dedicated Interactive Google Maps Section */}
+      <section className="section" style={{ paddingTop: "20px", paddingBottom: "60px" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 32px" }}>
+            <div
+              className="stitch-hero-eyebrow"
+              style={{ justifyContent: "center", margin: "0 auto 12px" }}
+            >
+              <span className="m-stripe-pill"></span> FIND OUR LOCATION
+            </div>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "clamp(26px, 3.5vw, 42px)",
+                fontWeight: 800,
+                letterSpacing: "-0.02em",
+                marginBottom: "12px",
+              }}
+            >
+              VISIT OUR SHOWROOM &amp; WORKSHOP
+            </h2>
+            <p
+              style={{
+                color: "var(--mid-gray)",
+                fontSize: "15px",
+                lineHeight: 1.6,
+              }}
+            >
+              Experience authentic BMW M Performance upgrades in person. Located at 325/1/A/3, Ihala Biyanwila, Kadawatha with dedicated customer parking and on-site fitment consultation bays.
+            </p>
+          </div>
+
+          <GoogleMapEmbed
+            title="DP Motorhub Showroom & Engineering Hub"
+            subtitle="325/1/A/3, Ihala Biyanwila, Kadawatha, Sri Lanka"
+            height={500}
+            showCardOverlay={true}
+          />
         </div>
       </section>
 

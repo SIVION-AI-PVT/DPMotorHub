@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   ArrowUpRight,
   Check,
+  MapPin,
 } from "lucide-react";
 import "./Footer.css";
 
@@ -63,18 +64,31 @@ export default function Footer() {
 
             <div className="footer-social-row">
               <a
+                href="https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                aria-label="Showroom Google Maps Location"
+                title="View Showroom on Google Maps"
+                style={{ color: "var(--m-blue)" }}
+              >
+                <MapPin size={18} />
+              </a>
+              <a
                 href="https://wa.me/15556769377"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-btn"
                 aria-label="WhatsApp Support"
+                title="WhatsApp Technician"
               >
                 <MessageCircle size={18} />
               </a>
               <a
-                href="mailto:sales@dpmotorhub.com"
+                href="mailto:hello@dpmotorhub.com"
                 className="social-icon-btn"
                 aria-label="Email Support"
+                title="Email DP Motorhub (hello@dpmotorhub.com)"
               >
                 <Mail size={18} />
               </a>
@@ -82,15 +96,9 @@ export default function Footer() {
                 href="tel:+15556769377"
                 className="social-icon-btn"
                 aria-label="Phone Support"
+                title="Call DP Motorhub"
               >
                 <Phone size={18} />
-              </a>
-              <a
-                href="#"
-                className="social-icon-btn"
-                aria-label="Global Support"
-              >
-                <Globe size={18} />
               </a>
             </div>
           </div>
@@ -164,6 +172,17 @@ export default function Footer() {
                   Technical Fitment Support
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-nav-link"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--m-blue)", fontWeight: "600" }}
+                >
+                  <MapPin size={14} /> Kadawatha Location ↗
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -224,15 +243,13 @@ export default function Footer() {
           </div>
 
           <div className="footer-legal-links">
-            <a
-              href="https://app.pagescms.org/SIVION-AI-PVT/DPMotorHub"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/admin"
               className="footer-legal-link"
               style={{ color: "#008AC9", fontWeight: "bold" }}
             >
-              Admin Panel
-            </a>
+              Admin Console ⚙️
+            </Link>
             <Link to="/contact" className="footer-legal-link">
               Privacy Policy
             </Link>

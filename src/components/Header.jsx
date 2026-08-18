@@ -11,13 +11,16 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { useCart, INITIAL_PRODUCTS } from "../context/CartContext";
-import { useTheme } from "../context/ThemeContext";
-import "./Header.css";
-
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
-  const { totalItems, setIsCartOpen, searchQuery, setSearchQuery } = useCart();
+  const {
+    totalItems,
+    setIsCartOpen,
+    searchQuery,
+    setSearchQuery,
+    products,
+    siteSettings,
+  } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -57,11 +60,11 @@ export default function Header() {
     const query = e.target.value;
     setSearchQuery(query);
     if (query.trim().length > 0) {
-      const filtered = INITIAL_PRODUCTS.filter(
+      const filtered = (products || []).filter(
         (p) =>
-          p.name.toLowerCase().includes(query.toLowerCase()) ||
-          p.oem.toLowerCase().includes(query.toLowerCase()) ||
-          p.models.some((m) => m.toLowerCase().includes(query.toLowerCase())),
+          p.name?.toLowerCase().includes(query.toLowerCase()) ||
+          p.oem?.toLowerCase().includes(query.toLowerCase()) ||
+          p.models?.some((m) => m.toLowerCase().includes(query.toLowerCase())),
       );
       setSearchResults(filtered);
     } else {
@@ -89,11 +92,10 @@ export default function Header() {
       <div className="top-announcement-bar">
         <div className="container announcement-content">
           <span className="announcement-tag">
-            <span className="m-stripe-pill"></span> 100% Genuine BMW M
-            Performance Hardware
+            <span className="m-stripe-pill"></span> {siteSettings?.announcementText || "100% Genuine BMW M Performance Hardware"}
           </span>
           <span className="announcement-info">
-            Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+            {siteSettings?.announcementSubtext || "Fast Worldwide Delivery | VIN Fitment Verification Guaranteed"}
           </span>
         </div>
       </div>
@@ -113,7 +115,7 @@ export default function Header() {
               className="header-logo-icon"
             />
             <div className="header-logo-text-wrapper">
-              <span className="logo-brand logo-text-premium">MOTORHUB</span>
+              <span className="logo-brand logo-text-premium">{siteSettings?.siteName || "MOTORHUB"}</span>
               <div className="m-stripe"></div>
             </div>
           </Link>
@@ -155,7 +157,12 @@ export default function Header() {
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <Link to="/contact" className="action-icon-btn" aria-label="User Support / Account">
+            <Link
+              to="/admin"
+              className="action-icon-btn"
+              aria-label="Admin Management Console"
+              title="Admin Console"
+            >
               <User size={18} />
             </Link>
 
@@ -199,6 +206,14 @@ export default function Header() {
                   </Link>
                 );
               })}
+              <Link
+                to="/admin"
+                className="mobile-nav-link"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span>ADMIN CONSOLE</span>
+                <ArrowUpRight size={16} />
+              </Link>
             </div>
           </div>
         )}
@@ -240,7 +255,7 @@ export default function Header() {
                   : "POPULAR M PERFORMANCE PARTS"}
               </div>
               <div className="search-results-list">
-                {(searchQuery.trim() ? searchResults : INITIAL_PRODUCTS).map((item) => (
+                {(searchQuery.trim() ? searchResults : (products || [])).map((item) => (
                   <Link
                     key={item.id}
                     to={`/product/${item.id}`}
@@ -255,11 +270,11 @@ export default function Header() {
                     <div className="search-item-info">
                       <div className="search-item-title">{item.name}</div>
                       <div className="search-item-oem">
-                        OEM #{item.oem} • {item.models.join(", ")}
+                        OEM #{item.oem} • {item.models?.join(", ")}
                       </div>
                     </div>
                     <div className="search-item-price price">
-                      LKR {item.price.toLocaleString()}
+                      LKR {Number(item.price).toLocaleString()}
                     </div>
                   </Link>
                 ))}

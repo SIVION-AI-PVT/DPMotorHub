@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useCart, INITIAL_PRODUCTS } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 import {
   ShieldCheck,
   Truck,
@@ -24,14 +24,14 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ProductDetail() {
   const container = useRef(null);
   const { id } = useParams();
-  const { addToCart } = useCart();
+  const { addToCart, products } = useCart();
   const [activeTab, setActiveTab] = useState("description");
   const [vin, setVin] = useState("");
   const [vinStatus, setVinStatus] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const product = INITIAL_PRODUCTS.find(
+  const product = products.find(
     (p) => p && (String(p.id) === String(id) || p.id == id),
   );
 
@@ -66,8 +66,8 @@ export default function ProductDetail() {
   const currentImage = selectedImage || product.image;
 
   // related products
-  const relatedProducts = INITIAL_PRODUCTS.filter(
-    (p) => p.id !== product.id,
+  const relatedProducts = products.filter(
+    (p) => String(p.id) !== String(product.id),
   ).slice(0, 3);
 
   const whatsappUrl = `https://wa.me/15556769377?text=${encodeURIComponent(`Hi DP Motorhub, I would like to inquire about technical fitment for: ${product.name} (OEM: ${product.oem})`)}`;

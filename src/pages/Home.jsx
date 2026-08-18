@@ -7,28 +7,20 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 import {
   ShieldCheck,
-  Clock,
-  Wrench,
-  Settings,
-  Star,
   ArrowUpRight,
   Search,
-  ChevronRight,
   CheckCircle2,
-  MessageCircle,
-  Sparkles,
   Award,
   Key,
   Truck,
   CheckSquare,
-  Layers,
-  MapPin,
-  Phone,
-  Mail,
+  Settings,
   Zap,
+  Compass,
 } from "lucide-react";
 import ProductCard from "../components/ProductCard";
-import { INITIAL_PRODUCTS, useCart } from "../context/CartContext";
+import GoogleMapEmbed from "../components/GoogleMapEmbed";
+import { useCart } from "../context/CartContext";
 import "./Home.css";
 
 const M5_FEATURES = [
@@ -109,7 +101,7 @@ export default function Home() {
   );
 
   const navigate = useNavigate();
-  const { addToCart } = useCart();
+  const { products } = useCart();
   const [selectedChassis, setSelectedChassis] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [activeModelTab, setActiveModelTab] = useState("all");
@@ -135,9 +127,9 @@ export default function Home() {
 
   const inventoryProducts =
     activeModelTab === "all"
-      ? INITIAL_PRODUCTS
-      : INITIAL_PRODUCTS.filter((p) =>
-          p.models.some((m) =>
+      ? products
+      : products.filter((p) =>
+          p.models?.some((m) =>
             m.toLowerCase().includes(activeModelTab.toLowerCase()),
           ),
         );
@@ -512,23 +504,31 @@ export default function Home() {
         <div className="container">
           <div
             className="grid grid-cols-2 wix-contact-grid"
-            style={{ gap: "64px", alignItems: "center" }}
+            style={{ gap: "48px", alignItems: "center" }}
           >
             <div className="wix-contact-info-col">
-              <h2 className="wix-main-h2 dark" style={{ marginBottom: "32px" }}>
-                Visit us & upgrade
+              <div
+                className="eyebrow"
+                style={{ color: "var(--m-blue)", marginBottom: "8px" }}
+              >
+                SHOWROOM &amp; WORKSHOP
+              </div>
+              <h2 className="wix-main-h2 dark" style={{ marginBottom: "24px" }}>
+                Visit us &amp; upgrade
                 <br />
                 your M car today!
               </h2>
 
               <div className="wix-contact-email">
-                <a href="mailto:sales@dpmotorhub.com">sales@dpmotorhub.com</a>
+                <a href="mailto:hello@dpmotorhub.com">hello@dpmotorhub.com</a>
               </div>
 
               <div className="wix-contact-address">
-                DP Motorhub GmbH
+                <strong style={{ color: "var(--white)" }}>DP Motorhub Showroom &amp; Workshop</strong>
                 <br />
-                Schleißheimer Str. 200, 80809 Munich, Germany
+                325/1/A/3, Ihala Biyanwila, Kadawatha
+                <br />
+                Western Province, Sri Lanka
               </div>
 
               <div className="wix-contact-phones">
@@ -536,26 +536,37 @@ export default function Home() {
                 <br />
                 +1 555-M-POWER
               </div>
+
+              <div style={{ marginTop: "24px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <a
+                  href="https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="wix-pill-btn dark"
+                  style={{ padding: "10px 22px", fontSize: "13px" }}
+                >
+                  Google Maps <ArrowUpRight size={15} />
+                </a>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=6.998970,79.963791"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="wix-pill-btn orange"
+                  style={{ padding: "10px 22px", fontSize: "13px" }}
+                >
+                  Get Directions <Compass size={15} />
+                </a>
+              </div>
             </div>
 
-            {/* Dark Map Simulation */}
-            <div className="wix-map-card">
-              <div className="wix-map-header">
-                <span>Map | Satellite</span>
-              </div>
-              <div className="wix-map-body">
-                <div className="wix-map-pin-popup">
-                  <strong>DP Motorhub Munich HQ</strong>
-                  <p>Schleißheimer Str. 200, Munich</p>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Directions ↗
-                  </a>
-                </div>
-              </div>
+            {/* Live Google Maps Embed Card */}
+            <div className="wix-map-wrapper">
+              <GoogleMapEmbed
+                compact={true}
+                height={420}
+                title="DP Motorhub Showroom & Workshop"
+                subtitle="325/1/A/3, Ihala Biyanwila, Kadawatha"
+              />
             </div>
           </div>
         </div>

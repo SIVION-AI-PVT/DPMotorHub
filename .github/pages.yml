@@ -42,12 +42,18 @@ content:
             value: wheels
           - label: Brakes & Suspension
             value: brakes-suspension
+      - name: models
+        label: Compatible BMW Chassis Codes
+        type: list
+        field:
+          type: string
       - name: image
         label: Product Image Path
         type: image
       - name: isMPerformance
         label: Genuine M Performance Badge
         type: boolean
+        default: true
       - name: oem
         label: OEM Part Number
         type: string
@@ -56,40 +62,62 @@ content:
         type: string
       - name: stock
         label: Stock Status
-        type: string
+        type: select
+        options:
+          - label: In Stock
+            value: In Stock
+          - label: Low Stock (2 Left)
+            value: Low Stock (2 Left)
+          - label: Pre-Order (7-10 Days)
+            value: Pre-Order (7-10 Days)
+          - label: Out of Stock
+            value: Out of Stock
       - name: rating
-        label: Customer Rating
+        label: Customer Rating (1.0 - 5.0)
         type: number
+        default: 5.0
       - name: reviewsCount
         label: Total Reviews Count
         type: number
+        default: 12
+      - name: description
+        label: Full Technical Description
+        type: rich-text
 
   - name: settings
-    label: Global Site Settings & Contact Info
+    label: Global Site Settings & Verified Contact Info
     type: file
     path: src/data/settings.json
     fields:
       - name: siteName
         label: Brand Name
         type: string
+        default: MOTORHUB
       - name: tagline
         label: Tagline
         type: string
+        default: Genuine BMW M Performance Parts
       - name: announcementText
         label: Top Announcement Bar Title
         type: string
+        default: 100% Genuine BMW M Performance Hardware
       - name: announcementSubtext
         label: Top Announcement Bar Subtitle
         type: string
+        default: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
       - name: contactPhone
-        label: Contact Support Phone
+        label: Contact Phone / WhatsApp
         type: string
+        default: "+94 77 123 4567"
       - name: contactEmail
-        label: Support Email Address
+        label: Official Sole Email Address
         type: string
+        default: "hello@dpmotorhub.com"
       - name: location
-        label: Store Location
+        label: Official Showroom Location Address
         type: string
+        default: "325/1/A/3, Ihala Biyanwila, Kadawatha"
       - name: businessHours
-        label: Opening Hours
+        label: Business Opening Hours
         type: string
+        default: "Mon - Fri: 9:00 AM - 6:00 PM | Sat: 10:00 AM - 4:00 PM"

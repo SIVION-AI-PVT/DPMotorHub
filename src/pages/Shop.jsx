@@ -12,10 +12,11 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import ProductCard from "../components/ProductCard";
-import { INITIAL_PRODUCTS } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 import "./Shop.css";
 
 export default function Shop() {
+  const { products } = useCart();
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "";
   const initialChassis = searchParams.get("chassis") || "";
@@ -70,18 +71,18 @@ export default function Shop() {
   };
 
   const filteredProducts = useMemo(() => {
-    return INITIAL_PRODUCTS.filter((product) => {
+    return products.filter((product) => {
       // Search
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
-        const matchesName = product.name.toLowerCase().includes(q);
-        const matchesOem = product.oem.toLowerCase().includes(q);
+        const matchesName = product.name?.toLowerCase().includes(q);
+        const matchesOem = product.oem?.toLowerCase().includes(q);
         if (!matchesName && !matchesOem) return false;
       }
 
       // Chassis
       if (selectedChassis.length > 0) {
-        const matches = product.models.some((m) =>
+        const matches = product.models?.some((m) =>
           selectedChassis.some(
             (sc) =>
               sc.toLowerCase().includes(m.toLowerCase()) ||
@@ -96,24 +97,21 @@ export default function Shop() {
         if (!selectedCategories.includes(product.category)) return false;
       }
 
-      // M Performance Only
-      if (mPerformanceOnly && !product.isMPerformance) {
-        return false;
-      }
+      // M Performance
+      if (mPerformanceOnly && !product.isMPerformance) return false;
 
       // Price
-      if (product.price > maxPrice) {
-        return false;
-      }
+      if (product.price > maxPrice) return false;
 
       return true;
     }).sort((a, b) => {
-      if (sortBy === "price-low") return a.price - b.price;
-      if (sortBy === "price-high") return b.price - a.price;
+      if (sortBy === "price-asc") return a.price - b.price;
+      if (sortBy === "price-desc") return b.price - a.price;
       if (sortBy === "rating") return b.rating - a.rating;
-      return 0;
+      return 0; // featured
     });
   }, [
+    products,
     searchQuery,
     selectedChassis,
     selectedCategories,
