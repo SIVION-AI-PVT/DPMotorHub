@@ -11,6 +11,10 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
+import { useCart } from "../context/CartContext";
+import { useTheme } from "../context/ThemeContext";
+import "./Header.css";
+
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const {
