@@ -1,5 +1,5 @@
-# Pages CMS Configuration
-# Documentation: https://pagescms.org/docs
+# Pages CMS Configuration for DP Motorhub
+# Official Documentation: https://pagescms.org/docs
 
 media:
   input: public/assets
@@ -10,33 +10,34 @@ content:
   # 1. M PERFORMANCE PARTS CATALOG (COLLECTION)
   # ══════════════════════════════════════════════════════════════
   - name: products
-    label: M Performance Parts Catalog
+    label: 🏎️ M Performance Parts Catalog
     type: collection
     path: src/data/products
     format: json
     filename: "{fields.id}.json"
     view:
       primary: name
-      fields: [id, name, price, category, stock, isMPerformance]
+      fields: [id, name, price, category, stock, isMPerformance, oem]
       default_sort: id
+      search: [name, id, oem, material, category]
     fields:
       - name: id
         label: SKU / Part ID
         type: string
         required: true
-        description: "Unique numeric SKU identifier (e.g. 1, 2, 3)"
+        description: "Unique numeric SKU identifier (e.g. 1, 2, 3, 5)"
       - name: name
         label: Product Title
         type: string
         required: true
-        description: "Full descriptive part name"
+        description: "Full descriptive genuine BMW M part name"
       - name: price
         label: Price in LKR (Sri Lankan Rupee)
         type: number
         required: true
         description: "Standard retail price in LKR (e.g. 555000)"
       - name: category
-        label: Category
+        label: System Category
         type: select
         required: true
         options:
@@ -59,13 +60,13 @@ content:
               value: "forged-carbon"
             - label: "Custom / Special Category"
               value: "custom"
-        description: "Select standard system category or choose 'Custom / Special Category'"
+        description: "Select standard system department or choose 'Custom / Special Category'"
       - name: customCategory
         label: Custom Category Name (If Custom Selected)
         type: string
-        description: "Specify custom category name if 'Custom / Special Category' was selected above"
+        description: "Specify custom category name if 'Custom / Special Category' is selected above"
       - name: stock
-        label: Stock Status
+        label: Stock Availability Status
         type: select
         required: true
         options:
@@ -86,7 +87,7 @@ content:
               value: "Made to Order / Custom Build"
             - label: "Out of Stock / Restocking Soon"
               value: "Out of Stock / Restocking Soon"
-        description: "Select real-time stock and fulfillment status"
+        description: "Select real-time stock and fulfillment availability"
       - name: models
         label: Compatible BMW Chassis Codes
         type: select
@@ -141,7 +142,7 @@ content:
   # 2. CUSTOM CATEGORIES & CATEGORY STOCK STATUS (FILE)
   # ══════════════════════════════════════════════════════════════
   - name: categories
-    label: Custom Categories & Category Stock Status
+    label: 🏷️ Custom Categories & Category Stock Status
     type: file
     path: src/data/categories.json
     fields:
@@ -194,7 +195,7 @@ content:
   # 3. GLOBAL STORE & VERIFIED CONTACT SETTINGS (FILE)
   # ══════════════════════════════════════════════════════════════
   - name: settings
-    label: Global Store & Verified Contact Settings
+    label: ⚙️ Global Store & Verified Contact Settings
     type: file
     path: src/data/settings.json
     fields:
@@ -214,6 +215,10 @@ content:
         label: Top Announcement Banner Subtext
         type: string
         default: Fast Worldwide Delivery | VIN Fitment Verification Guaranteed
+      - name: announcementLink
+        label: Announcement Banner Destination Link
+        type: string
+        default: "/shop"
       - name: contactEmail
         label: Sole Official Email Address
         type: string
@@ -240,12 +245,81 @@ content:
         label: GPS Latitude, Longitude
         type: string
         default: "6.998970, 79.963791"
+      - name: currency
+        label: Store Currency Code
+        type: string
+        default: "LKR"
+      - name: freeShippingThreshold
+        label: Free Express Shipping Threshold (LKR)
+        type: number
+        default: 500000
+      - name: whatsappQuickMessage
+        label: Default WhatsApp Chat Message
+        type: string
+        default: "Hi DP Motorhub, I would like to inquire about authentic BMW M Performance parts."
+      - name: seoTitle
+        label: Default SEO Meta Title
+        type: string
+        default: "DP Motorhub | Authentic BMW M Performance Hardware & Dry Carbon Upgrades"
+      - name: seoDescription
+        label: Default SEO Meta Description
+        type: string
+        default: "Specialist retailer of genuine BMW M Performance parts, 2x2 dry carbon fiber aerodynamic components, titanium exhaust systems, and certified VIN fitment in Kadawatha, Sri Lanka."
 
   # ══════════════════════════════════════════════════════════════
-  # 4. VERIFIED CUSTOMER REVIEWS (FILE)
+  # 4. HOMEPAGE HERO & TRACK SPECS (FILE)
+  # ══════════════════════════════════════════════════════════════
+  - name: hero
+    label: 🚀 Homepage Hero & Track Highlights
+    type: file
+    path: src/data/hero.json
+    fields:
+      - name: eyebrow
+        label: Top Eyebrow Text
+        type: string
+        default: "BORN ON THE TRACK. PERFECTED FOR THE ROAD."
+      - name: headline
+        label: Main Headline
+        type: string
+        default: "DP MOTORHUB"
+      - name: subheadline
+        label: Subheadline
+        type: string
+        default: "THE M5 EXPERIENCE"
+      - name: chassisCode
+        label: Featured Model Chassis Code
+        type: string
+        default: "BMW F90 M5 COMPETITION"
+      - name: specs
+        label: Track Performance Highlights
+        type: list
+        fields:
+          - name: label
+            label: Metric Label (e.g. POWER OUTPUT)
+            type: string
+          - name: value
+            label: Metric Value (e.g. 635 HP)
+            type: string
+          - name: detail
+            label: Subtext Detail (e.g. S63 4.4L Twin-Turbo V8)
+            type: string
+      - name: ctaText
+        label: Primary CTA Button Label
+        type: string
+        default: "Explore M Catalog"
+      - name: ctaLink
+        label: Primary CTA Button Link
+        type: string
+        default: "/shop"
+      - name: heroImage
+        label: Hero Background Image Asset
+        type: image
+
+  # ══════════════════════════════════════════════════════════════
+  # 5. VERIFIED CUSTOMER REVIEWS (FILE)
   # ══════════════════════════════════════════════════════════════
   - name: reviews
-    label: Customer Testimonials & Reviews
+    label: ⭐ Verified Customer Testimonials
     type: file
     path: src/data/reviews.json
     fields:
@@ -281,10 +355,10 @@ content:
             default: true
 
   # ══════════════════════════════════════════════════════════════
-  # 5. FREQUENTLY ASKED QUESTIONS / FAQS (FILE)
+  # 6. FREQUENTLY ASKED QUESTIONS / FAQS (FILE)
   # ══════════════════════════════════════════════════════════════
   - name: faqs
-    label: Technical Fitment & Store FAQs
+    label: ❓ Technical Fitment & Store FAQs
     type: file
     path: src/data/faqs.json
     fields:

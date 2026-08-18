@@ -1,0 +1,31 @@
+{
+  "eyebrow": "BORN ON THE TRACK. PERFECTED FOR THE ROAD.",
+  "headline": "DP MOTORHUB",
+  "subheadline": "THE M5 EXPERIENCE",
+  "chassisCode": "BMW F90 M5 COMPETITION",
+  "specs": [
+    {
+      "label": "POWER OUTPUT",
+      "value": "635 HP",
+      "detail": "S63 4.4L Twin-Turbo V8"
+    },
+    {
+      "label": "ACCELERATION",
+      "value": "3.0s",
+      "detail": "0 - 100 km/h Sprint"
+    },
+    {
+      "label": "ACOUSTICS",
+      "value": "TITANIUM",
+      "detail": "Grade-1 Quad Valved Exhaust"
+    },
+    {
+      "label": "AERODYNAMICS",
+      "value": "CFRP",
+      "detail": "2x2 Autoclaved Dry Carbon"
+    }
+  ],
+  "ctaText": "Explore M Catalog",
+  "ctaLink": "/shop",
+  "heroImage": "/assets/hero_bg.jpg"
+}

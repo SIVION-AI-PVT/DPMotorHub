@@ -3,10 +3,16 @@
   "tagline": "Genuine BMW M Performance Parts",
   "announcementText": "100% Genuine BMW M Performance Hardware",
   "announcementSubtext": "Fast Worldwide Delivery | VIN Fitment Verification Guaranteed",
-  "contactPhone": "+94 77 123 4567",
+  "announcementLink": "/shop",
   "contactEmail": "hello@dpmotorhub.com",
   "location": "325/1/A/3, Ihala Biyanwila, Kadawatha",
+  "contactPhone": "+94 77 123 4567",
   "businessHours": "Mon - Sat: 9:00 AM - 7:00 PM IST",
   "googleMapsUrl": "https://maps.app.goo.gl/8nHc8qSnCRHtKBfL6?g_st=aw",
-  "coordinates": "6.998970, 79.963791"
+  "coordinates": "6.998970, 79.963791",
+  "currency": "LKR",
+  "freeShippingThreshold": 500000,
+  "whatsappQuickMessage": "Hi DP Motorhub, I would like to inquire about authentic BMW M Performance parts.",
+  "seoTitle": "DP Motorhub | Authentic BMW M Performance Hardware & Dry Carbon Upgrades",
+  "seoDescription": "Specialist retailer of genuine BMW M Performance parts, 2x2 dry carbon fiber aerodynamic components, titanium exhaust systems, and certified VIN fitment in Kadawatha, Sri Lanka."
 }
